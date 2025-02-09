@@ -16,13 +16,13 @@ export function BackgroundImage({
   return (
     <div
       className={clsx(
-        'absolute inset-0 overflow-hidden bg-indigo-50',
+        'absolute inset-0 overflow-hidden',
         className,
       )}
     >
       <Image
         className={clsx(
-          'absolute top-0 blur-3xl sm:blur-lg brightness-100 opacity-90',
+          'absolute top-0 blur-3xl sm:blur-lg brightness-100 opacity-30',
           position === 'left' &&
             'left-0 translate-x-[-55%] translate-y-[-10%] -scale-x-100 sm:left-1/2 sm:translate-x-[-98%] sm:translate-y-[-6%] lg:translate-x-[-106%] xl:translate-x-[-122%]',
           position === 'right' &&
@@ -35,8 +35,6 @@ export function BackgroundImage({
         priority
         unoptimized
       />
-      <div className="absolute inset-x-0 top-0 h-40 bg-linear-to-b from-white" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-white" />
     </div>
   )
 }

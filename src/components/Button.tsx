@@ -7,7 +7,7 @@ type ButtonProps =
 
 export function Button({ className, ...props }: ButtonProps) {
   className = clsx(
-    'inline-flex justify-center rounded-md bg-white px-6 py-3 text-base font-semibold text-[#026cbf] shadow-sm hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-300',
+    'inline-flex justify-center rounded-md bg-[#9eff65] px-6 py-3 text-base font-semibold text-[#1a1150] shadow-sm hover:bg-[#8be455] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9eff65] transition-all duration-300',
     className,
   )
 

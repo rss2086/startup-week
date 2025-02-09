@@ -3,9 +3,11 @@
 import { useEffect, useState } from 'react'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import clsx from 'clsx'
+import Image from 'next/image'
 
 import { BackgroundImage } from '@/components/BackgroundImage'
 import { Container } from '@/components/Container'
+import startupSummit from '@/images/startup-summit.png'
 
 interface Day {
   date: React.ReactNode
@@ -456,8 +458,17 @@ function WeekSchedule() {
 
 function SummitSchedule() {
   return (
-    <div className="mt-16 rounded-3xl bg-blue-50 px-8 py-12">
-      <div className="mx-auto max-w-2xl lg:mx-0">
+    <div className="mt-16 rounded-3xl bg-blue-50 px-8 py-12 relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={startupSummit}
+          alt=""
+          fill
+          className="object-cover blur-sm opacity-20"
+          priority
+        />
+      </div>
+      <div className="relative z-10 mx-auto max-w-2xl lg:mx-0">
         <h3 className="font-display text-3xl font-medium tracking-tighter text-blue-600">
           Startup Summit at Fitler Club
         </h3>
@@ -470,7 +481,7 @@ function SummitSchedule() {
       </div>
       <TimeSlots 
         day={summitSchedule} 
-        className="mt-8 bg-white/80 rounded-2xl border border-blue-100"
+        className="mt-8 bg-white/80 rounded-2xl border border-blue-100 relative z-10"
       />
     </div>
   )
