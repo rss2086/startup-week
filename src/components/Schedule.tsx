@@ -9,22 +9,24 @@ import { BackgroundImage } from '@/components/BackgroundImage'
 import { Container } from '@/components/Container'
 import startupSummit from '@/images/startup-summit.png'
 
-interface Day {
+export interface Day {
   date: React.ReactNode
   dateTime: string
   summary: string
-  timeSlots: Array<{
+  timeSlots: Array<TimeSlot>
+}
+
+export interface TimeSlot {
+  name: string
+  description: string | null
+  start: string
+  end: string
+  isVirtual?: boolean
+  speakers?: Array<{
     name: string
-    description: string | null
-    start: string
-    end: string
-    isVirtual?: boolean
-    speakers?: Array<{
-      name: string
-      role?: string
-      company?: string
-      companyLogoUrl?: string
-    }>
+    role?: string
+    company?: string
+    companyLogoUrl?: string
   }>
 }
 
@@ -206,7 +208,7 @@ const weekSchedule: Array<Day> = [
   },
 ]
 
-const summitSchedule: Day = {
+export const summitSchedule: Day = {
   date: 'March 21',
   dateTime: '2024-03-21',
   summary: 'Our flagship event at Fitler Club featuring industry leaders, keynotes, and extensive networking.',
@@ -546,7 +548,7 @@ function DaySummary({ day }: { day: Day }) {
   )
 }
 
-function TimeSlots({ day, className }: { day: Day; className?: string }) {
+export function TimeSlots({ day, className }: { day: Day; className?: string }) {
   const isWeekday = day.date !== 'March 21'
 
   return (

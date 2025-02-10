@@ -1,38 +1,25 @@
-import Image from 'next/image'
-
 import { Container } from '@/components/Container'
-import logoLaravel from '@/images/logos/laravel.svg'
-import logoMirage from '@/images/logos/mirage.svg'
-import logoStatamic from '@/images/logos/statamic.svg'
-import logoStaticKit from '@/images/logos/statickit.svg'
-import logoTransistor from '@/images/logos/transistor.svg'
-import logoTuple from '@/images/logos/tuple.svg'
-
-const sponsors = [
-  { name: 'Transistor', logo: logoTransistor },
-  { name: 'Tuple', logo: logoTuple },
-  { name: 'StaticKit', logo: logoStaticKit },
-  { name: 'Mirage', logo: logoMirage },
-  { name: 'Laravel', logo: logoLaravel },
-  { name: 'Statamic', logo: logoStatamic },
-]
 
 export function Sponsors() {
   return (
     <section id="sponsors" aria-label="Sponsors" className="py-20 sm:py-32">
       <Container>
-        <h2 className="mx-auto max-w-2xl text-center font-display text-4xl font-medium tracking-tighter text-blue-900 sm:text-5xl">
-          Current sponsorships for our workshops and speakers.
-        </h2>
-        <div className="mx-auto mt-20 grid max-w-max grid-cols-1 place-content-center gap-x-32 gap-y-12 sm:grid-cols-3 md:gap-x-16 lg:gap-x-32">
-          {sponsors.map((sponsor) => (
-            <div
-              key={sponsor.name}
-              className="flex items-center justify-center"
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-display text-4xl font-medium tracking-tighter text-blue-900 sm:text-5xl">
+            Interested in becoming a sponsor?
+          </h2>
+          <p className="mt-4 text-lg text-slate-600">
+            Support our workshops and speakers while gaining visibility in the developer community. 
+            We're currently looking for sponsors who share our vision for quality tech education.
+          </p>
+          <div className="mt-8">
+            <a
+              href="mailto:sponsors@example.com"
+              className="inline-block rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-500"
             >
-              <Image src={sponsor.logo} alt={sponsor.name} unoptimized />
-            </div>
-          ))}
+              Get in touch about sponsorship
+            </a>
+          </div>
         </div>
       </Container>
     </section>

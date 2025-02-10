@@ -11,6 +11,7 @@ import Logo from '@/images/eclub-logo.png'
 const navigation = {
   main: [
     { name: 'Schedule', href: '/schedule' },
+    { name: 'Summit', href: '/summit' },
     { name: 'Speakers', href: '/speakers' },
     { name: 'Sponsors', href: '/sponsors' },
     { name: 'Organizers', href: '/organizers' },
