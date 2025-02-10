@@ -7,6 +7,7 @@ import Image from 'next/image'
 
 import { BackgroundImage } from '@/components/BackgroundImage'
 import { Container } from '@/components/Container'
+import { avatars, logos } from '@/config/images'
 import startupSummit from '@/images/startup-summit.png'
 
 export interface Day {
@@ -27,6 +28,7 @@ export interface TimeSlot {
     role?: string
     company?: string
     companyLogoUrl?: string
+    image?: string
   }>
 }
 
@@ -46,7 +48,9 @@ const weekSchedule: Array<Day> = [
           {
             name: 'Robert Borghese',
             role: 'Professor',
-            company: 'Wharton'
+            company: 'Wharton',
+            image: avatars.robertBorghese,
+            companyLogoUrl: logos.wharton
           }
         ]
       },
@@ -60,11 +64,15 @@ const weekSchedule: Array<Day> = [
           {
             name: 'Brian Riordan',
             company: 'Avalanche',
-            role: 'Founder'
+            role: 'Founder',
+            image: avatars.brianRiordan,
+            companyLogoUrl: logos.avalanche
           },
           {
             name: 'Shawn Xu',
-            company: 'Lowercarbon'
+            company: 'Lowercarbon',
+            image: avatars.shawnXu,
+            companyLogoUrl: logos.lowercarbon
           },
           {
             name: 'TBA',
@@ -92,15 +100,21 @@ const weekSchedule: Array<Day> = [
         speakers: [
           {
             name: 'Jake Gordon',
-            company: 'Noteefy'
+            company: 'Noteefy',
+            image: avatars.jakeGordon,
+            companyLogoUrl: logos.noteefy
           },
           {
             name: 'Daniel Kang',
-            company: 'Flowbo'
+            company: 'Flowbo',
+            image: avatars.danielKang,
+            companyLogoUrl: logos.flowbo
           },
           {
             name: 'Ian Goldberg',
-            company: 'Venrex'
+            company: 'Venrex',
+            image: avatars.ianGoldberg,
+            companyLogoUrl: logos.venrex
           }
         ]
       },
@@ -127,22 +141,30 @@ const weekSchedule: Array<Day> = [
           {
             name: 'Hannah Frankl',
             role: 'Wharton Student',
-            company: 'Rogo (Fin Tech)'
+            company: 'Rogo (Fin Tech)',
+            image: avatars.hannahFrankl,
+            companyLogoUrl: logos.rogo
           },
           {
             name: 'Allie DiPietro',
             role: 'Wharton Student',
-            company: 'Juniver (Health Tech)'
+            company: 'Juniver (Health Tech)',
+            image: avatars.allieDiPietro,
+            companyLogoUrl: logos.juniver
           },
           {
             name: 'Jacqueline Keene',
             role: 'Wharton Student',
-            company: 'Sown to Grown (Ed Tech)'
+            company: 'Sown to Grown (Ed Tech)',
+            image: avatars.jacquelineKeene,
+            companyLogoUrl: logos.sownToGrow
           },
           {
             name: 'Filippos Letsas',
             role: 'Wharton Student',
-            company: 'Auterion (Deep Tech)'
+            company: 'Auterion (Deep Tech)',
+            image: avatars.filipposLetsas,
+            companyLogoUrl: logos.auterion
           }
         ]
       },
@@ -155,7 +177,9 @@ const weekSchedule: Array<Day> = [
         speakers: [
           {
             name: 'Nicole Sahin',
-            company: 'Globalization Partners'
+            company: 'Globalization Partners',
+            image: avatars.nicoleSahin,
+            companyLogoUrl: logos.globalizationPartners
           }
         ]
       },
@@ -176,17 +200,23 @@ const weekSchedule: Array<Day> = [
           {
             name: 'Jenna Bryant',
             role: 'Founder, GP',
-            company: 'Embedded Ventures'
+            company: 'Embedded Ventures',
+            image: avatars.jennaBryant,
+            companyLogoUrl: logos.embeddedVentures
           },
           {
             name: 'Urvashi Barooah',
             role: 'Partner',
-            company: 'Redpoint Ventures'
+            company: 'Redpoint Ventures',
+            image: avatars.urvashipBarooah,
+            companyLogoUrl: logos.redpoint
           },
           {
             name: 'Sue Xu',
             role: 'GP',
-            company: 'Amino Capital'
+            company: 'Amino Capital',
+            image: avatars.sueXu,
+            companyLogoUrl: logos.aminoCapital
           }
         ]
       },
@@ -200,7 +230,9 @@ const weekSchedule: Array<Day> = [
           {
             name: 'Nancy Xu',
             role: 'Founder, CEO',
-            company: 'Moonhub AI, Stanford'
+            company: 'Moonhub AI, Stanford',
+            image: avatars.nancyXu,
+            companyLogoUrl: logos.moonhubAi
           }
         ]
       },
@@ -230,17 +262,23 @@ export const summitSchedule: Day = {
         {
           name: 'Jordan Noone',
           role: 'Founder',
-          company: 'Zoo'
+          company: 'Zoo',
+          image: avatars.jordanNoone,
+          companyLogoUrl: logos.zoo
         },
         {
           name: 'Dan Roelker',
           role: 'Founder',
-          company: 'OurSky'
+          company: 'OurSky',
+          image: avatars.danielRoelker,
+          companyLogoUrl: logos.oursky
         },
         {
           name: 'Philip Johnston',
           role: 'Founder',
-          company: 'Lumen'
+          company: 'Lumen',
+          image: avatars.phillipJohnston,
+          companyLogoUrl: logos.lumen
         }
       ]
     },
@@ -252,29 +290,39 @@ export const summitSchedule: Day = {
       isVirtual: false,
       speakers: [
         {
-          name: 'James De La Costa',
+          name: 'James da Costa',
           role: 'Partner',
-          company: 'a16z'
+          company: 'a16z',
+          image: avatars.jamesDaCosta,
+          companyLogoUrl: logos.a16z
         },
         {
           name: 'Gabe Stengel',
           role: 'Founder',
-          company: 'Rogo'
+          company: 'Rogo',
+          image: avatars.gabrielStengel,
+          companyLogoUrl: logos.rogo
         },
         {
           name: 'Haroon Choudery',
           role: 'Founder',
-          company: 'Autoblocks AI'
+          company: 'Autoblocks AI',
+          image: avatars.haroonChoudery,
+          companyLogoUrl: logos.autoblocksAi
         },
         {
           name: 'Logan Kilpatrick',
           role: 'Founder, Former A16z Scout',
-          company: 'DeepMind, Google Gemini, Early stage AI VC'
+          company: 'DeepMind, Google Gemini, Early stage AI VC',
+          image: avatars.loganKilpatrick,
+          companyLogoUrl: logos.deepmind
         },
         {
           name: 'John Nay',
           role: 'Founder, CEO',
-          company: 'Norm AI'
+          company: 'Norm AI',
+          image: avatars.johnNay,
+          companyLogoUrl: logos.normAi
         }
       ]
     },
@@ -288,17 +336,23 @@ export const summitSchedule: Day = {
         {
           name: 'Eric Kinariwala',
           role: 'Founder',
-          company: 'Capsule'
+          company: 'Capsule',
+          image: avatars.ericKinariwala,
+          companyLogoUrl: logos.capsule
         },
         {
           name: 'Cavan Klinsky',
           role: 'Founder',
-          company: 'Healthie'
+          company: 'Healthie',
+          image: avatars.cavanKlinsky,
+          companyLogoUrl: logos.healthie
         },
         {
           name: 'Justin Silver',
           role: 'Founder',
-          company: 'Symptoguard + Aavrani'
+          company: 'Symptoguard + Aavrani',
+          image: avatars.justinSilver,
+          companyLogoUrl: logos.aavrani
         }
       ]
     },
@@ -312,7 +366,9 @@ export const summitSchedule: Day = {
         {
           name: 'Sandeep Acharya',
           role: 'Founder, CEO',
-          company: 'Octave'
+          company: 'Octave',
+          image: avatars.sandeepAcharya,
+          companyLogoUrl: logos.octave
         }
       ]
     },
@@ -333,7 +389,9 @@ export const summitSchedule: Day = {
         {
           name: 'Gordon Ritter',
           role: 'Founder and GP',
-          company: 'Emergence Capital'
+          company: 'Emergence Capital',
+          image: avatars.gordonRitter,
+          companyLogoUrl: logos.emergenceCapital
         }
       ]
     },
@@ -345,29 +403,39 @@ export const summitSchedule: Day = {
       isVirtual: false,
       speakers: [
         {
-          name: 'Nass Eddequiouaq',
+          name: 'Nassim Eddequiouaq',
           role: 'Founder, CEO',
-          company: 'Bastion, a16z crypto CTO'
+          company: 'Bastion, a16z crypto CTO',
+          image: avatars.nassimEddequiouaq,
+          companyLogoUrl: logos.bastion
         },
         {
           name: 'Nick Krakoff',
           role: 'Head of Crypto Products & Business',
-          company: 'Stripe Crypto'
+          company: 'Stripe Crypto',
+          image: avatars.nickKrakoff,
+          companyLogoUrl: logos.stripe
         },
         {
-          name: 'Rami',
+          name: 'Rami Shahatit',
           role: 'Founder, CEO',
-          company: 'Portal'
+          company: 'Portal',
+          image: avatars.ramiShahatit,
+          companyLogoUrl: logos.portal
         },
         {
           name: 'Ejaaz Ahamadeen',
           role: 'Cohost and Founder',
-          company: 'Bankless, AI X Crypto HedgeFund'
+          company: 'Bankless, AI X Crypto HedgeFund',
+          image: avatars.ejaazAhamadeen,
+          companyLogoUrl: logos.bankless
         },
         {
           name: 'Mark Grace',
           role: 'Partner, Crypto',
-          company: 'M13'
+          company: 'M13',
+          image: avatars.markGrace,
+          companyLogoUrl: logos.m13
         }
       ]
     },
@@ -638,16 +706,20 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
                         )}
                       >
                         <div className="flex-shrink-0">
-                          {speaker.companyLogoUrl ? (
-                            <img 
-                              src={speaker.companyLogoUrl} 
-                              alt={`${speaker.company} logo`}
-                              className="h-8 w-8 object-contain"
-                            />
-                          ) : speaker.company && (
-                            <div className="h-8 w-8 rounded bg-slate-100 flex items-center justify-center text-slate-400">
-                              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                          {speaker.image ? (
+                            <div className="h-12 w-12 rounded-full overflow-hidden">
+                              <Image 
+                                src={speaker.image}
+                                alt={speaker.name}
+                                width={48}
+                                height={48}
+                                className="h-full w-full object-cover"
+                              />
+                            </div>
+                          ) : (
+                            <div className="h-12 w-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
+                              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                               </svg>
                             </div>
                           )}
@@ -657,15 +729,21 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
                             <p className="text-lg font-semibold text-blue-900 truncate">
                               {speaker.name}
                             </p>
-                            {speaker.company && (
-                              <p className="text-sm text-blue-600 font-medium ml-2">
-                                {speaker.company}
-                              </p>
+                            {speaker.companyLogoUrl && (
+                              <div className="ml-2 h-6 w-6">
+                                <Image 
+                                  src={speaker.companyLogoUrl}
+                                  alt={`${speaker.company} logo`}
+                                  width={24}
+                                  height={24}
+                                  className="h-full w-full object-contain"
+                                />
+                              </div>
                             )}
                           </div>
-                          {speaker.role && (
+                          {(speaker.role || speaker.company) && (
                             <p className="text-sm text-slate-600 truncate">
-                              {speaker.role}
+                              {[speaker.role, speaker.company].filter(Boolean).join(' at ')}
                             </p>
                           )}
                         </div>
@@ -678,9 +756,19 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
                       key={idx} 
                       className={clsx(
                         "flex flex-col items-center p-6 rounded-xl bg-gradient-to-b from-white to-slate-50/90 shadow-sm hover:shadow-md transition-all duration-300 border border-blue-100/20 hover:border-blue-200/30",
-                        timeSlot.speakers?.length === 1 && "mx-auto w-full"
+                        timeSlot.speakers?.length === 1 && "mx-auto w-full max-w-lg"
                       )}
                     >
+                      {speaker.image && (
+                        <div className="relative w-24 h-24 mb-4">
+                          <Image
+                            src={speaker.image}
+                            alt={speaker.name}
+                            fill
+                            className="object-cover rounded-full"
+                          />
+                        </div>
+                      )}
                       <div className="text-center mb-4">
                         <h5 className="text-2xl font-bold text-blue-900 mb-1.5 leading-tight">
                           {speaker.name}
@@ -694,11 +782,14 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
 
                       <div className="w-full mt-auto pt-4 border-t border-slate-100">
                         {speaker.companyLogoUrl ? (
-                          <img 
-                            src={speaker.companyLogoUrl} 
-                            alt={`${speaker.company} logo`}
-                            className="h-10 w-auto mb-2 mx-auto object-contain"
-                          />
+                          <div className="h-10 relative">
+                            <Image 
+                              src={speaker.companyLogoUrl} 
+                              alt={`${speaker.company} logo`}
+                              fill
+                              className="object-contain"
+                            />
+                          </div>
                         ) : speaker.company && (
                           <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-slate-100 to-white mb-2 mx-auto flex items-center justify-center text-slate-400 shadow-sm">
                             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -707,7 +798,7 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
                           </div>
                         )}
                         {speaker.company && (
-                          <p className="text-sm text-blue-600 text-center font-medium">
+                          <p className="text-sm text-blue-600 text-center font-medium mt-2">
                             {speaker.company}
                           </p>
                         )}

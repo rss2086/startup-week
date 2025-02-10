@@ -1,12 +1,13 @@
 'use client'
 
 import { useEffect, useId, useState } from 'react'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import { DiamondIcon } from '@/components/DiamondIcon'
+import { avatars, logos } from '@/config/images'
 
 /* People */
 import robertBorghese from '@/images/avatars/robert-borghese.jpeg'
@@ -28,9 +29,9 @@ import venrexLogo from '@/images/logos/venrex.jpeg'
 interface Speaker {
   name: string
   role: string
-  image?: StaticImageData
+  image?: string
   company?: string
-  companyLogoUrl?: StaticImageData
+  companyLogoUrl?: string
   linkedinUrl?: string
   companyWebsite?: string
 }
@@ -51,29 +52,29 @@ const days: Day[] = [
       {
         name: 'Robert Borghese',
         role: 'Professor at Wharton - Legal Aspects of Entrepreneurship',
-        image: robertBorghese,
+        image: avatars.robertBorghese,
         company: 'Wharton',
-        companyLogoUrl: whartonLogo,
+        companyLogoUrl: logos.wharton,
         linkedinUrl: 'https://www.linkedin.com/in/robert-j-borghese-16247a1',
         companyWebsite: 'https://lgst.wharton.upenn.edu/profile/borghese/'
       },
       {
         name: 'Brian Riordan',
         role: 'Founder at Avalanche',
-        image: brianRiordan,
+        image: avatars.brianRiordan,
         company: 'Avalanche Energy',
-        companyLogoUrl: avalancheLogo,
+        companyLogoUrl: logos.avalanche,
         linkedinUrl: 'https://www.linkedin.com/in/brian-riordan-a7883b11/',
         companyWebsite: 'https://avalanchefusion.com/about/'
       },
       {
         name: 'Shawn Xu',
         role: 'Partner at Lowercarbon Capital',
-        image: shawnXu,
+        image: avatars.shawnXu,
         company: 'Lowercarbon Capital',
-        companyLogoUrl: lowercarbonLogo,
-        linkedinUrl: null,
-        companyWebsite: null
+        companyLogoUrl: logos.lowercarbon,
+        linkedinUrl: undefined,
+        companyWebsite: undefined
       },
     ],
   },
@@ -85,27 +86,27 @@ const days: Day[] = [
       {
         name: 'Jake Gordon',
         role: 'Co-Founder & CEO of Noteefy',
-        image: jakeGordon,
+        image: avatars.jakeGordon,
         company: 'Noteefy',
-        companyLogoUrl: noteefyLogo,
+        companyLogoUrl: logos.noteefy,
         linkedinUrl: 'https://www.linkedin.com/in/jng',
         companyWebsite: 'https://noteefy.app'
       },
       {
         name: 'Daniel Kang',
         role: 'Co-Founder of Flowbo (YC S21)',
-        image: danielKang,
+        image: avatars.danielKang,
         company: 'Flowbo',
-        companyLogoUrl: flowboLogo,
+        companyLogoUrl: logos.flowbo,
         linkedinUrl: 'https://www.linkedin.com/in/itsdankang',
         companyWebsite: 'https://www.flowbo.co'
       },
       {
         name: 'Ian Goldberg',
         role: 'Partner at Venrex',
-        image: ianGoldberg,
+        image: avatars.ianGoldberg,
         company: 'Venrex',
-        companyLogoUrl: venrexLogo,
+        companyLogoUrl: logos.venrex,
         linkedinUrl: 'https://www.linkedin.com/in/ian-s-goldberg',
         companyWebsite: 'http://www.venrex.partners'
       }
@@ -119,45 +120,45 @@ const days: Day[] = [
       {
         name: 'Hannah Frankl',
         role: 'Wharton Student - Rogo (Fin Tech)',
-        image: hannahFrankl,
+        image: avatars.hannahFrankl,
         company: 'Rogo',
-        companyLogoUrl: rogoLogo,
+        companyLogoUrl: logos.rogo,
         linkedinUrl: 'https://www.linkedin.com/in/hannahfrankl/',
         companyWebsite: 'https://www.rogoai.com/'
       },
       {
         name: 'Allie DiPietro',
         role: 'Wharton Student - Juniver (Health Tech)',
-        image: allieDiPietro,
+        image: avatars.allieDiPietro,
         company: 'Juniver',
-        companyLogoUrl: juniverLogo,
+        companyLogoUrl: logos.juniver,
         linkedinUrl: 'https://www.linkedin.com/in/alice-dipietro/',
         companyWebsite: 'https://www.juniver.com/'
       },
       {
         name: 'Jacqueline Keene',
         role: 'Wharton Student - Sown to Grown (Ed Tech)',
-        image: jacquelineKeene,
+        image: avatars.jacquelineKeene,
         company: 'Sown To Grow',
-        companyLogoUrl: sownToGrowLogo,
+        companyLogoUrl: logos.sownToGrow,
         linkedinUrl: 'https://www.linkedin.com/in/jacqueline-keene/',
         companyWebsite: 'https://www.sowntogrow.com/'
       },
       {
         name: 'Filippos Letsas',
         role: 'Wharton Student - Auterion (Deep Tech)',
-        image: filipposLetsas,
+        image: avatars.filipposLetsas,
         company: 'Auterion',
-        companyLogoUrl: auterionLogo,
+        companyLogoUrl: logos.auterion,
         linkedinUrl: 'https://www.linkedin.com/in/fletsas/',
         companyWebsite: 'https://auterion.com/'
       },
       {
         name: 'Nicole Sahin',
         role: 'CEO at Globalization Partners',
-        image: nicoleSahin,
+        image: avatars.nicoleSahin,
         company: 'Globalization Partners',
-        companyLogoUrl: globalizationPartnersLogo,
+        companyLogoUrl: logos.globalizationPartners,
         linkedinUrl: 'https://www.linkedin.com/in/nicolesahin/',
         companyWebsite: 'https://www.globalization-partners.com/'
       },
@@ -171,36 +172,36 @@ const days: Day[] = [
       {
         name: 'Jenna Bryant',
         role: 'Founder & GP at Embedded Ventures',
-        image: 'https://media.licdn.com/dms/image/C4E03AQGq3qiCJRDHlA/profile-displayphoto-shrink_800_800/0/1517614739746?e=1707350400&v=beta&t=Ry-Ue7bYNfyBz-Xp8Gu7qmCsZfLBzHGEOZMdAHhCTOE',
+        image: avatars.jennaBryant,
         company: 'Embedded Ventures',
-        companyLogoUrl: 'https://media.licdn.com/dms/image/C560BAQHbQZFSQIB9Yw/company-logo_200_200/0/1630511737707?e=1709769600&v=beta&t=Hs-Ue1-Hd-pVWzqcBNGJTZhsXwPVhJDSPFLWz_8Xq3I',
+        companyLogoUrl: logos.embeddedVentures,
         linkedinUrl: 'https://www.linkedin.com/in/jennabryant/',
         companyWebsite: 'https://embedded.ventures/'
       },
       {
         name: 'Urvashi Barooah',
         role: 'Partner at Redpoint Ventures',
-        image: 'https://media.licdn.com/dms/image/C4E03AQFdCJGZEJVEAA/profile-displayphoto-shrink_800_800/0/1633453571589?e=1707350400&v=beta&t=Oo0XaLdCQVxNGDLdXkXtNvJXHzTZnRhDEcXLxlZsVXY',
+        image: avatars.urvashipBarooah,
         company: 'Redpoint Ventures',
-        companyLogoUrl: 'https://media.licdn.com/dms/image/C560BAQHULTsms1vbYA/company-logo_200_200/0/1630641439820?e=1709769600&v=beta&t=Ux_1gDqODGHZcXTvx9Xt1yxlgbTXwcwV-Ks3pNi-Gm0',
+        companyLogoUrl: logos.redpoint,
         linkedinUrl: 'https://www.linkedin.com/in/urvashi-barooah-7a0ba228/',
         companyWebsite: 'https://www.redpoint.com/'
       },
       {
         name: 'Sue Xu',
         role: 'GP at Amino Capital',
-        image: 'https://media.licdn.com/dms/image/C4E03AQE0Ey7WxBVmNg/profile-displayphoto-shrink_800_800/0/1516242694733?e=1707350400&v=beta&t=Aq_Aw9Kq3AQM5CjgGHCdqGkLOWZkCaAVcFgRDQJPRZI',
+        image: avatars.sueXu,
         company: 'Amino Capital',
-        companyLogoUrl: 'https://media.licdn.com/dms/image/C4E0BAQHiNAaEgmOQ_g/company-logo_200_200/0/1630639684750?e=1709769600&v=beta&t=Vy9Jn9uXRQWTf7_Pu6Ck6ZfXyFOTAMVxPxwXHGEKBrY',
+        companyLogoUrl: logos.aminoCapital,
         linkedinUrl: 'https://www.linkedin.com/in/suexu/',
         companyWebsite: 'https://www.aminocapital.com/'
       },
       {
         name: 'Nancy Xu',
         role: 'Founder & CEO at Moonhub AI',
-        image: 'https://media.licdn.com/dms/image/C4E03AQFNEXTIrJxTmw/profile-displayphoto-shrink_800_800/0/1517614752744?e=1707350400&v=beta&t=Oi5Uj2OTKQqPDrYZGNLNVdpWNmkXhWZXCXWGqC4Ue_I',
+        image: avatars.nancyXu,
         company: 'Moonhub AI',
-        companyLogoUrl: 'https://media.licdn.com/dms/image/D560BAQEkKxhRPYJ0Vw/company-logo_200_200/0/1692290408421?e=1709769600&v=beta&t=TRhqZhRkuSZvLPGwGULqf_sPXRPLVQTEwvJZHjGLDXc',
+        companyLogoUrl: logos.moonhubAi,
         linkedinUrl: 'https://www.linkedin.com/in/xnancy/',
         companyWebsite: 'https://www.moonhub.ai/'
       },
@@ -214,133 +215,171 @@ const days: Day[] = [
       {
         name: "Sandeep Acharya",
         role: "Founder & CEO at Octave - Keynote Speaker",
+        image: avatars.sandeepAcharya,
         company: "Octave",
+        companyLogoUrl: logos.octave,
         linkedinUrl: "https://www.linkedin.com/in/sandeep-acharya-he-his-52ab458",
         companyWebsite: "https://www.findoctave.com/"
       },
       {
         name: "Jordan Noone",
         role: "Founder at Zoo",
+        image: avatars.jordanNoone,
         company: "Zoo",
+        companyLogoUrl: logos.zoo,
         linkedinUrl: "https://www.linkedin.com/in/jordannoone/",
         companyWebsite: "https://zoo.dev/"
       },
       {
         name: "Dan Roelker",
         role: "Founder at OurSky",
+        image: avatars.danielRoelker,
         company: "OurSky",
+        companyLogoUrl: logos.oursky,
         linkedinUrl: "https://www.linkedin.com/in/dan-roelker",
         companyWebsite: "https://oursky.ai/"
       },
       {
         name: "Philip Johnston",
         role: "Founder at Lumen",
+        image: avatars.phillipJohnston,
         company: "Lumen Orbit",
+        companyLogoUrl: logos.lumen,
         linkedinUrl: "https://www.linkedin.com/in/johnstonphilip",
         companyWebsite: "https://www.lumenorbit.com/"
       },
       {
         name: "James da Costa",
         role: "Partner at a16z",
+        image: avatars.jamesDaCosta,
         company: "Andreessen Horowitz",
+        companyLogoUrl: logos.a16z,
         linkedinUrl: "https://www.linkedin.com/in/jamesdacosta",
         companyWebsite: "https://a16z.com/"
       },
       {
         name: "Gabe Stengel",
         role: "Founder at Rogo",
+        image: avatars.gabrielStengel,
         company: "Rogo",
+        companyLogoUrl: logos.rogo,
         linkedinUrl: "https://www.linkedin.com/in/gabestengel/",
         companyWebsite: "https://www.rogoai.com/"
       },
       {
         name: "Haroon Choudery",
         role: "Founder at Autoblocks AI",
+        image: avatars.haroonChoudery,
         company: "Autoblocks AI",
+        companyLogoUrl: logos.autoblocksAi,
         linkedinUrl: "https://www.linkedin.com/in/haroonchoudery/",
         companyWebsite: "https://www.autoblocks.ai/"
       },
       {
         name: "Logan Kilpatrick",
         role: "DeepMind, Google Gemini, Early stage AI VC Founder",
+        image: avatars.loganKilpatrick,
         company: "Google",
+        companyLogoUrl: logos.deepmind,
         linkedinUrl: "https://www.linkedin.com/in/logankilpatrick/",
         companyWebsite: "https://deepmind.google/"
       },
       {
         name: "John Nay",
         role: "Founder & CEO at Norm AI",
+        image: avatars.johnNay,
         company: "Norm AI",
+        companyLogoUrl: logos.normAi,
         linkedinUrl: "https://www.linkedin.com/in/johnjnay",
         companyWebsite: "https://www.norm.ai/"
       },
       {
         name: "Eric Kinariwala",
         role: "Founder at Capsule",
+        image: avatars.ericKinariwala,
         company: "Capsule",
+        companyLogoUrl: logos.capsule,
         linkedinUrl: "https://www.linkedin.com/in/ekinariwala",
         companyWebsite: "https://www.capsule.com/"
       },
       {
         name: "Cavan Klinsky",
         role: "Founder at Healthie",
+        image: avatars.cavanKlinsky,
         company: "Healthie",
+        companyLogoUrl: logos.healthie,
         linkedinUrl: "https://www.linkedin.com/in/cavan-klinsky-4b4b74a9/",
         companyWebsite: "https://www.gethealthie.com/"
       },
       {
         name: "Justin Silver",
         role: "Founder at Symptoguard + Aavrani",
+        image: avatars.justinSilver,
         company: "Symptoguard & Aavrani",
+        companyLogoUrl: logos.aavrani,
         linkedinUrl: "https://www.linkedin.com/in/justinasilver/",
         companyWebsite: "https://aavrani.com/"
       },
       {
         name: "Gordon Ritter",
         role: "Founder and GP at Emergence Capital",
+        image: avatars.gordonRitter,
         company: "Emergence Capital",
+        companyLogoUrl: logos.emergenceCapital,
         linkedinUrl: "https://www.linkedin.com/in/gordonpritter",
         companyWebsite: "https://www.emcap.com/"
       },
       {
         name: "Nassim Eddequiouaq",
         role: "Founder & CEO at Bastion, former a16z crypto CTO",
+        image: avatars.nassimEddequiouaq,
         company: "Bastion",
+        companyLogoUrl: logos.bastion,
         linkedinUrl: "https://www.linkedin.com/in/nassim-eddequidouaq/",
         companyWebsite: "https://www.bastion.com/"
       },
       {
         name: "Nick Krakoff",
         role: "Head of Crypto Products & Business at Stripe",
+        image: avatars.nickKrakoff,
         company: "Stripe",
-        linkedinUrl: null,
+        companyLogoUrl: logos.stripe,
+        linkedinUrl: undefined,
         companyWebsite: "https://stripe.com/"
       },
       {
         name: "Rami Shahatit",
         role: "Founder & hCEO at Portal",
+        image: avatars.ramiShahatit,
         company: "Portal",
+        companyLogoUrl: logos.portal,
         linkedinUrl: "https://www.linkedin.com/in/rami-shahatit/",
         companyWebsite: "https://www.portal.org/"
       },
       {
         name: "Ejaaz Ahamadeen",
         role: "Cohost and Founder at Bankless, AI X Crypto HedgeFund",
+        image: avatars.ejaazAhamadeen,
         company: "Bankless",
+        companyLogoUrl: logos.bankless,
         linkedinUrl: "https://www.linkedin.com/in/ejaaz-ahamadeen-231b7030/",
         companyWebsite: "https://www.bankless.com/"
       },
       {
         name: "Andrew F",
         role: "Head of Base Engineering at Coinbase",
+        image: avatars.andrewF,
         company: "Coinbase",
+        companyLogoUrl: logos.coinbase,
         linkedinUrl: "https://www.linkedin.com/in/andrew-f-206a77153/",
         companyWebsite: "https://www.coinbase.com/"
       },
       {
         name: "Mark Grace",
         role: "Partner, Crypto at M13",
+        image: avatars.markGrace,
         company: "M13",
+        companyLogoUrl: logos.m13,
         linkedinUrl: "https://www.linkedin.com/in/markgrace95/",
         companyWebsite: "https://www.m13.co/"
       }

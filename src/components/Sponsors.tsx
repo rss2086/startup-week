@@ -10,11 +10,11 @@ export function Sponsors() {
           </h2>
           <p className="mt-4 text-lg text-slate-600">
             Support our workshops and speakers while gaining visibility in the developer community. 
-            We're currently looking for sponsors who share our vision for quality tech education.
+            We&apos;re currently looking for sponsors who share our vision for quality tech education.
           </p>
           <div className="mt-8">
             <a
-              href="mailto:sponsors@example.com"
+              href="mailto:rohanss@wharton.upenn.edu"
               className="inline-block rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-500"
             >
               Get in touch about sponsorship
