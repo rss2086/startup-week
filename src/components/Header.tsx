@@ -1,12 +1,12 @@
 "use client"
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { DiamondIcon } from '@/components/DiamondIcon'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Logo from '@/images/eclub-logo.png'
+import { MobileMenu } from './MobileMenu'
 
 const navigation = {
   main: [
@@ -72,21 +72,8 @@ function NavLink({
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const nav = document.getElementById('mobile-menu')
-      if (nav && !nav.contains(event.target as Node)) {
-        setIsMobileMenuOpen(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
-
   return (
-    <header className="relative z-50 flex-none bg-[#1a1150]/95 backdrop-blur-sm sticky top-0">
+    <header className="sticky top-0 z-[9997] bg-[#1a1150]/95 backdrop-blur-sm">
       <Container className="flex flex-wrap items-center justify-between py-4 lg:flex-nowrap">
         <div className="flex items-center">
           <Link href="/">
@@ -113,11 +100,12 @@ export function Header() {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            {isMobileMenuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/>
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/>
-            )}
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         </button>
 
@@ -144,37 +132,12 @@ export function Header() {
           <Button href="#tickets">Get Your Ticket</Button>
         </nav>
 
-        {/* Mobile navigation */}
-        <div
-          id="mobile-menu"
-          className={`${
-            isMobileMenuOpen ? 'block' : 'hidden'
-          } lg:hidden absolute top-full left-0 right-0 bg-[#1a1150]/95 backdrop-blur-sm border-t border-gray-800`}
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <div className="flex flex-col items-center justify-center gap-1 p-3">
-              <span className="text-xs uppercase tracking-wider text-gray-400">Startup Week</span>
-              <span className="text-xl font-bold text-[#9eff65]">March 17-21, 2025</span>
-            </div>
-            <div className="grid grid-cols-2 gap-2 p-2">
-              {navigation.main.map((item) => (
-                <NavLink key={item.name} href={item.href}>
-                  {item.name}
-                </NavLink>
-              ))}
-            </div>
-            <div className="p-2 border-t border-gray-800">
-              <ExternalLink href="https://whartonentrepreneurship.com">
-                Visit E-Club Website
-              </ExternalLink>
-            </div>
-            <div className="p-2">
-              <Button href="#tickets" className="w-full">
-                Get Your Ticket
-              </Button>
-            </div>
-          </div>
-        </div>
+        {/* Mobile Menu */}
+        <MobileMenu
+          isOpen={isMobileMenuOpen}
+          onClose={() => setIsMobileMenuOpen(false)}
+          navigation={navigation.main}
+        />
       </Container>
     </header>
   )

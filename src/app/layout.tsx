@@ -19,11 +19,11 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - DeceptiConf',
-    default: 'DeceptiConf - A community-driven design conference',
+    template: '%s - Startup Week 2025',
+    default: 'Startup Week 2025 - Wharton Entrepreneurship Club',
   },
   description:
-    'At DeceptiConf you’ll learn about the latest dark patterns being developed to trick even the smartest visitors, and you’ll learn how to deploy them without ever being detected.',
+    "Join us for Startup Week 2025, Wharton Entrepreneurship Club's annual flagship event featuring founders, investors, and students. Experience panels, workshops, and networking events, culminating in our Startup Summit at Fitler Club.",
 }
 
 export default function RootLayout({
@@ -40,8 +40,8 @@ export default function RootLayout({
         dmSans.variable,
       )}
     >
-      <body className="flex min-h-full">
-        <div className="flex w-full flex-col">{children}</div>
+      <body className="relative min-h-full overflow-x-hidden">
+        <div className="relative flex min-h-full flex-col">{children}</div>
       </body>
     </html>
   )
