@@ -138,27 +138,11 @@ export function Footer() {
               <h3 className="text-sm font-semibold leading-6 text-white">Contact Us</h3>
               <div className="mt-6 space-y-4 text-sm leading-6 text-gray-300">
                 <p>
-                  <span className="font-semibold text-[#9eff65]">General Inquiries:</span>
+                  <span className="font-semibold text-[#9eff65]">Email:</span>
                   <br />
-                  <a href="mailto:contact@penneclub.com" className="hover:text-[#9eff65]">
-                    contact@penneclub.com
+                  <a href="mailto:northc@wharton.upenn.edu" className="hover:text-[#9eff65]">
+                    northc@wharton.upenn.edu
                   </a>
-                </p>
-                <p>
-                  <span className="font-semibold text-[#9eff65]">Sponsorship:</span>
-                  <br />
-                  <a href="mailto:sponsors@penneclub.com" className="hover:text-[#9eff65]">
-                    sponsors@penneclub.com
-                  </a>
-                </p>
-                <p>
-                  <span className="font-semibold text-[#9eff65]">Location:</span>
-                  <br />
-                  Huntsman Hall
-                  <br />
-                  3730 Walnut Street
-                  <br />
-                  Philadelphia, PA 19104
                 </p>
               </div>
             </div>
