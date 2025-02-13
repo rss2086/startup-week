@@ -434,7 +434,7 @@ export function Speakers() {
             Featured Speakers
           </h2>
           <p className="mt-4 font-display text-2xl tracking-tight text-blue-900">
-            Join us for talks and panels with over 50 founders, VCs, and industry leaders from the most innovative companies.
+            Join us for talks and panels with over 25 founders, VCs, and industry leaders from the most innovative companies.
           </p>
         </div>
         <TabGroup
@@ -519,14 +519,14 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
 
           {/* Enlarged Company Logo Overlay */}
           {speaker.companyLogoUrl && (
-            <div className="absolute bottom-0 right-0 flex h-1/5 sm:h-1/4 w-1/3 items-center justify-center">
+            <div className="absolute bottom-0 right-0 flex h-1/3  w-1/2 sm:w-1/3 items-center justify-center">
               <a 
                 href={speaker.companyWebsite}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-full w-full"
               >
-                <div className="h-full w-full overflow-hidden bg-white/15 p-2 sm:p-4 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:bg-white/50 group-hover:shadow-xl rounded-tl-2xl rounded-br-2xl">
+                <div className="h-full w-full overflow-hidden bg-white/15 p-3 sm:p-4 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:bg-white/50 group-hover:shadow-xl rounded-tl-2xl rounded-br-2xl">
                   <Image
                     src={speaker.companyLogoUrl}
                     alt={`${speaker.company} logo`}

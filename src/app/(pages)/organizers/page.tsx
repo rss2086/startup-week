@@ -28,6 +28,13 @@ const teams = [
     description: 'Driving key initiatives and ensuring successful execution',
     members: [
       {
+        name: 'Don Dao',
+        role: 'WGA Conference Lead',
+        image: '/images/avatars/don-dao.jpeg',
+        linkedin: 'https://www.linkedin.com/in/donqdao/',
+        bio: 'Keynote Sourcing, Early Stage Investor'
+      },
+      {
         name: 'Nico Aldeanueva',
         role: 'Operations Director',
         image: '/images/avatars/nico-aldeanueva.jpg',
@@ -68,13 +75,6 @@ const teams = [
     name: 'Finance Committee',
     description: 'Managing budget and financial operations',
     members: [
-      {
-        name: 'Don Dao',
-        role: 'WGA Conference Lead',
-        image: '/images/avatars/don-dao.jpeg',
-        linkedin: 'https://www.linkedin.com/in/donqdao/',
-        bio: 'Leading financial planning and budget management'
-      },
       {
         name: 'Rachana Lingutla',
         role: 'EClub Head of Finance',

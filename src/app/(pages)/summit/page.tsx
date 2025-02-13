@@ -32,7 +32,7 @@ export default function SummitPage() {
               <span className="block text-[#9eff65] text-3xl sm:text-4xl mt-4 font-normal">March 21st, 2025</span>
             </h1>
             <p className="mt-8 text-xl text-gray-300 max-w-2xl">
-              An immersive one-day conference bringing together founders, investors, and innovators at Philadelphia's exclusive Fitler Club.
+              An immersive one-day conference bringing together founders, investors, and innovators at Philadelphia&apos;s exclusive Fitler Club.
             </p>
 
             <div className="mt-12 flex flex-col sm:flex-row gap-6">
@@ -78,7 +78,7 @@ export default function SummitPage() {
                 </div>
                 <p className="text-gray-300">
                   Keynote speeches<br/>
-                  Interactive workshops<br/>
+                  Panels<br/>
                   Networking sessions
                 </p>
               </div>

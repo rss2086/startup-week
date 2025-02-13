@@ -350,15 +350,15 @@ export const summitSchedule: Day = {
     },
     {
       name: 'Keynote Speaker',
-      description: 'Sandeep Acharya',
+      description: 'Healthcare Innovation & Leadership',
       start: '11:55AM',
       end: '12:35PM',
       isVirtual: false,
       speakers: [
         {
           name: 'Sandeep Acharya',
-          role: 'Founder, CEO',
-          company: 'Octave',
+          role: 'Founder & CEO',
+          company: 'Octave Health',
           image: avatars.sandeepAcharya,
           companyLogoUrl: logos.octave
         }
@@ -373,14 +373,14 @@ export const summitSchedule: Day = {
     },
     {
       name: 'Keynote Speaker',
-      description: 'Gordon Ritter',
+      description: 'The Future of Enterprise Software & Venture Capital',
       start: '1:30PM',
       end: '2:20PM',
       isVirtual: false,
       speakers: [
         {
           name: 'Gordon Ritter',
-          role: 'Founder and GP',
+          role: 'Founder & General Partner',
           company: 'Emergence Capital',
           image: avatars.gordonRitter,
           companyLogoUrl: logos.emergenceCapital
