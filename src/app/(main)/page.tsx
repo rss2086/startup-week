@@ -1,16 +1,19 @@
 import { Hero } from '@/components/Hero'
-import { Newsletter } from '@/components/OrganizingTeamCallout'
+import { OrganizersCallout } from '@/components/OrganizingTeamCallout'
 import { Schedule } from '@/components/Schedule'
 import { Speakers } from '@/components/Speakers'
 import { Sponsors } from '@/components/Sponsors'
+import { KeynoteSpeakers } from '@/components/KeynoteSpeakers'
+import { LogoMarquee } from '@/components/LogoMarquee'
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Sponsors />
+      <KeynoteSpeakers />
+      <Sponsors onHomePage={true} />
       <Speakers />
-      <Newsletter />
+      <OrganizersCallout />
       <Schedule />
     </>
   )

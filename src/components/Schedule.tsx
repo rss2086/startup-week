@@ -72,16 +72,8 @@ const weekSchedule: Array<Day> = [
             name: 'Shawn Xu',
             company: 'Lowercarbon',
             image: avatars.shawnXu,
-            companyLogoUrl: logos.lowercarbon
+            companyLogoUrl: logos.lowercarbonCapital
           },
-          {
-            name: 'TBA',
-            company: 'Breakthrough VC'
-          },
-          {
-            name: 'TBA',
-            company: 'Heirloom'
-          }
         ]
       },
     ],
@@ -157,7 +149,7 @@ const weekSchedule: Array<Day> = [
             role: 'Wharton Student',
             company: 'Sown to Grown (Ed Tech)',
             image: avatars.jacquelineKeene,
-            companyLogoUrl: logos.sownToGrow
+            companyLogoUrl: logos.sowntogrow
           },
           {
             name: 'Filippos Letsas',
@@ -216,7 +208,7 @@ const weekSchedule: Array<Day> = [
             role: 'GP',
             company: 'Amino Capital',
             image: avatars.sueXu,
-            companyLogoUrl: logos.aminoCapital
+            companyLogoUrl: logos.aminocapital
           }
         ]
       },
@@ -310,20 +302,20 @@ export const summitSchedule: Day = {
           image: avatars.haroonChoudery,
           companyLogoUrl: logos.autoblocksAi
         },
-        {
-          name: 'Logan Kilpatrick',
-          role: 'Founder, Former A16z Scout',
-          company: 'DeepMind, Google Gemini, Early stage AI VC',
-          image: avatars.loganKilpatrick,
-          companyLogoUrl: logos.deepmind
-        },
-        {
-          name: 'John Nay',
-          role: 'Founder, CEO',
-          company: 'Norm AI',
-          image: avatars.johnNay,
-          companyLogoUrl: logos.normAi
-        }
+        // {
+        //   name: 'Logan Kilpatrick',
+        //   role: 'Founder, Former A16z Scout',
+        //   company: 'DeepMind, Google Gemini, Early stage AI VC',
+        //   image: avatars.loganKilpatrick,
+        //   companyLogoUrl: logos.deepmind
+        // },
+        // {
+        //   name: 'John Nay',
+        //   role: 'Founder, CEO',
+        //   company: 'Norm AI',
+        //   image: avatars.johnNay,
+        //   companyLogoUrl: logos.normAi
+        // }
       ]
     },
     {
@@ -380,8 +372,8 @@ export const summitSchedule: Day = {
       isVirtual: false
     },
     {
-      name: 'Making it in VC: Fireside',
-      description: 'Fireside with Gordon Ritter',
+      name: 'Keynote Speaker',
+      description: 'Gordon Ritter',
       start: '1:30PM',
       end: '2:20PM',
       isVirtual: false,
@@ -418,7 +410,7 @@ export const summitSchedule: Day = {
         },
         {
           name: 'Rami Shahatit',
-          role: 'Founder, CEO',
+          role: 'Co-Founder & CEO',
           company: 'Portal',
           image: avatars.ramiShahatit,
           companyLogoUrl: logos.portal
@@ -426,17 +418,10 @@ export const summitSchedule: Day = {
         {
           name: 'Ejaaz Ahamadeen',
           role: 'Cohost and Founder',
-          company: 'Bankless, AI X Crypto HedgeFund',
+          company: 'Founder / CIO @26CC, Co-host Bankless, Core contributor @aiccelerateDAO',
           image: avatars.ejaazAhamadeen,
           companyLogoUrl: logos.bankless
         },
-        {
-          name: 'Mark Grace',
-          role: 'Partner, Crypto',
-          company: 'M13',
-          image: avatars.markGrace,
-          companyLogoUrl: logos.m13
-        }
       ]
     },
     {
@@ -562,8 +547,15 @@ export function Schedule() {
     <section id="schedule" aria-label="Schedule" className="py-20 sm:py-32">
       <Container className="relative z-10">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-4xl lg:pr-24">
+          <div className="inline-flex items-center justify-center gap-3 mb-6 sm:mb-8 bg-blue-50/50 px-4 py-2 rounded-2xl">
+            <div className="h-px w-8 rounded-full bg-blue-600/20" />
+            <span className="text-xl font-semibold text-blue-600 tracking-wider uppercase">
+              Week Events
+            </span>
+            <div className="h-px w-8 rounded-full bg-blue-600/20" />
+          </div>
           <h2 className="font-display text-4xl font-medium tracking-tighter text-blue-600 sm:text-5xl">
-            Week Events at Huntsman Hall
+            Join us at Huntsman Hall
           </h2>
           <p className="mt-4 font-display text-2xl tracking-tight text-blue-900">
             Join us throughout the week for intimate fireside chats and focused panel discussions with industry leaders.
@@ -581,6 +573,13 @@ export function Schedule() {
 
       <Container className="relative z-10 mt-24">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-4xl lg:pr-24">
+          <div className="inline-flex items-center justify-center gap-3 mb-6 sm:mb-8 bg-blue-50/50 px-4 py-2 rounded-2xl">
+            <div className="h-px w-8 rounded-full bg-blue-600/20" />
+            <span className="text-xl font-semibold text-blue-600 tracking-wider uppercase">
+              Summit Day
+            </span>
+            <div className="h-px w-8 rounded-full bg-blue-600/20" />
+          </div>
           <h2 className="font-display text-4xl font-medium tracking-tighter text-blue-600 sm:text-5xl">
             Startup Summit at Fitler Club
           </h2>
@@ -637,55 +636,91 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
             <div className="mx-auto mb-12 h-px w-48 bg-indigo-500/10" />
           )}
           
-          <div className="flex flex-col items-center space-y-6">
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              <span className={clsx(
-                "inline-flex items-center rounded-md px-3 py-1.5 text-xs font-medium ring-1 ring-inset",
-                timeSlot.name === "Lunch Event" 
-                  ? "bg-yellow-400/10 text-yellow-500 ring-yellow-400/30"
-                  : "bg-blue-400/10 text-blue-400 ring-blue-400/30",
-                !isWeekday && "text-lg px-4 py-2" // Made bigger for summit day
-              )}>
-                {timeSlot.name}
-              </span>
-              {timeSlot.isVirtual !== undefined && isWeekday && (
-                <span className={clsx(
-                  "inline-flex items-center rounded-md px-3 py-1.5 text-xs font-medium ring-1 ring-inset",
-                  timeSlot.isVirtual
-                    ? "bg-purple-50 text-purple-700 ring-purple-700/10"
-                    : "bg-green-50 text-green-700 ring-green-700/10"
+          <div className="flex flex-col items-center space-y-4">
+            {/* Session Title */}
+            <div className="w-full text-center">
+              {timeSlot.name !== timeSlot.description && timeSlot.description ? (
+                <>
+                  {/* Title with description */}
+                  <div className="space-y-4">
+                    <div className="inline-flex items-center justify-center gap-3 px-4 py-2 rounded-2xl bg-blue-50/50 backdrop-blur-sm">
+                      <div className="h-px w-6 rounded-full bg-blue-600/20" />
+                      <span className="text-lg font-semibold text-blue-600 tracking-wider uppercase">
+                        {timeSlot.name}
+                      </span>
+                      <div className="h-px w-6 rounded-full bg-blue-600/20" />
+                    </div>
+                    {timeSlot.description && (
+                      <p className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900">
+                        {timeSlot.description}
+                      </p>
+                    )}
+                  </div>
+                </>
+              ) : (
+                <div className={clsx(
+                  "inline-flex items-center justify-center gap-3 px-4 py-2 rounded-2xl backdrop-blur-sm",
+                  timeSlot.description === "No event scheduled" || timeSlot.name === "Lunch Break"
+                    ? "bg-gray-50/50"
+                    : "bg-blue-50/50"
                 )}>
-                { 
-                  (timeSlot.isVirtual) ? 'Speakers on Zoom' : 'In Person'
-                  }
-                </span>
+                  <div className={clsx(
+                    "h-px w-6 rounded-full",
+                    timeSlot.description === "No event scheduled" || timeSlot.name === "Lunch Break"
+                      ? "bg-gray-400/20"
+                      : "bg-blue-600/20"
+                  )} />
+                  <span className={clsx(
+                    "text-lg font-semibold tracking-wider uppercase",
+                    timeSlot.description === "No event scheduled" || timeSlot.name === "Lunch Break"
+                      ? "text-gray-400"
+                      : "text-blue-600"
+                  )}>
+                    {timeSlot.name}
+                  </span>
+                  <div className={clsx(
+                    "h-px w-6 rounded-full",
+                    timeSlot.description === "No event scheduled" || timeSlot.name === "Lunch Break"
+                      ? "bg-gray-400/20"
+                      : "bg-blue-600/20"
+                  )} />
+                </div>
               )}
+              
+              {/* Time Display */}
+              <div className="mt-4 flex items-center justify-center gap-3 text-[#980B2B] font-bold">
+                <div className="flex items-center bg-gray-50 rounded-full px-4 py-1.5">
+                  <svg className="w-4 h-4 mr-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <time className="font-mono text-sm" dateTime={`${day.dateTime}T${timeSlot.start}-05:00`}>
+                    {timeSlot.start}
+                  </time>
+                  <span className="mx-2">-</span>
+                  <time className="font-mono text-sm" dateTime={`${day.dateTime}T${timeSlot.end}-05:00`}>
+                    {timeSlot.end}
+                  </time>
+                  <span className="ml-1 text-sm font-medium">EST</span>
+                </div>
+                
+                {/* Virtual/In-Person Badge - Only show for weekday events */}
+                {isWeekday && timeSlot.isVirtual !== undefined && (
+                  <span className={clsx(
+                    "inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium",
+                    timeSlot.isVirtual
+                      ? "bg-purple-50 text-purple-700"
+                      : "bg-green-50 text-green-700"
+                  )}>
+                    {timeSlot.isVirtual ? 'Virtual' : 'In Person'}
+                  </span>
+                )}
+              </div>
             </div>
 
-            <div className="text-center max-w-2xl">
-              <h4 className={clsx(
-                "text-2xl font-semibold tracking-tight",
-                timeSlot.description === "No event scheduled" 
-                  ? "text-slate-400"
-                  : "text-blue-900"
-              )}>
-                {timeSlot.description}
-              </h4>
-              <p className="mt-2 font-mono text-sm text-slate-500">
-                <time dateTime={`${day.dateTime}T${timeSlot.start}-05:00`}>
-                  {timeSlot.start}
-                </time>{' '}
-                -{' '}
-                <time dateTime={`${day.dateTime}T${timeSlot.end}-05:00`}>
-                  {timeSlot.end}
-                </time>{' '}
-                EST
-              </p>
-            </div>
-            
+            {/* Speakers Section */}
             {timeSlot.speakers && timeSlot.speakers.length > 0 && (
               <div className={clsx(
-                "mt-8 w-full mx-auto",
+                "w-full mx-auto mt-8",
                 isWeekday 
                   ? "max-w-3xl" 
                   : "grid gap-6",
@@ -696,58 +731,9 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
                 )
               )}>
                 {isWeekday ? (
-                  <div className="bg-white/80 rounded-xl border border-blue-100/20 overflow-hidden">
-                    {timeSlot.speakers.map((speaker, idx) => (
-                      <div 
-                        key={idx}
-                        className={clsx(
-                          "flex items-center gap-4 p-4",
-                          idx !== timeSlot.speakers!.length - 1 && "border-b border-slate-100"
-                        )}
-                      >
-                        <div className="flex-shrink-0">
-                          {speaker.image ? (
-                            <div className="h-12 w-12 rounded-full overflow-hidden">
-                              <Image 
-                                src={speaker.image}
-                                alt={speaker.name}
-                                width={48}
-                                height={48}
-                                className="h-full w-full object-cover"
-                              />
-                            </div>
-                          ) : (
-                            <div className="h-12 w-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
-                              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                              </svg>
-                            </div>
-                          )}
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-center justify-between">
-                            <p className="text-lg font-semibold text-blue-900 truncate">
-                              {speaker.name}
-                            </p>
-                            {speaker.companyLogoUrl && (
-                              <div className="ml-2 h-6 w-6">
-                                <Image 
-                                  src={speaker.companyLogoUrl}
-                                  alt={`${speaker.company} logo`}
-                                  width={24}
-                                  height={24}
-                                  className="h-full w-full object-contain"
-                                />
-                              </div>
-                            )}
-                          </div>
-                          {(speaker.role || speaker.company) && (
-                            <p className="text-sm text-slate-600 truncate">
-                              {[speaker.role, speaker.company].filter(Boolean).join(' at ')}
-                            </p>
-                          )}
-                        </div>
-                      </div>
+                  <div className="bg-white rounded-xl border border-gray-200/50 divide-y divide-gray-100 overflow-hidden">
+                    {timeSlot.speakers?.map((speaker, idx) => (
+                      <SpeakerRow key={idx} speaker={speaker} />
                     ))}
                   </div>
                 ) : (
@@ -755,53 +741,12 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
                     <div 
                       key={idx} 
                       className={clsx(
-                        "flex flex-col items-center p-6 rounded-xl bg-gradient-to-b from-white to-slate-50/90 shadow-sm hover:shadow-md transition-all duration-300 border border-blue-100/20 hover:border-blue-200/30",
+                        "bg-white/80 rounded-2xl border border-blue-100/20 hover:border-blue-200/50 transition-all duration-300 shadow-sm hover:shadow-md overflow-hidden",
                         timeSlot.speakers?.length === 1 && "mx-auto w-full max-w-lg"
                       )}
                     >
-                      {speaker.image && (
-                        <div className="relative w-24 h-24 mb-4">
-                          <Image
-                            src={speaker.image}
-                            alt={speaker.name}
-                            fill
-                            className="object-cover rounded-full"
-                          />
-                        </div>
-                      )}
-                      <div className="text-center mb-4">
-                        <h5 className="text-2xl font-bold text-blue-900 mb-1.5 leading-tight">
-                          {speaker.name}
-                        </h5>
-                        {speaker.role && (
-                          <p className="text-base text-slate-600 font-medium">
-                            {speaker.role}
-                          </p>
-                        )}
-                      </div>
-
-                      <div className="w-full mt-auto pt-4 border-t border-slate-100">
-                        {speaker.companyLogoUrl ? (
-                          <div className="h-10 relative">
-                            <Image 
-                              src={speaker.companyLogoUrl} 
-                              alt={`${speaker.company} logo`}
-                              fill
-                              className="object-contain"
-                            />
-                          </div>
-                        ) : speaker.company && (
-                          <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-slate-100 to-white mb-2 mx-auto flex items-center justify-center text-slate-400 shadow-sm">
-                            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                            </svg>
-                          </div>
-                        )}
-                        {speaker.company && (
-                          <p className="text-sm text-blue-600 text-center font-medium mt-2">
-                            {speaker.company}
-                          </p>
-                        )}
+                      <div className="p-6">
+                        <SpeakerCard speaker={speaker} />
                       </div>
                     </div>
                   ))
@@ -825,6 +770,135 @@ function ScheduleStatic() {
             <TimeSlots day={day} className="mt-10" />
           </section>
         ))}
+      </div>
+    </div>
+  )
+}
+
+interface SpeakerCardProps {
+  speaker: {
+    name: string;
+    role?: string;
+    company?: string;
+    companyLogoUrl?: string;
+    image?: string;
+  };
+}
+
+function SpeakerCard({ speaker }: SpeakerCardProps) {
+  return (
+    <div className="group relative flex flex-col">
+      {/* Image Container */}
+      {speaker.image && (
+        <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-slate-100">
+          <Image
+            src={speaker.image}
+            alt={speaker.name}
+            fill
+            className="object-cover transition-all duration-500 will-change-transform group-hover:scale-105 group-hover:brightness-110"
+          />
+          {/* Enhanced Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-slate-900/0" />
+
+          {/* Company Logo Overlay */}
+          {speaker.companyLogoUrl && (
+            <div className="absolute bottom-0 right-0 flex h-1/3 w-3/5 items-center justify-center">
+              <div className="h-full w-full overflow-hidden bg-white/15 p-4 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:bg-white/50 group-hover:shadow-xl rounded-tl-2xl">
+                <Image
+                  src={speaker.companyLogoUrl}
+                  alt={`${speaker.company} logo`}
+                  width={400}
+                  height={400}
+                  className="h-full w-full object-contain"
+                  quality={100}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Text Content */}
+      <div className="mt-6 space-y-2">
+        <h3 className="text-xl font-semibold tracking-tight text-blue-900 group-hover:text-blue-600 transition-colors duration-200">
+          {speaker.name}
+        </h3>
+        <div className="space-y-1">
+          {/* Role */}
+          {speaker.role && (
+            <div className="text-sm text-slate-600">
+              {speaker.role}
+            </div>
+          )}
+          {/* Company */}
+          {speaker.company && (
+            <div className="text-sm text-blue-600 font-medium">
+              {speaker.company}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+function SpeakerRow({ speaker }: { speaker: { name: string; role?: string; company?: string; companyLogoUrl?: string; image?: string } }) {
+  return (
+    <div className="flex items-center gap-6 p-4 hover:bg-blue-50/50 transition-colors duration-200 group">
+      {/* Speaker Image */}
+      <div className="flex-shrink-0">
+        {speaker.image ? (
+          <div className="relative h-16 w-16 rounded-full overflow-hidden border-2 border-gray-100">
+            <Image 
+              src={speaker.image}
+              alt={speaker.name}
+              fill
+              className="object-cover"
+            />
+          </div>
+        ) : (
+          <div className="h-16 w-16 rounded-full bg-gray-100 flex items-center justify-center">
+            <svg className="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+        )}
+      </div>
+
+      {/* Speaker Info */}
+      <div className="flex-grow min-w-0">
+        <div className="flex items-center gap-4">
+          <div className="flex-grow">
+            <h4 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+              {speaker.name}
+            </h4>
+            {speaker.role && (
+              <p className="text-sm text-gray-600 mt-0.5">
+                {speaker.role}
+              </p>
+            )}
+          </div>
+          {speaker.companyLogoUrl ? (
+            <div className="flex-shrink-0 w-32">
+              <div className="relative h-12 w-full p-2">
+                <Image 
+                  src={speaker.companyLogoUrl}
+                  alt={`${speaker.company} logo`}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              {speaker.company && (
+                <p className="text-sm font-medium text-blue-600 text-center mt-1">
+                  {speaker.company}
+                </p>
+              )}
+            </div>
+          ) : speaker.company && (
+            <div className="flex-shrink-0 w-32 text-base font-medium text-blue-600 text-right">
+              {speaker.company}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )

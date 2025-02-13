@@ -9,16 +9,16 @@ const teams = [
     members: [
       {
         name: 'Claire North',
-        role: 'Conference Lead',
+        role: 'Conference President',
         image: '/images/avatars/claire-north.jpg',
-        linkedin: 'https://linkedin.com/in/claire-north',
+        linkedin: 'https://www.linkedin.com/in/claire-north-12072b11b/',
         bio: 'Overseeing the overall conference strategy and execution'
       },
       {
         name: 'Ghassan Zubhaid',
-        role: 'Conference Lead',
+        role: 'Conference Vice President', 
         image: '/images/avatars/ghassan-zubhaid.jpg',
-        linkedin: 'https://linkedin.com/in/ghassan-zubhaid',
+        linkedin: 'https://www.linkedin.com/in/ghassan-zughaib/',
         bio: 'Managing speaker relations and event programming'
       },
     ]
@@ -38,49 +38,83 @@ const teams = [
         name: 'Christo Ritter',
         role: 'Partnerships Lead',
         image: '/images/avatars/christo-ritter.jpg',
-        linkedin: 'https://linkedin.com/in/christo-ritter',
+        linkedin: 'https://www.linkedin.com/in/christoritter/',
         bio: 'Managing sponsor relationships and partnerships'
       },
       {
         name: 'Ben Wang',
         role: 'Marketing Director',
         image: '/images/avatars/ben-wang.jpg',
-        linkedin: 'https://linkedin.com/in/ben-wang',
+        linkedin: 'https://www.linkedin.com/in/benwangg/',
         bio: 'Leading brand strategy and community engagement'
       },
       {
         name: 'Alex Liu',
         role: 'Technology Lead',
         image: '/images/avatars/alex-liu.jpg',
-        linkedin: 'https://linkedin.com/in/alex-liu',
+        linkedin: 'https://www.linkedin.com/in/xalexliu/',
         bio: 'Managing digital platforms and technical infrastructure'
       },
       {
         name: 'Devon Murphy',
         role: 'Content Strategy Lead',
         image: '/images/avatars/devon-murphy.jpg',
-        linkedin: 'https://linkedin.com/in/devon-murphy',
+        linkedin: 'https://www.linkedin.com/in/devon-m-7b56bb141/',
         bio: 'Developing content strategy and speaker programming'
       },
     ]
   },
   {
-    name: 'Entrepreneurship Club Leadership',
+    name: 'Finance Committee',
+    description: 'Managing budget and financial operations',
+    members: [
+      {
+        name: 'Don Dao',
+        role: 'WGA Conference Lead',
+        image: '/images/avatars/don-dao.jpeg',
+        linkedin: 'https://www.linkedin.com/in/donqdao/',
+        bio: 'Leading financial planning and budget management'
+      },
+      {
+        name: 'Rachana Lingutla',
+        role: 'EClub Head of Finance',
+        image: '/images/avatars/rachana-lingutla.jpeg',
+        linkedin: 'https://www.linkedin.com/in/rlingutla/',
+        bio: 'Supporting financial operations and reporting'
+      },
+      {
+        name: 'Kamal Kadiri',
+        role: 'EClub Finance VP',
+        image: '/images/avatars/kamal-kadiri.jpeg',
+        linkedin: 'https://www.linkedin.com/in/kkadiri/',
+        bio: 'Managing expense tracking and vendor payments'
+      },
+    ]
+  },
+  {
+    name: 'Club Leadership',
     description: 'Supporting Startup Week through EClub resources and network',
     members: [
       {
         name: 'Rohan Shah',
         role: 'EClub Co-President',
         image: '/images/avatars/rohan-shah.jpg',
-        linkedin: 'https://linkedin.com/in/rohan-shah',
-        bio: 'Providing strategic oversight and club resources'
+        linkedin: 'https://www.linkedin.com/in/rss2086/',
+        bio: 'Providing strategic oversight and club resources + built this website'
       },
       {
         name: 'Srineetha Maddineni',
         role: 'EClub Co-President',
         image: '/images/avatars/srineetha-maddineni.jpg',
-        linkedin: 'https://linkedin.com/in/srineetha-maddineni',
-        bio: 'Facilitating club partnerships and community engagement'
+        linkedin: 'https://www.linkedin.com/in/srineethamaddineni/',
+        bio: 'Facilitating club partnerships and financial operations'
+      },
+      {
+        name: 'Naman Jain',
+        role: 'EClub Co-President',
+        image: '/images/avatars/naman-jain.jpeg',
+        linkedin: 'https://www.linkedin.com/in/naman-jain-5a6126165/',
+        bio: 'Facilitating club partnerships and financial operations'
       },
     ]
   },
@@ -132,7 +166,7 @@ export default function OrganizersPage() {
           {teams.map((team) => (
             <div key={team.name} className="relative">
               {/* Section Header */}
-              <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <div className="mx-auto max-w-7xl">
                 <div className="mx-auto max-w-2xl lg:mx-0">
                   <h2 className="text-3xl font-bold tracking-tight text-blue-900 sm:text-4xl">
                     {team.name}
@@ -144,7 +178,7 @@ export default function OrganizersPage() {
               </div>
 
               {/* Team Grid */}
-              <div className="mx-auto mt-8 grid max-w-7xl grid-cols-1 gap-x-8 gap-y-14 px-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-8">
+              <div className="mx-auto mt-8 grid max-w-7xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
                 {team.members.map((member) => (
                   <div key={member.name} className="relative flex flex-col items-start">
                     <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl bg-blue-50 transition-all duration-300 group-hover:scale-105">
@@ -182,17 +216,11 @@ export default function OrganizersPage() {
         <div className="mx-auto mt-24 max-w-3xl rounded-2xl bg-blue-50 px-8 py-12">
           <div className="flex flex-col items-center text-center">
             <h2 className="font-display text-2xl font-medium tracking-tight text-blue-900">
-              Join Our Team
+              Join Our Team for 2026
             </h2>
             <p className="mt-4 text-lg tracking-tight text-slate-700">
-              Interested in helping organize future Startup Week events? We&apos;re always looking for passionate individuals to join our team.
+              Want to help organize Penn&apos;s largest entrepreneurship event? Keep an eye on your inbox - we&apos;ll be sending out committee recruitment emails in Fall 2025!
             </p>
-            <a
-              href="mailto:team@startupweek.com"
-              className="mt-8 inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-base font-medium text-white hover:bg-blue-700 transition-colors"
-            >
-              Get in Touch
-            </a>
           </div>
         </div>
       </Container>

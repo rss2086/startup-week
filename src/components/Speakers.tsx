@@ -72,7 +72,7 @@ const days: Day[] = [
         role: 'Partner at Lowercarbon Capital',
         image: avatars.shawnXu,
         company: 'Lowercarbon Capital',
-        companyLogoUrl: logos.lowercarbon,
+        companyLogoUrl: logos.lowercarbonCapital,
         linkedinUrl: undefined,
         companyWebsite: undefined
       },
@@ -140,7 +140,7 @@ const days: Day[] = [
         role: 'Wharton Student - Sown to Grown (Ed Tech)',
         image: avatars.jacquelineKeene,
         company: 'Sown To Grow',
-        companyLogoUrl: logos.sownToGrow,
+        companyLogoUrl: logos.sowntogrow,
         linkedinUrl: 'https://www.linkedin.com/in/jacqueline-keene/',
         companyWebsite: 'https://www.sowntogrow.com/'
       },
@@ -192,7 +192,7 @@ const days: Day[] = [
         role: 'GP at Amino Capital',
         image: avatars.sueXu,
         company: 'Amino Capital',
-        companyLogoUrl: logos.aminoCapital,
+        companyLogoUrl: logos.aminocapital,
         linkedinUrl: 'https://www.linkedin.com/in/suexu/',
         companyWebsite: 'https://www.aminocapital.com/'
       },
@@ -275,24 +275,24 @@ const days: Day[] = [
         linkedinUrl: "https://www.linkedin.com/in/haroonchoudery/",
         companyWebsite: "https://www.autoblocks.ai/"
       },
-      {
-        name: "Logan Kilpatrick",
-        role: "DeepMind, Google Gemini, Early stage AI VC Founder",
-        image: avatars.loganKilpatrick,
-        company: "Google",
-        companyLogoUrl: logos.deepmind,
-        linkedinUrl: "https://www.linkedin.com/in/logankilpatrick/",
-        companyWebsite: "https://deepmind.google/"
-      },
-      {
-        name: "John Nay",
-        role: "Founder & CEO at Norm AI",
-        image: avatars.johnNay,
-        company: "Norm AI",
-        companyLogoUrl: logos.normAi,
-        linkedinUrl: "https://www.linkedin.com/in/johnjnay",
-        companyWebsite: "https://www.norm.ai/"
-      },
+      // {
+      //   name: "Logan Kilpatrick",
+      //   role: "DeepMind, Google Gemini, Early stage AI VC Founder",
+      //   image: avatars.loganKilpatrick,
+      //   company: "Google",
+      //   companyLogoUrl: logos.deepmind,
+      //   linkedinUrl: "https://www.linkedin.com/in/logankilpatrick/",
+      //   companyWebsite: "https://deepmind.google/"
+      // },
+      // {
+      //   name: "John Nay",
+      //   role: "Founder & CEO at Norm AI",
+      //   image: avatars.johnNay,
+      //   company: "Norm AI",
+      //   companyLogoUrl: logos.normAi,
+      //   linkedinUrl: "https://www.linkedin.com/in/johnjnay",
+      //   companyWebsite: "https://www.norm.ai/"
+      // },
       {
         name: "Eric Kinariwala",
         role: "Founder at Capsule",
@@ -349,16 +349,16 @@ const days: Day[] = [
       },
       {
         name: "Rami Shahatit",
-        role: "Founder & hCEO at Portal",
+        role: "Co-Founder & CEO at Portal",
         image: avatars.ramiShahatit,
-        company: "Portal",
+        company: "Portal", 
         companyLogoUrl: logos.portal,
         linkedinUrl: "https://www.linkedin.com/in/rami-shahatit/",
         companyWebsite: "https://www.portal.org/"
       },
       {
         name: "Ejaaz Ahamadeen",
-        role: "Cohost and Founder at Bankless, AI X Crypto HedgeFund",
+        role: "Founder / CIO @26CC, Co-host Bankless, Core contributor @aiccelerateDAO",
         image: avatars.ejaazAhamadeen,
         company: "Bankless",
         companyLogoUrl: logos.bankless,
@@ -374,15 +374,6 @@ const days: Day[] = [
         linkedinUrl: "https://www.linkedin.com/in/andrew-f-206a77153/",
         companyWebsite: "https://www.coinbase.com/"
       },
-      {
-        name: "Mark Grace",
-        role: "Partner, Crypto at M13",
-        image: avatars.markGrace,
-        company: "M13",
-        companyLogoUrl: logos.m13,
-        linkedinUrl: "https://www.linkedin.com/in/markgrace95/",
-        companyWebsite: "https://www.m13.co/"
-      }
     ],
   },
 ]
@@ -528,19 +519,19 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
 
           {/* Enlarged Company Logo Overlay */}
           {speaker.companyLogoUrl && (
-            <div className="absolute bottom-0 right-0 flex h-1/4 w-1/3 items-center justify-center">
+            <div className="absolute bottom-0 right-0 flex h-1/5 sm:h-1/4 w-1/3 items-center justify-center">
               <a 
                 href={speaker.companyWebsite}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-full w-full"
               >
-                <div className="h-full w-full overflow-hidden bg-white/15 p-4 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:bg-white/50 group-hover:shadow-xl rounded-tl-2xl rounded-br-2xl">
+                <div className="h-full w-full overflow-hidden bg-white/15 p-2 sm:p-4 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:bg-white/50 group-hover:shadow-xl rounded-tl-2xl rounded-br-2xl">
                   <Image
                     src={speaker.companyLogoUrl}
                     alt={`${speaker.company} logo`}
-                    width={200}
-                    height={200}
+                    width={1600}
+                    height={1600}
                     className="h-full w-full object-contain"
                   />
                 </div>
@@ -551,50 +542,49 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
       )}
 
       {/* Text Content */}
-      <div className="mt-6 space-y-2">
+      <div className="mt-4 sm:mt-6 space-y-1 sm:space-y-2">
         <a 
           href={speaker.linkedinUrl}
           target="_blank" 
           rel="noopener noreferrer"
           className="block group/link"
         >
-          <h3 className="text-2xl font-semibold tracking-tight text-gray-900 flex items-center gap-2 group-hover/link:text-blue-600 transition-colors duration-200">
+          <h3 className="text-lg sm:text-2xl font-semibold tracking-tight text-gray-900 flex items-center gap-2 group-hover/link:text-blue-600 transition-colors duration-200">
             <span>{speaker.name}</span>
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
             </svg>
           </h3>
         </a>
 
-
-          <div className="space-y-1">
-            {/* Role */}
-            {speaker.role && (
-              <div className="text-base text-gray-600">
-                {speaker.role.split(' at ')[0]}
-              </div>
-            )}
-            {/* Company */}
-            {speaker.company && (
-              <div className="mt-2 text-gray-600 flex items-center text-lg">
-                <a 
-                  href={speaker.companyWebsite}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/company inline-flex items-center gap-2 hover:text-[#165DFB] transition-colors duration-200"
-                >
-                  <span className="relative flex items-center">
-                    <span className="text-[#011F5B]/70 mr-1">at</span>
-                    <span className="font-bold text-blue-600">{speaker.company}</span>
-                    <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-[#165DFB] scale-x-0 group-hover/company:scale-x-100 transition-transform duration-300 origin-left rounded-full"></span>
-                  </span>
-                  <svg className="w-4 h-4 opacity-0 -translate-x-2 group-hover/company:opacity-100 group-hover/company:translate-x-0 transition-all duration-200" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
-                  </svg>
-                </a>
-              </div>
-            )}
-          </div>
+        <div className="space-y-1">
+          {/* Role */}
+          {speaker.role && (
+            <div className="text-sm sm:text-base text-gray-600">
+              {speaker.role.split(' at ')[0]}
+            </div>
+          )}
+          {/* Company */}
+          {speaker.company && (
+            <div className="mt-1 sm:mt-2 text-gray-600 flex items-center text-base sm:text-lg">
+              <a 
+                href={speaker.companyWebsite}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/company inline-flex items-center gap-1 sm:gap-2 hover:text-[#165DFB] transition-colors duration-200"
+              >
+                <span className="relative flex items-center">
+                  <span className="text-[#011F5B]/70 mr-1">at</span>
+                  <span className="font-bold text-blue-600">{speaker.company}</span>
+                  <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-[#165DFB] scale-x-0 group-hover/company:scale-x-100 transition-transform duration-300 origin-left rounded-full"></span>
+                </span>
+                <svg className="w-3 h-3 sm:w-4 sm:h-4 opacity-0 -translate-x-2 group-hover/company:opacity-100 group-hover/company:translate-x-0 transition-all duration-200" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )
