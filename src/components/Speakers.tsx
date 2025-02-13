@@ -9,23 +9,6 @@ import { Container } from '@/components/Container'
 import { DiamondIcon } from '@/components/DiamondIcon'
 import { avatars, logos } from '@/config/images'
 
-/* People */
-import robertBorghese from '@/images/avatars/robert-borghese.jpeg'
-import brianRiordan from '@/images/avatars/brian-riordan.jpeg'
-import shawnXu from '@/images/avatars/shawn-xu.jpeg'
-import jakeGordon from '@/images/avatars/jake-gordon.jpeg'
-import danielKang from '@/images/avatars/daniel-kang.jpeg'
-import ianGoldberg from '@/images/avatars/ian-goldberg.jpeg'
-
-
-/* Companies */
-import whartonLogo from '@/images/logos/wharton-logo.svg'
-import avalancheLogo from '@/images/logos/avalanche-fusion.jpeg'
-import lowercarbonLogo from '@/images/logos/lowercarbon-capital.jpeg'
-import noteefyLogo from '@/images/logos/noteefy.jpeg'
-import flowboLogo from '@/images/logos/flowbo.jpeg'
-import venrexLogo from '@/images/logos/venrex.jpeg'
-
 interface Speaker {
   name: string
   role: string
@@ -340,7 +323,7 @@ const days: Day[] = [
       },
       {
         name: "Nick Krakoff",
-        role: "Head of Crypto Products & Business at Stripe",
+        role: "Crypto Products & Business at Stripe",
         image: avatars.nickKrakoff,
         company: "Stripe",
         companyLogoUrl: logos.stripe,

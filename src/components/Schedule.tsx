@@ -403,8 +403,8 @@ export const summitSchedule: Day = {
         },
         {
           name: 'Nick Krakoff',
-          role: 'Head of Crypto Products & Business',
-          company: 'Stripe Crypto',
+          role: 'Crypto Products & Business',
+          company: 'Stripe',
           image: avatars.nickKrakoff,
           companyLogoUrl: logos.stripe
         },
