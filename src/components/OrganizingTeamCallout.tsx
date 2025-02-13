@@ -19,7 +19,7 @@ function ArrowRightIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export function OrganizersCallout() {
   return (
-    <section id="team" aria-label="Team" className="relative overflow-hidden -skew-y-2 p-4">
+    <section id="team" aria-label="Team" className="relative overflow-hidden -skew-y-2 p-8 sm:p-16">
       {/* Minimal skewed background */}
       <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-950 to-blue-950 transform " />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:14px_14px] transform" />

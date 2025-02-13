@@ -31,7 +31,7 @@ const teams = [
         name: 'Nico Aldeanueva',
         role: 'Operations Director',
         image: '/images/avatars/nico-aldeanueva.jpg',
-        linkedin: 'https://linkedin.com/in/nico-aldeanueva',
+        linkedin: 'https://www.linkedin.com/in/nicolas-aldeanueva-34ab24126/',
         bio: 'Coordinating event logistics and venue management'
       },
       {

@@ -63,7 +63,7 @@ export function Sponsors({ onHomePage = false }: SponsorsProps) {
       <section 
         id="sponsors" 
         aria-label="Sponsors"
-        className="relative overflow-hidden bg-gradient-to-br from-zinc-900 via-zinc-950 to-blue-950 transform"
+        className="relative overflow-hidden bg-[linear-gradient(to_bottom_right,#18181b,#020617,#172554),linear-gradient(to_top_right,#18181b,#020617,#172554)] transform p-12 sm:m-12 m-4 rounded-2xl"
       >
         <div className="relative py-16 sm:py-24 transform">
           <Container className="px-4 sm:px-6 lg:px-8">
@@ -124,46 +124,36 @@ export function Sponsors({ onHomePage = false }: SponsorsProps) {
               </div>
 
               <div className="space-y-6 text-lg text-gray-300 max-w-3xl mx-auto mb-12">
-                <p>
+                <p className="text-center">
                   As Wharton&apos;s flagship student-run initiative, your sponsorship enables:
                 </p>
-                <ul className="grid sm:grid-cols-2 gap-4">
+                <ul className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
                   <li className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Top-tier speakers & mentors</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Premium brand visibility</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Direct talent access</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>Exclusive networking events</span>
                   </li>
                 </ul>
               </div>
-
-              <Link
-                href="mailto:rohanss@wharton.upenn.edu"
-                className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold rounded-xl bg-white text-zinc-900 hover:bg-gray-100 transition-colors duration-200"
-              >
-                Become a Sponsor
-                <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
-                </svg>
-              </Link>
             </div>
           </div>
         </Container>

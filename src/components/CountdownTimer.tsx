@@ -43,25 +43,25 @@ export function CountdownTimer() {
   }, [])
 
   return (
-    <div className="inline-flex items-center gap-6 text-center">
+    <div className="inline-flex items-center gap-2 sm:gap-6 text-center">
       <div>
-        <div className="text-4xl font-bold text-white">{timeLeft.days}</div>
-        <div className="text-sm uppercase tracking-wide text-gray-400">Days</div>
+        <div className="text-2xl sm:text-4xl font-bold text-white">{timeLeft.days}</div>
+        <div className="text-xs sm:text-sm uppercase tracking-wide text-gray-400">Days</div>
       </div>
-      <div className="text-2xl font-bold text-gray-600">:</div>
+      <div className="text-xl sm:text-2xl font-bold text-gray-600">:</div>
       <div>
-        <div className="text-4xl font-bold text-white">{padNumber(timeLeft.hours)}</div>
-        <div className="text-sm uppercase tracking-wide text-gray-400">Hours</div>
+        <div className="text-2xl sm:text-4xl font-bold text-white">{padNumber(timeLeft.hours)}</div>
+        <div className="text-xs sm:text-sm uppercase tracking-wide text-gray-400">Hours</div>
       </div>
-      <div className="text-2xl font-bold text-gray-600">:</div>
+      <div className="text-xl sm:text-2xl font-bold text-gray-600">:</div>
       <div>
-        <div className="text-4xl font-bold text-white">{padNumber(timeLeft.minutes)}</div>
-        <div className="text-sm uppercase tracking-wide text-gray-400">Minutes</div>
+        <div className="text-2xl sm:text-4xl font-bold text-white">{padNumber(timeLeft.minutes)}</div>
+        <div className="text-xs sm:text-sm uppercase tracking-wide text-gray-400">Minutes</div>
       </div>
-      <div className="text-2xl font-bold text-gray-600">:</div>
+      <div className="text-xl sm:text-2xl font-bold text-gray-600">:</div>
       <div>
-        <div className="text-4xl font-bold text-white">{padNumber(timeLeft.seconds)}</div>
-        <div className="text-sm uppercase tracking-wide text-gray-400">Seconds</div>
+        <div className="text-2xl sm:text-4xl font-bold text-white">{padNumber(timeLeft.seconds)}</div>
+        <div className="text-xs sm:text-sm uppercase tracking-wide text-gray-400">Seconds</div>
       </div>
     </div>
   )

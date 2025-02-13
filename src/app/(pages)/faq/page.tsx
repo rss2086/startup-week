@@ -40,7 +40,7 @@ export default function FAQPage() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative py-20 sm:py-32 bg-gradient-to-br from-[#1a1150] via-[#1e1761] to-[#2b1c8c] overflow-hidden">
+      <div className="relative py-20 sm:py-48 bg-gradient-to-br from-[#1a1150] via-[#1e1761] to-[#2b1c8c] overflow-hidden">
         <BackgroundImage className="-top-36" position="right" />
         <Container className="relative">
           <div className="mx-auto max-w-2xl lg:max-w-4xl text-center">

@@ -155,7 +155,7 @@ const days: Day[] = [
       },
       {
         name: 'Nicole Sahin',
-        role: 'CEO at Globalization Partners',
+        role: 'Co-Founder & CEO at Globalization Partners',
         image: avatars.nicoleSahin,
         company: 'Globalization Partners',
         companyLogoUrl: logos.globalizationPartners,
@@ -223,7 +223,7 @@ const days: Day[] = [
       },
       {
         name: "Jordan Noone",
-        role: "Founder at Zoo",
+        role: "Co-Founder @ Zoo and Relativity Space",
         image: avatars.jordanNoone,
         company: "Zoo",
         companyLogoUrl: logos.zoo,

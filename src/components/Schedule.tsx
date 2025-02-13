@@ -513,13 +513,13 @@ function WeekSchedule() {
 
 function SummitSchedule() {
   return (
-    <div className="mt-16 rounded-3xl bg-blue-50 px-8 py-12 relative overflow-hidden">
+    <div className="mt-16 sm:mt-16 rounded-3xl bg-blue-50 px-4 sm:px-8 py-6 sm:py-12 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
           src={startupSummit}
           alt=""
           fill
-          className="object-cover blur-sm opacity-20"
+          className="object-cover blur-sm opacity-10"
           priority
         />
       </div>
@@ -536,7 +536,7 @@ function SummitSchedule() {
       </div>
       <TimeSlots 
         day={summitSchedule} 
-        className="mt-8 bg-white/80 rounded-2xl border border-blue-100 relative z-10"
+        className="mt-4 sm:mt-8 bg-white/80 rounded-2xl border border-blue-100 relative z-10"
       />
     </div>
   )
@@ -623,7 +623,7 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
       role="list"
       className={clsx(
         className,
-        'space-y-12 bg-white/60 px-8 py-10 shadow-xl shadow-blue-900/5 backdrop-blur-sm rounded-2xl border border-blue-100/20',
+        'space-y-8 sm:space-y-12 bg-white/60 px-4 sm:px-8 py-6 sm:py-10 shadow-xl shadow-blue-900/5 backdrop-blur-sm rounded-2xl border border-blue-100/20',
       )}
     >
       {day.timeSlots.map((timeSlot, timeSlotIndex) => (
@@ -633,7 +633,7 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
           className="relative"
         >
           {timeSlotIndex > 0 && (
-            <div className="mx-auto mb-12 h-px w-48 bg-indigo-500/10" />
+            <div className="mx-auto mb-8 sm:mb-12 h-px w-32 sm:w-48 bg-indigo-500/10" />
           )}
           
           <div className="flex flex-col items-center space-y-4">
@@ -642,16 +642,16 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
               {timeSlot.name !== timeSlot.description && timeSlot.description ? (
                 <>
                   {/* Title with description */}
-                  <div className="space-y-4">
-                    <div className="inline-flex items-center justify-center gap-3 px-4 py-2 rounded-2xl bg-blue-50/50 backdrop-blur-sm">
-                      <div className="h-px w-6 rounded-full bg-blue-600/20" />
-                      <span className="text-lg font-semibold text-blue-600 tracking-wider uppercase">
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="inline-flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-blue-50/50 backdrop-blur-sm">
+                      <div className="h-px w-4 sm:w-6 rounded-full bg-blue-600/20" />
+                      <span className="text-base sm:text-lg font-semibold text-blue-600 tracking-wider uppercase">
                         {timeSlot.name}
                       </span>
-                      <div className="h-px w-6 rounded-full bg-blue-600/20" />
+                      <div className="h-px w-4 sm:w-6 rounded-full bg-blue-600/20" />
                     </div>
                     {timeSlot.description && (
-                      <p className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900">
+                      <p className="text-xl md:text-3xl font-bold tracking-tight text-[#011F5B] px-2">
                         {timeSlot.description}
                       </p>
                     )}
@@ -659,19 +659,19 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
                 </>
               ) : (
                 <div className={clsx(
-                  "inline-flex items-center justify-center gap-3 px-4 py-2 rounded-2xl backdrop-blur-sm",
+                  "inline-flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl backdrop-blur-sm",
                   timeSlot.description === "No event scheduled" || timeSlot.name === "Lunch Break"
                     ? "bg-gray-50/50"
                     : "bg-blue-50/50"
                 )}>
                   <div className={clsx(
-                    "h-px w-6 rounded-full",
+                    "h-px w-4 sm:w-6 rounded-full",
                     timeSlot.description === "No event scheduled" || timeSlot.name === "Lunch Break"
                       ? "bg-gray-400/20"
                       : "bg-blue-600/20"
                   )} />
                   <span className={clsx(
-                    "text-lg font-semibold tracking-wider uppercase",
+                    "text-base sm:text-lg font-semibold tracking-wider uppercase",
                     timeSlot.description === "No event scheduled" || timeSlot.name === "Lunch Break"
                       ? "text-gray-400"
                       : "text-blue-600"
@@ -679,7 +679,7 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
                     {timeSlot.name}
                   </span>
                   <div className={clsx(
-                    "h-px w-6 rounded-full",
+                    "h-px w-4 sm:w-6 rounded-full",
                     timeSlot.description === "No event scheduled" || timeSlot.name === "Lunch Break"
                       ? "bg-gray-400/20"
                       : "bg-blue-600/20"
@@ -688,25 +688,25 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
               )}
               
               {/* Time Display */}
-              <div className="mt-4 flex items-center justify-center gap-3 text-[#980B2B] font-bold">
-                <div className="flex items-center bg-gray-50 rounded-full px-4 py-1.5">
-                  <svg className="w-4 h-4 mr-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[#980B2B] font-bold">
+                <div className="flex items-center bg-gray-50 rounded-full px-3 sm:px-4 py-1 sm:py-1.5">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <time className="font-mono text-sm" dateTime={`${day.dateTime}T${timeSlot.start}-05:00`}>
+                  <time className="font-mono text-xs sm:text-sm" dateTime={`${day.dateTime}T${timeSlot.start}-05:00`}>
                     {timeSlot.start}
                   </time>
-                  <span className="mx-2">-</span>
-                  <time className="font-mono text-sm" dateTime={`${day.dateTime}T${timeSlot.end}-05:00`}>
+                  <span className="mx-1 sm:mx-2">-</span>
+                  <time className="font-mono text-xs sm:text-sm" dateTime={`${day.dateTime}T${timeSlot.end}-05:00`}>
                     {timeSlot.end}
                   </time>
-                  <span className="ml-1 text-sm font-medium">EST</span>
+                  <span className="ml-1 text-xs sm:text-sm font-medium">EST</span>
                 </div>
                 
                 {/* Virtual/In-Person Badge - Only show for weekday events */}
                 {isWeekday && timeSlot.isVirtual !== undefined && (
                   <span className={clsx(
-                    "inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium",
+                    "inline-flex items-center rounded-full px-3 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm font-medium",
                     timeSlot.isVirtual
                       ? "bg-purple-50 text-purple-700"
                       : "bg-green-50 text-green-700"
@@ -720,14 +720,14 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
             {/* Speakers Section */}
             {timeSlot.speakers && timeSlot.speakers.length > 0 && (
               <div className={clsx(
-                "w-full mx-auto mt-8",
+                "w-full mx-auto mt-6 sm:mt-8 px-2 sm:px-0",
                 isWeekday 
                   ? "max-w-3xl" 
-                  : "grid gap-6",
+                  : "grid gap-4 sm:gap-6",
                 !isWeekday && (
                   timeSlot.speakers.length === 1 ? "max-w-lg" : 
-                  timeSlot.speakers.length === 2 ? "grid-cols-2 max-w-3xl" :
-                  "sm:grid-cols-2 lg:grid-cols-3 max-w-5xl"
+                  timeSlot.speakers.length === 2 ? "grid-cols-1 sm:grid-cols-2 max-w-3xl" :
+                  "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl"
                 )
               )}>
                 {isWeekday ? (
@@ -745,7 +745,7 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
                         timeSlot.speakers?.length === 1 && "mx-auto w-full max-w-lg"
                       )}
                     >
-                      <div className="p-6">
+                      <div className="p-4 sm:p-6">
                         <SpeakerCard speaker={speaker} />
                       </div>
                     </div>
