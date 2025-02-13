@@ -89,7 +89,7 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="text-center my-12">
+          <div className="text-center my-4">
             <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-4">
               <AnimatedTitle />
             </h1>
@@ -103,10 +103,10 @@ export function Hero() {
             </motion.p>
           </div>
 
-          <div className="text-center mb-16">
+          {/* <div className="text-center mb-16">
             <div className="text-sm uppercase tracking-wider text-gray-300 mb-2">Time Until Startup Summit</div>
             <CountdownTimer />
-          </div>
+          </div> */}
 
           <div className="space-y-6 text-xl text-gray-300 max-w-3xl mx-auto mb-12">
             <p>
