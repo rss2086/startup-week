@@ -14,13 +14,24 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Startup Week 2025 - Wharton Entrepreneurship Club',
     description: 'Join us for Startup Week 2025, featuring industry leaders, innovative founders, and transformative ideas.',
-    images: ['/images/og-image.png'],
+    images: [{
+      url: '/images/og-image-optimized.png',
+      width: 1200,
+      height: 630,
+      alt: 'Startup Week 2025 - Wharton Entrepreneurship Club',
+      type: 'image/png',
+    }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Startup Week 2025 - Wharton Entrepreneurship Club',
     description: 'Join us for Startup Week 2025, featuring industry leaders, innovative founders, and transformative ideas.',
-    images: ['/images/og-image.png'],
+    images: [{
+      url: '/images/og-image-optimized.png',
+      width: 1200,
+      height: 630,
+      alt: 'Startup Week 2025 - Wharton Entrepreneurship Club',
+    }],
   },
 }
 
