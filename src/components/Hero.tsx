@@ -103,10 +103,10 @@ export function Hero() {
             </motion.p>
           </div>
 
-          {/* <div className="text-center mb-16">
+          <div className="text-center mb-16">
             <div className="text-sm uppercase tracking-wider text-gray-300 mb-2">Time Until Startup Summit</div>
             <CountdownTimer />
-          </div> */}
+          </div>
 
           <div className="space-y-6 text-xl text-gray-300 max-w-3xl mx-auto mb-12">
             <p>

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Startup Week 2025 - Wharton Entrepreneurship Club',
     description: 'Join us for Startup Week 2025, featuring industry leaders, innovative founders, and transformative ideas.',
-    images: ['/images/og-image.jpg'],
+    images: ['/images/og-image.png'],
   },
   twitter: {
     card: 'summary_large_image',
