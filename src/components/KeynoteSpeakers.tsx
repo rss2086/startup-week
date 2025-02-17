@@ -23,7 +23,7 @@ export function KeynoteSpeakers() {
       company: 'Emergence Capital',
       image: avatars.gordonRitter,
       companyLogo: logos.emergenceCapital,
-      companyWebsite: 'https://www.emergencecapital.com/',
+      companyWebsite: 'https://www.emcap.com/',
       bio: {
         main: 'Gordon Ritter is the Founder and General Partner of Emergence Capital Partners. With over 15 years of experience founding and building companies, he has been instrumental in shaping new markets including embedded web-based interfaces, server appliances, "On Demand" services for the SMB market and web-native application development.',
         experience: 'In 2003, he led Emergence Capital\'s first investment in Salesforce.com. His strategic vision and investment acumen have earned him multiple appearances on Forbes\' Midas List of top venture capital investors.',

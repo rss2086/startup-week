@@ -37,8 +37,10 @@ export function SummitContent() {
 
             <div className="mt-12 flex flex-col sm:flex-row gap-6">
               <a
-                href="#tickets"
+                href="https://www.eventbrite.com/e/wharton-startup-week-summit-2025-tickets-1248998310569"
                 className="inline-flex items-center justify-center rounded-lg bg-[#9eff65] px-8 py-3 text-lg font-medium text-[#1a1150] hover:bg-white transition-all duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Get Your Ticket
               </a>

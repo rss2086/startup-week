@@ -134,7 +134,11 @@ export function MobileMenu({ isOpen, onClose, navigation }: MobileMenuProps) {
                   </div>
                   
                   <div className="pt-2 pb-8">
-                    <Button href="#tickets" className="w-full text-lg" onClick={onClose}>
+                    <Button 
+                      href="https://www.eventbrite.com/e/wharton-startup-week-summit-2025-tickets-1248998310569"
+                      className="w-full text-lg" 
+                      onClick={onClose}
+                    >
                       Get Your Ticket
                     </Button>
                   </div>

@@ -117,9 +117,28 @@ export function Hero() {
             </p>
           </div>
 
-          <Button href="#" className="mb-24 w-full sm:hidden">
-            Get Your Ticket
-          </Button>
+          <div className="my-24 flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Button
+              href="https://www.eventbrite.com/e/wharton-startup-week-summit-2025-tickets-1248998310569"
+              color="white"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="min-w-[240px] w-full max-w-2xl text-lg font-bold relative overflow-hidden group
+                bg-gradient-to-r from-[#9eff65] to-[#7acc4d] text-gray-900
+                px-8 py-4 rounded-full
+                transform hover:scale-105 transition-all duration-300
+                shadow-[0_0_20px_rgba(158,255,101,0.3)] hover:shadow-[0_0_30px_rgba(158,255,101,0.5)]
+                before:absolute before:inset-0 before:bg-white/20 before:translate-x-[-100%] before:skew-x-[-45deg] before:transition-transform before:duration-500
+                hover:before:translate-x-[100%] before:z-0"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                Get Your Ticket
+                <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+            </Button>
+          </div>
 
           <div className="grid sm:grid-cols-4 gap-8 max-w-4xl mx-auto mb-16">
             {[

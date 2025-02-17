@@ -129,7 +129,13 @@ export function Header() {
           <ExternalLink href="https://whartonentrepreneurship.com">
             Visit E-Club Website
           </ExternalLink>
-          <Button href="#tickets">Get Your Ticket</Button>
+          <Button 
+            href="https://www.eventbrite.com/e/wharton-startup-week-summit-2025-tickets-1248998310569"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get Your Ticket
+          </Button>
         </nav>
 
         {/* Mobile Menu */}
