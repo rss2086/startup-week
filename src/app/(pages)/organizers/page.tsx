@@ -83,7 +83,7 @@ const teams = [
         role: 'EClub Head of Finance',
         image: '/images/avatars/rachana-lingutla.jpeg',
         linkedin: 'https://www.linkedin.com/in/rlingutla/',
-        bio: 'Supporting financial operations and reporting'
+        bio: 'Managing financial operations and reporting'
       },
       {
         name: 'Kamal Kadiri',
