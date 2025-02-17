@@ -29,9 +29,9 @@ export interface TimeSlot {
     company?: string
     companyLogoUrl?: string
     image?: string
+    companyWebsite?: string
   }>
 }
-
 const weekSchedule: Array<Day> = [
   {
     date: 'March 17',
@@ -41,8 +41,8 @@ const weekSchedule: Array<Day> = [
       {
         name: 'Lunch Event',
         description: 'Legal Aspects of Entrepreneurship - Fireside Chat',
-        start: '12:30PM',
-        end: '1:15PM',
+        start: '12:00PM',
+        end: '1:00PM',
         isVirtual: false,
         speakers: [
           {
@@ -50,7 +50,8 @@ const weekSchedule: Array<Day> = [
             role: 'Professor',
             company: 'Wharton',
             image: avatars.robertBorghese,
-            companyLogoUrl: logos.wharton
+            companyLogoUrl: logos.wharton,
+            companyWebsite: 'https://lgst.wharton.upenn.edu/profile/borghese/'
           }
         ]
       },
@@ -66,13 +67,15 @@ const weekSchedule: Array<Day> = [
             company: 'Avalanche',
             role: 'Founder',
             image: avatars.brianRiordan,
-            companyLogoUrl: logos.avalanche
+            companyLogoUrl: logos.avalanche,
+            companyWebsite: 'https://avalanchefusion.com/'
           },
           {
             name: 'Shawn Xu',
             company: 'Lowercarbon',
             image: avatars.shawnXu,
-            companyLogoUrl: logos.lowercarbonCapital
+            companyLogoUrl: logos.lowercarbonCapital,
+            companyWebsite: 'https://lowercarbon.com/'
           },
         ]
       },
@@ -86,27 +89,30 @@ const weekSchedule: Array<Day> = [
       {
         name: 'Lunch Event',
         description: 'Navigating Early Days Building a Startup',
-        start: '12:30PM',
-        end: '1:15PM',
+        start: '12:00PM',
+        end: '1:00PM',
         isVirtual: true,
         speakers: [
           {
             name: 'Jake Gordon',
             company: 'Noteefy',
             image: avatars.jakeGordon,
-            companyLogoUrl: logos.noteefy
+            companyLogoUrl: logos.noteefy,
+            companyWebsite: 'https://noteefy.app'
           },
           {
             name: 'Daniel Kang',
             company: 'Flowbo',
             image: avatars.danielKang,
-            companyLogoUrl: logos.flowbo
+            companyLogoUrl: logos.flowbo,
+            companyWebsite: 'https://www.flowbo.co'
           },
           {
             name: 'Ian Goldberg',
             company: 'Venrex',
             image: avatars.ianGoldberg,
-            companyLogoUrl: logos.venrex
+            companyLogoUrl: logos.venrex,
+            companyWebsite: 'http://www.venrex.partners'
           }
         ]
       },
@@ -126,8 +132,8 @@ const weekSchedule: Array<Day> = [
       {
         name: 'Lunch Event',
         description: 'Getting a job at a startup: Wharton Students Panel',
-        start: '12:30PM',
-        end: '1:15PM',
+        start: '12:00PM',
+        end: '1:00PM',
         isVirtual: false,
         speakers: [
           {
@@ -135,28 +141,32 @@ const weekSchedule: Array<Day> = [
             role: 'Wharton Student',
             company: 'Rogo (Fin Tech)',
             image: avatars.hannahFrankl,
-            companyLogoUrl: logos.rogo
+            companyLogoUrl: logos.rogo,
+            companyWebsite: 'https://rogo.ai/'
           },
           {
             name: 'Allie DiPietro',
             role: 'Wharton Student',
             company: 'Juniver (Health Tech)',
             image: avatars.allieDiPietro,
-            companyLogoUrl: logos.juniver
+            companyLogoUrl: logos.juniver,
+            companyWebsite: 'https://www.joinjuniver.com/'
           },
           {
             name: 'Jacqueline Keene',
             role: 'Wharton Student',
             company: 'Sown to Grown (Ed Tech)',
             image: avatars.jacquelineKeene,
-            companyLogoUrl: logos.sowntogrow
+            companyLogoUrl: logos.sowntogrow,
+            companyWebsite: 'https://www.sowntogrow.com/'
           },
           {
             name: 'Filippos Letsas',
             role: 'Wharton Student',
             company: 'Auterion (Deep Tech)',
             image: avatars.filipposLetsas,
-            companyLogoUrl: logos.auterion
+            companyLogoUrl: logos.auterion,
+            companyWebsite: 'https://auterion.com/'
           }
         ]
       },
@@ -171,7 +181,8 @@ const weekSchedule: Array<Day> = [
             name: 'Nicole Sahin',
             company: 'Globalization Partners',
             image: avatars.nicoleSahin,
-            companyLogoUrl: logos.globalizationPartners
+            companyLogoUrl: logos.globalizationPartners,
+            companyWebsite: 'https://www.globalization-partners.com/'
           }
         ]
       },
@@ -185,8 +196,8 @@ const weekSchedule: Array<Day> = [
       {
         name: 'Lunch Event',
         description: 'Women in VC Panel',
-        start: '12:30PM',
-        end: '1:15PM',
+        start: '12:00PM',
+        end: '1:00PM',
         isVirtual: true,
         speakers: [
           {
@@ -194,21 +205,24 @@ const weekSchedule: Array<Day> = [
             role: 'Founder, GP',
             company: 'Embedded Ventures',
             image: avatars.jennaBryant,
-            companyLogoUrl: logos.embeddedVentures
+            companyLogoUrl: logos.embeddedVentures,
+            companyWebsite: 'https://embedded.ventures/'
           },
           {
             name: 'Urvashi Barooah',
             role: 'Partner',
             company: 'Redpoint Ventures',
             image: avatars.urvashipBarooah,
-            companyLogoUrl: logos.redpoint
+            companyLogoUrl: logos.redpoint,
+            companyWebsite: 'https://www.redpoint.com/'
           },
           {
             name: 'Sue Xu',
             role: 'GP',
             company: 'Amino Capital',
             image: avatars.sueXu,
-            companyLogoUrl: logos.aminocapital
+            companyLogoUrl: logos.aminocapital,
+            companyWebsite: 'https://www.aminocapital.com/'
           }
         ]
       },
@@ -224,7 +238,8 @@ const weekSchedule: Array<Day> = [
             role: 'Founder, CEO',
             company: 'Moonhub AI, Stanford',
             image: avatars.nancyXu,
-            companyLogoUrl: logos.moonhubAi
+            companyLogoUrl: logos.moonhubAi,
+            companyWebsite: 'https://www.moonhub.ai/'
           }
         ]
       },
@@ -253,24 +268,27 @@ export const summitSchedule: Day = {
       speakers: [
         {
           name: 'Jordan Noone',
-          role: 'Founder',
+          role: 'Co-Founder @ Zoo and Relativity Space',
           company: 'Zoo',
           image: avatars.jordanNoone,
-          companyLogoUrl: logos.zoo
+          companyLogoUrl: logos.zoo,
+          companyWebsite: 'https://www.zoo.co/'
         },
         {
           name: 'Dan Roelker',
           role: 'Founder',
           company: 'OurSky',
           image: avatars.danielRoelker,
-          companyLogoUrl: logos.oursky
+          companyLogoUrl: logos.oursky,
+          companyWebsite: 'https://oursky.ai/'
         },
         {
           name: 'Philip Johnston',
           role: 'Founder',
-          company: 'Lumen',
+          company: 'Star Cloud',
           image: avatars.phillipJohnston,
-          companyLogoUrl: logos.lumen
+          companyLogoUrl: logos.starcloud,
+          companyWebsite: 'https://www.starcloud.com/'
         }
       ]
     },
@@ -284,23 +302,26 @@ export const summitSchedule: Day = {
         {
           name: 'James da Costa',
           role: 'Partner',
-          company: 'a16z',
+          company: 'Andreessen Horowitz',
           image: avatars.jamesDaCosta,
-          companyLogoUrl: logos.a16z
+          companyLogoUrl: logos.a16z,
+          companyWebsite: 'https://a16z.com/'
         },
         {
           name: 'Gabe Stengel',
           role: 'Founder',
           company: 'Rogo',
           image: avatars.gabrielStengel,
-          companyLogoUrl: logos.rogo
+          companyLogoUrl: logos.rogo,
+          companyWebsite: 'https://www.rogo.ai'
         },
         {
           name: 'Haroon Choudery',
           role: 'Founder',
           company: 'Autoblocks AI',
           image: avatars.haroonChoudery,
-          companyLogoUrl: logos.autoblocksAi
+          companyLogoUrl: logos.autoblocksAi,
+          companyWebsite: 'https://www.autoblocks.ai/'
         },
         // {
         //   name: 'Logan Kilpatrick',
@@ -330,21 +351,24 @@ export const summitSchedule: Day = {
           role: 'Founder',
           company: 'Capsule',
           image: avatars.ericKinariwala,
-          companyLogoUrl: logos.capsule
+          companyLogoUrl: logos.capsule,
+          companyWebsite: 'https://www.capsule.com/'
         },
         {
           name: 'Cavan Klinsky',
           role: 'Founder',
           company: 'Healthie',
           image: avatars.cavanKlinsky,
-          companyLogoUrl: logos.healthie
+          companyLogoUrl: logos.healthie,
+          companyWebsite: 'https://www.gethealthie.com/'
         },
         {
           name: 'Justin Silver',
           role: 'Founder',
-          company: 'Symptoguard + Aavrani',
+          company: 'Symptoguard & Aavrani',
           image: avatars.justinSilver,
-          companyLogoUrl: logos.aavrani
+          companyLogoUrl: logos.symptoguard,
+          companyWebsite: 'https://www.symptoguard.com/'
         }
       ]
     },
@@ -360,7 +384,8 @@ export const summitSchedule: Day = {
           role: 'Founder & CEO',
           company: 'Octave Health',
           image: avatars.sandeepAcharya,
-          companyLogoUrl: logos.octave
+          companyLogoUrl: logos.octave,
+          companyWebsite: 'https://www.findoctave.com/'
         }
       ]
     },
@@ -383,7 +408,8 @@ export const summitSchedule: Day = {
           role: 'Founder & General Partner',
           company: 'Emergence Capital',
           image: avatars.gordonRitter,
-          companyLogoUrl: logos.emergenceCapital
+          companyLogoUrl: logos.emergenceCapital,
+          companyWebsite: 'https://www.emcap.com/'
         }
       ]
     },
@@ -399,28 +425,32 @@ export const summitSchedule: Day = {
           role: 'Founder, CEO',
           company: 'Bastion, a16z crypto CTO',
           image: avatars.nassimEddequiouaq,
-          companyLogoUrl: logos.bastion
+          companyLogoUrl: logos.bastion,
+          companyWebsite: 'https://www.bastion.com/'
         },
         {
           name: 'Nick Krakoff',
           role: 'Crypto Products & Business',
           company: 'Stripe',
           image: avatars.nickKrakoff,
-          companyLogoUrl: logos.stripe
+          companyLogoUrl: logos.stripe,
+          companyWebsite: 'https://stripe.com/'
         },
         {
           name: 'Rami Shahatit',
           role: 'Co-Founder & CEO',
           company: 'Portal',
           image: avatars.ramiShahatit,
-          companyLogoUrl: logos.portal
+          companyLogoUrl: logos.portal,
+          companyWebsite: 'https://www.portalhq.io/'
         },
         {
           name: 'Ejaaz Ahamadeen',
           role: 'Cohost and Founder',
           company: 'Founder / CIO @26CC, Co-host Bankless, Core contributor @aiccelerateDAO',
           image: avatars.ejaazAhamadeen,
-          companyLogoUrl: logos.bankless
+          companyLogoUrl: logos.bankless,
+          companyWebsite: 'https://www.bankless.com/'
         },
       ]
     },
@@ -781,6 +811,7 @@ interface SpeakerCardProps {
     role?: string;
     company?: string;
     companyLogoUrl?: string;
+    companyWebsite?: string;
     image?: string;
   };
 }
@@ -803,16 +834,23 @@ function SpeakerCard({ speaker }: SpeakerCardProps) {
           {/* Company Logo Overlay */}
           {speaker.companyLogoUrl && (
             <div className="absolute bottom-0 right-0 flex h-1/3 w-3/5 items-center justify-center">
-              <div className="h-full w-full overflow-hidden bg-white/15 p-4 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:bg-white/50 group-hover:shadow-xl rounded-tl-2xl">
-                <Image
-                  src={speaker.companyLogoUrl}
-                  alt={`${speaker.company} logo`}
-                  width={400}
-                  height={400}
-                  className="h-full w-full object-contain"
-                  quality={100}
-                />
-              </div>
+              <a 
+                href={speaker.companyWebsite}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-full w-full group/logo"
+              >
+                <div className="h-full w-full overflow-hidden bg-white/15 p-4 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover/logo:bg-white/50 group-hover/logo:shadow-xl rounded-tl-2xl">
+                  <Image
+                    src={speaker.companyLogoUrl}
+                    alt={`${speaker.company} logo`}
+                    width={400}
+                    height={400}
+                    className="h-full w-full object-contain"
+                    quality={100}
+                  />
+                </div>
+              </a>
             </div>
           )}
         </div>
@@ -830,18 +868,27 @@ function SpeakerCard({ speaker }: SpeakerCardProps) {
               {speaker.role}
             </div>
           )}
-          {/* Company */}
+          {/* Company with Link */}
           {speaker.company && (
-            <div className="text-sm text-blue-600 font-medium">
+            <a 
+              href={speaker.companyWebsite}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/company inline-flex items-center gap-1 text-sm text-blue-600 font-medium hover:text-blue-800 transition-colors duration-200"
+            >
               {speaker.company}
-            </div>
+              <svg className="w-3 h-3 opacity-0 -translate-x-1 group-hover/company:opacity-100 group-hover/company:translate-x-0 transition-all duration-200" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
+              </svg>
+            </a>
           )}
         </div>
       </div>
     </div>
   )
 }
-function SpeakerRow({ speaker }: { speaker: { name: string; role?: string; company?: string; companyLogoUrl?: string; image?: string } }) {
+
+function SpeakerRow({ speaker }: { speaker: { name: string; role?: string; company?: string; companyLogoUrl?: string; companyWebsite?: string; image?: string } }) {
   return (
     <div className="flex items-center gap-6 p-4 hover:bg-blue-50/50 transition-colors duration-200 group">
       {/* Speaker Image */}
@@ -877,26 +924,44 @@ function SpeakerRow({ speaker }: { speaker: { name: string; role?: string; compa
               </p>
             )}
           </div>
-          {speaker.companyLogoUrl ? (
+          {speaker.companyLogoUrl && speaker.companyWebsite ? (
             <div className="flex-shrink-0 w-32">
-              <div className="relative h-12 w-full p-2">
-                <Image 
-                  src={speaker.companyLogoUrl}
-                  alt={`${speaker.company} logo`}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              {speaker.company && (
-                <p className="text-sm font-medium text-blue-600 text-center mt-1">
-                  {speaker.company}
-                </p>
-              )}
+              <a 
+                href={speaker.companyWebsite}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group/company"
+              >
+                <div className="relative h-12 w-full p-2">
+                  <Image 
+                    src={speaker.companyLogoUrl}
+                    alt={`${speaker.company} logo`}
+                    fill
+                    className="object-contain transition-opacity duration-200 group-hover/company:opacity-80"
+                  />
+                </div>
+                {speaker.company && (
+                  <p className="text-sm font-medium text-blue-600 text-center mt-1 group-hover/company:text-blue-800 transition-colors flex items-center justify-center gap-1">
+                    {speaker.company}
+                    <svg className="w-3 h-3 opacity-0 -translate-x-1 group-hover/company:opacity-100 group-hover/company:translate-x-0 transition-all duration-200" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
+                    </svg>
+                  </p>
+                )}
+              </a>
             </div>
-          ) : speaker.company && (
-            <div className="flex-shrink-0 w-32 text-base font-medium text-blue-600 text-right">
+          ) : speaker.company && speaker.companyWebsite && (
+            <a 
+              href={speaker.companyWebsite}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 w-32 text-base font-medium text-blue-600 text-right group/company hover:text-blue-800 transition-colors flex items-center justify-end gap-1"
+            >
               {speaker.company}
-            </div>
+              <svg className="w-3 h-3 opacity-0 -translate-x-1 group-hover/company:opacity-100 group-hover/company:translate-x-0 transition-all duration-200" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
+              </svg>
+            </a>
           )}
         </div>
       </div>

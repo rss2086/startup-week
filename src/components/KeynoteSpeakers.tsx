@@ -9,6 +9,7 @@ export function KeynoteSpeakers() {
       company: 'Octave Health',
       image: avatars.sandeepAcharya,
       companyLogo: logos.octave,
+      companyWebsite: 'https://www.findoctave.com/',
       bio: {
         main: 'Sandeep has spent most of his career at the nexus of strategy, policy, healthcare reform, technology innovation, and mission oriented leadership. As founder & CEO of Octave Health, he leads a mental health practice and technology platform offering higher quality care in-network with leading insurance companies.',
         experience: 'Prior to Octave, he was the head of strategy at One Medical, a primary care practice that he helped lead through expansion across the country before its IPO and subsequent acquisition by Amazon.',
@@ -22,6 +23,7 @@ export function KeynoteSpeakers() {
       company: 'Emergence Capital',
       image: avatars.gordonRitter,
       companyLogo: logos.emergenceCapital,
+      companyWebsite: 'https://www.emergencecapital.com/',
       bio: {
         main: 'Gordon Ritter is the Founder and General Partner of Emergence Capital Partners. With over 15 years of experience founding and building companies, he has been instrumental in shaping new markets including embedded web-based interfaces, server appliances, "On Demand" services for the SMB market and web-native application development.',
         experience: 'In 2003, he led Emergence Capital\'s first investment in Salesforce.com. His strategic vision and investment acumen have earned him multiple appearances on Forbes\' Midas List of top venture capital investors.',
@@ -70,15 +72,22 @@ export function KeynoteSpeakers() {
                   {/* Company Logo Overlay */}
                   {speaker.companyLogo && (
                     <div className="absolute bottom-0 right-0 flex h-1/3 w-1/2 sm:w-1/3 items-center justify-center">
-                      <div className="h-full w-full overflow-hidden bg-white/15 p-3 sm:p-4 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:bg-white/50 group-hover:shadow-xl rounded-tl-2xl rounded-br-2xl">
-                        <Image
-                          src={speaker.companyLogo}
-                          alt={`${speaker.company} logo`}
-                          width={1600}
-                          height={1600}
-                          className="h-full w-full object-contain"
-                        />
-                      </div>
+                      <a 
+                        href={speaker.companyWebsite}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="h-full w-full group/logo"
+                      >
+                        <div className="h-full w-full overflow-hidden bg-white/15 p-3 sm:p-4 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover/logo:bg-white/50 group-hover/logo:shadow-xl rounded-tl-2xl rounded-br-2xl">
+                          <Image
+                            src={speaker.companyLogo}
+                            alt={`${speaker.company} logo`}
+                            width={1600}
+                            height={1600}
+                            className="h-full w-full object-contain"
+                          />
+                        </div>
+                      </a>
                     </div>
                   )}
                 </div>
@@ -96,9 +105,19 @@ export function KeynoteSpeakers() {
                     {speaker.role}
                   </div>
                   {/* Company */}
-                  <div className="text-lg text-gray-600">
+                  <div className="text-lg">
                     <span className="text-[#011F5B]/70 mr-1">at</span>
-                    <span className="font-bold text-blue-600">{speaker.company}</span>
+                    <a 
+                      href={speaker.companyWebsite}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/company inline-flex items-center gap-1 font-bold text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                    >
+                      {speaker.company}
+                      <svg className="w-3 h-3 opacity-0 -translate-x-1 group-hover/company:opacity-100 group-hover/company:translate-x-0 transition-all duration-200" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
+                      </svg>
+                    </a>
                   </div>
                 </div>
 

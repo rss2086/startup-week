@@ -48,7 +48,7 @@ const days: Day[] = [
         company: 'Avalanche Energy',
         companyLogoUrl: logos.avalanche,
         linkedinUrl: 'https://www.linkedin.com/in/brian-riordan-a7883b11/',
-        companyWebsite: 'https://avalanchefusion.com/about/'
+        companyWebsite: 'https://avalanchefusion.com/'
       },
       {
         name: 'Shawn Xu',
@@ -56,8 +56,8 @@ const days: Day[] = [
         image: avatars.shawnXu,
         company: 'Lowercarbon Capital',
         companyLogoUrl: logos.lowercarbonCapital,
-        linkedinUrl: undefined,
-        companyWebsite: undefined
+        linkedinUrl: 'https://www.linkedin.com/in/shawnxxu/',
+        companyWebsite: 'https://lowercarbon.com/'
       },
     ],
   },
@@ -107,7 +107,7 @@ const days: Day[] = [
         company: 'Rogo',
         companyLogoUrl: logos.rogo,
         linkedinUrl: 'https://www.linkedin.com/in/hannahfrankl/',
-        companyWebsite: 'https://www.rogoai.com/'
+        companyWebsite: 'https://rogo.ai/'
       },
       {
         name: 'Allie DiPietro',
@@ -116,7 +116,7 @@ const days: Day[] = [
         company: 'Juniver',
         companyLogoUrl: logos.juniver,
         linkedinUrl: 'https://www.linkedin.com/in/alice-dipietro/',
-        companyWebsite: 'https://www.juniver.com/'
+        companyWebsite: 'https://www.joinjuniver.com/'
       },
       {
         name: 'Jacqueline Keene',
@@ -224,12 +224,12 @@ const days: Day[] = [
       },
       {
         name: "Philip Johnston",
-        role: "Founder at Lumen",
+        role: "Founder at Star Cloud",
         image: avatars.phillipJohnston,
-        company: "Lumen Orbit",
-        companyLogoUrl: logos.lumen,
+        company: "Star Cloud",
+        companyLogoUrl: logos.starcloud,
         linkedinUrl: "https://www.linkedin.com/in/johnstonphilip",
-        companyWebsite: "https://www.lumenorbit.com/"
+        companyWebsite: "https://www.starcloud.com/"
       },
       {
         name: "James da Costa",
@@ -247,7 +247,7 @@ const days: Day[] = [
         company: "Rogo",
         companyLogoUrl: logos.rogo,
         linkedinUrl: "https://www.linkedin.com/in/gabestengel/",
-        companyWebsite: "https://www.rogoai.com/"
+        companyWebsite: "https://www.rogo.ai"
       },
       {
         name: "Haroon Choudery",
@@ -299,9 +299,9 @@ const days: Day[] = [
         role: "Founder at Symptoguard + Aavrani",
         image: avatars.justinSilver,
         company: "Symptoguard & Aavrani",
-        companyLogoUrl: logos.aavrani,
+        companyLogoUrl: logos.symptoguard,
         linkedinUrl: "https://www.linkedin.com/in/justinasilver/",
-        companyWebsite: "https://aavrani.com/"
+        companyWebsite: "https://www.symptoguard.com/"
       },
       {
         name: "Gordon Ritter",
@@ -337,7 +337,7 @@ const days: Day[] = [
         company: "Portal", 
         companyLogoUrl: logos.portal,
         linkedinUrl: "https://www.linkedin.com/in/rami-shahatit/",
-        companyWebsite: "https://www.portal.org/"
+        companyWebsite: "https://www.portalhq.io/"
       },
       {
         name: "Ejaaz Ahamadeen",

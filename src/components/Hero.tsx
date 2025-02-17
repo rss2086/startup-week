@@ -117,7 +117,7 @@ export function Hero() {
             </p>
           </div>
 
-          <Button href="#" className="mt-10 w-full sm:hidden">
+          <Button href="#" className="mb-24 w-full sm:hidden">
             Get Your Ticket
           </Button>
 
