@@ -72,7 +72,7 @@ export function Sponsors({ onHomePage = false }: SponsorsProps) {
                 Partner with Penn&apos;s Largest Entrepreneurship Event
               </h2>
               <p className="text-lg sm:text-xl text-purple-100/90 max-w-3xl mx-auto mb-8">
-                Join us in shaping the future of entrepreneurship at Penn. Connect with over 250 ambitious students and 50+ industry leaders.
+                Join us in shaping the future of entrepreneurship at Penn. Connect with over 250 ambitious students and 25+ industry leaders.
               </p>
               <Link
                 href="/sponsors"
