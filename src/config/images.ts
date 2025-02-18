@@ -10,7 +10,7 @@ export const logos = {
   bankless: '/images/logos/bankless.png',
   bastion: '/images/logos/bastion.jpeg',
   capsule: '/images/logos/capsule.png',
-  coinbase: '/images/logos/coinbase.png',
+  // coinbase: '/images/logos/coinbase.png',
   deepmind: '/images/logos/deepmind.png',
   embeddedVentures: '/images/logos/embeddedventures.png',
   emergenceCapital: '/images/logos/emergencecapital.jpeg',

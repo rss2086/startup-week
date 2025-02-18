@@ -382,7 +382,7 @@ export const summitSchedule: Day = {
         {
           name: 'Sandeep Acharya',
           role: 'Founder & CEO',
-          company: 'Octave Health',
+          company: 'Octave',
           image: avatars.sandeepAcharya,
           companyLogoUrl: logos.octave,
           companyWebsite: 'https://www.findoctave.com/'
@@ -438,7 +438,7 @@ export const summitSchedule: Day = {
         },
         {
           name: 'Rami Shahatit',
-          role: 'Co-Founder & CEO',
+          role: 'Co-Founder',
           company: 'Portal',
           image: avatars.ramiShahatit,
           companyLogoUrl: logos.portal,

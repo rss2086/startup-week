@@ -6,15 +6,15 @@ export function KeynoteSpeakers() {
     {
       name: 'Sandeep Acharya',
       role: 'Founder & CEO',
-      company: 'Octave Health',
+      company: 'Octave',
       image: avatars.sandeepAcharya,
       companyLogo: logos.octave,
       companyWebsite: 'https://www.findoctave.com/',
       bio: {
-        main: 'Sandeep has spent most of his career at the nexus of strategy, policy, healthcare reform, technology innovation, and mission oriented leadership. As founder & CEO of Octave Health, he leads a mental health practice and technology platform offering higher quality care in-network with leading insurance companies.',
-        experience: 'Prior to Octave, he was the head of strategy at One Medical, a primary care practice that he helped lead through expansion across the country before its IPO and subsequent acquisition by Amazon.',
-        recognition: 'Octave has been recognized as a Best Place to Work in 2023 & 2024 and a CB Insights Top 50 Healthcare Startup. Sandeep has been a writer and featured speaker in USA Today, Fast Company, HIMSS, National Business Group on Health, Behavioral Health Business, and a wide variety of other publications.',
-        personal: 'Outside of work, Sandeep is a recovering collegiate a cappella singer, long suffering New York Giants fan, and enjoys spending time with his family.'
+        main: 'Sandeep Acharya is the founder and CEO of Octave, which is transforming premium mental health care into a standard practice. By partnering with major insurers, high-quality, affordable therapy is available to over 33M covered lives across 17 states. Under Sandeep\'s leadership, he led Octave to be recognized as a LinkedIn Top Startup in 2023, as well as to gain recognition as a top workplace in the USA and the healthcare industry.',
+        experience: 'Prior to co-founding Octave, Sandeep led strategy at One Medical for five years. In this role, he was responsible for launching and scaling several new services and oversaw the growth of its employer business to over 1,000 companies, while being a member of a senior leadership team that expanded the company to over sixty clinics in eight cities. Before One Medical, he spent his career as an investor, operator and consultant in the healthcare, retail, and technology sectors at Bain & Co, Bain Capital and Insight Venture Partners.',
+        recognition: 'In addition to his executive career, Sandeep has been an active writer & speaker over the last decade. His posts on LinkedIn have earned him over 84,000 followers globally, and he has written articles for USA Today and Employee Benefits News. He has been an invited speaker at HIMSS, Conference Board, National Business Group on Health, Behavioral Health Tech, and other conferences.',
+        personal: 'Sandeep is a recovering collegiate a cappella singer, karaoke enthusiast, and a long-suffering New York Giants fan. When he\'s not working, he enjoys writing and spending time with his family.'
       }
     },
     {

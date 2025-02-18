@@ -332,7 +332,7 @@ const days: Day[] = [
       },
       {
         name: "Rami Shahatit",
-        role: "Co-Founder & CEO at Portal",
+        role: "Co-Founder",
         image: avatars.ramiShahatit,
         company: "Portal", 
         companyLogoUrl: logos.portal,
@@ -348,15 +348,15 @@ const days: Day[] = [
         linkedinUrl: "https://www.linkedin.com/in/ejaaz-ahamadeen-231b7030/",
         companyWebsite: "https://www.bankless.com/"
       },
-      {
-        name: "Andrew F",
-        role: "Head of Base Engineering at Coinbase",
-        image: avatars.andrewF,
-        company: "Coinbase",
-        companyLogoUrl: logos.coinbase,
-        linkedinUrl: "https://www.linkedin.com/in/andrew-f-206a77153/",
-        companyWebsite: "https://www.coinbase.com/"
-      },
+      // {
+      //   name: "Andrew F",
+      //   role: "Head of Base Engineering at Coinbase",
+      //   image: avatars.andrewF,
+      //   company: "Coinbase",
+      //   companyLogoUrl: logos.coinbase,
+      //   linkedinUrl: "https://www.linkedin.com/in/andrew-f-206a77153/",
+      //   companyWebsite: "https://www.coinbase.com/"
+      // },
     ],
   },
 ]
