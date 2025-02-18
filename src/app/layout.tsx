@@ -1,6 +1,7 @@
 import { type Metadata } from 'next'
 import { DM_Sans, Inter } from 'next/font/google'
 import clsx from 'clsx'
+import { Analytics } from "@vercel/analytics/react"
 
 import '@/styles/tailwind.css'
 
@@ -96,6 +97,7 @@ export default function RootLayout({
       <body className="relative min-h-full overflow-x-hidden">
         <div className="relative flex min-h-full flex-col">{children}</div>
       </body>
+      <Analytics />
     </html>
   )
 }

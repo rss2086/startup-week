@@ -113,7 +113,7 @@ export function Hero() {
               Want to meet cool founders? Network your way to a job at a startup? Or maybe just have a good time? Come join us for EClub&apos;s startup week!
             </p>
             <p>
-              Our flagship event, Startup Summit, has us booking out Fitler Club for a full day packed with over 25+ founders, a networking fair, and two incredible keynotes by the founder of Octave, Sandeep Bacharya, and the founder of Emergence Capital, Gordon Ritter.
+              Our flagship event, Startup Summit, has us booking out Fitler Club for a full day packed with over 25+ founders, a networking fair, and two incredible keynotes by the founder of Octave, Sandeep Acharya, and the founder of Emergence Capital, Gordon Ritter.
             </p>
           </div>
 
