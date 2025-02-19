@@ -92,6 +92,14 @@ const days: Day[] = [
         companyLogoUrl: logos.venrex,
         linkedinUrl: 'https://www.linkedin.com/in/ian-s-goldberg',
         companyWebsite: 'http://www.venrex.partners'
+      },
+      {
+        name: 'Jason Chen',
+        role: 'Partner at Contrary',
+        image: avatars.jasonChen,
+        company: 'Contrary',
+        companyLogoUrl: logos.contrary,
+        companyWebsite: 'https://contrary.com'
       }
     ],
   },
@@ -348,15 +356,15 @@ const days: Day[] = [
         linkedinUrl: "https://www.linkedin.com/in/ejaaz-ahamadeen-231b7030/",
         companyWebsite: "https://www.bankless.com/"
       },
-      // {
-      //   name: "Andrew F",
-      //   role: "Head of Base Engineering at Coinbase",
-      //   image: avatars.andrewF,
-      //   company: "Coinbase",
-      //   companyLogoUrl: logos.coinbase,
-      //   linkedinUrl: "https://www.linkedin.com/in/andrew-f-206a77153/",
-      //   companyWebsite: "https://www.coinbase.com/"
-      // },
+      {
+        name: "Andrew Flockhart",
+        role: "Director of Engineering For Base at ",
+        image: avatars.andrewF,
+        company: "Coinbase",
+        companyLogoUrl: logos.coinbase,
+        linkedinUrl: "https://www.linkedin.com/in/andrew-f-206a77153/",
+        companyWebsite: "https://www.coinbase.com/"
+      },
     ],
   },
 ]

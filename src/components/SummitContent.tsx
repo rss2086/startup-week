@@ -28,6 +28,8 @@ export function SummitContent() {
         <Container className="relative z-10">
           <div className="mx-auto max-w-4xl">
             <h1 className="font-display text-7xl sm:text-8xl font-bold tracking-tight text-white">
+              Wharton
+              <br/>
               Startup Summit
               <span className="block text-[#9eff65] text-3xl sm:text-4xl mt-4 font-normal">March 21st, 2025</span>
             </h1>

@@ -118,9 +118,20 @@ const weekSchedule: Array<Day> = [
       },
       {
         name: 'After Class',
-        description: 'No event scheduled',
+        description: 'Contrary Venture Capital: From Seed to Success',
         start: '5:00PM',
-        end: '6:00PM',
+        end: '6:30PM',
+        isVirtual: false,
+        speakers: [
+          {
+            name: 'Jason Chen',
+            role: 'Partner',
+            company: 'Contrary',
+            image: avatars.jasonChen,
+            companyLogoUrl: logos.contrary,
+            companyWebsite: 'https://contrary.com'
+          }
+        ]
       },
     ],
   },
@@ -452,6 +463,14 @@ export const summitSchedule: Day = {
           companyLogoUrl: logos.bankless,
           companyWebsite: 'https://www.bankless.com/'
         },
+        {
+          name: 'Andrew Flockhart',
+          role: 'Director of Engineering For Base',
+          company: 'Coinbase',
+          image: avatars.andrewF,
+          companyLogoUrl: logos.coinbase,
+          companyWebsite: 'https://www.coinbase.com/'
+        }
       ]
     },
     {
