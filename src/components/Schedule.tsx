@@ -359,7 +359,7 @@ export const summitSchedule: Day = {
       speakers: [
         {
           name: 'Eric Kinariwala',
-          role: 'Founder',
+          role: 'Founder and CEO',
           company: 'Capsule',
           image: avatars.ericKinariwala,
           companyLogoUrl: logos.capsule,

@@ -286,7 +286,7 @@ const days: Day[] = [
       // },
       {
         name: "Eric Kinariwala",
-        role: "Founder at Capsule",
+        role: "Founder and CEO at Capsule",
         image: avatars.ericKinariwala,
         company: "Capsule",
         companyLogoUrl: logos.capsule,
