@@ -287,11 +287,11 @@ export const summitSchedule: Day = {
         },
         {
           name: 'Dan Roelker',
-          role: 'Founder',
-          company: 'OurSky',
+          role: 'Co-Founder',
+          company: 'Observable Space',
           image: avatars.danielRoelker,
-          companyLogoUrl: logos.oursky,
-          companyWebsite: 'https://oursky.ai/'
+          companyLogoUrl: logos.observableSpace,
+          companyWebsite: 'https://observable.space/'
         },
         {
           name: 'Philip Johnston',

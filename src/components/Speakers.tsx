@@ -223,12 +223,12 @@ const days: Day[] = [
       },
       {
         name: "Dan Roelker",
-        role: "Founder at OurSky",
+        role: "Co-Founder at Observable Space",
         image: avatars.danielRoelker,
-        company: "OurSky",
-        companyLogoUrl: logos.oursky,
+        company: "Observable Space",
+        companyLogoUrl: logos.observableSpace,
         linkedinUrl: "https://www.linkedin.com/in/dan-roelker",
-        companyWebsite: "https://oursky.ai/"
+        companyWebsite: "https://observable.space/"
       },
       {
         name: "Philip Johnston",
