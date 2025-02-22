@@ -232,9 +232,9 @@ const days: Day[] = [
       },
       {
         name: "Philip Johnston",
-        role: "Founder at Star Cloud",
+        role: "Founder at Starcloud",
         image: avatars.phillipJohnston,
-        company: "Star Cloud",
+        company: "Starcloud",
         companyLogoUrl: logos.starcloud,
         linkedinUrl: "https://www.linkedin.com/in/johnstonphilip",
         companyWebsite: "https://www.starcloud.com/"

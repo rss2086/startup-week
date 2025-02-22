@@ -296,7 +296,7 @@ export const summitSchedule: Day = {
         {
           name: 'Philip Johnston',
           role: 'Founder',
-          company: 'Star Cloud',
+          company: 'Starcloud',
           image: avatars.phillipJohnston,
           companyLogoUrl: logos.starcloud,
           companyWebsite: 'https://www.starcloud.com/'
