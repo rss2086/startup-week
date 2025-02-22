@@ -12,7 +12,7 @@ export const logos = {
   capsule: '/images/logos/capsule.png',
   contrary: '/images/logos/contrary.png',
   coinbase: '/images/logos/coinbase.png',
-  deepmind: '/images/logos/deepmind.png',
+  // deepmind: '/images/logos/deepmind.png',
   embeddedVentures: '/images/logos/embeddedventures.png',
   emergenceCapital: '/images/logos/emergencecapital.jpeg',
   flowbo: '/images/logos/flowbo.png',
