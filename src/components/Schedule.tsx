@@ -324,14 +324,14 @@ export const summitSchedule: Day = {
       end: '10:55AM',
       isVirtual: false,
       speakers: [
-        {
-          name: 'James da Costa',
-          role: 'Partner',
-          company: 'Andreessen Horowitz',
-          image: avatars.jamesDaCosta,
-          companyLogoUrl: logos.a16z,
-          companyWebsite: 'https://a16z.com/'
-        },
+        // {
+        //   name: 'James da Costa',
+        //   role: 'Partner',
+        //   company: 'Andreessen Horowitz',
+        //   image: avatars.jamesDaCosta,
+        //   companyLogoUrl: logos.a16z,
+        //   companyWebsite: 'https://a16z.com/'
+        // },
         {
           name: 'Gabe Stengel',
           role: 'Founder',

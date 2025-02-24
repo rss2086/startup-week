@@ -257,15 +257,15 @@ const days: Day[] = [
         linkedinUrl: "https://www.linkedin.com/in/johnstonphilip",
         companyWebsite: "https://www.starcloud.com/"
       },
-      {
-        name: "James da Costa",
-        role: "Partner at a16z",
-        image: avatars.jamesDaCosta,
-        company: "Andreessen Horowitz",
-        companyLogoUrl: logos.a16z,
-        linkedinUrl: "https://www.linkedin.com/in/jamesdacosta",
-        companyWebsite: "https://a16z.com/"
-      },
+      // {
+      //   name: "James da Costa",
+      //   role: "Partner at a16z",
+      //   image: avatars.jamesDaCosta,
+      //   company: "Andreessen Horowitz",
+      //   companyLogoUrl: logos.a16z,
+      //   linkedinUrl: "https://www.linkedin.com/in/jamesdacosta",
+      //   companyWebsite: "https://a16z.com/"
+      // },
       {
         name: "Gabe Stengel",
         role: "Founder at Rogo",
