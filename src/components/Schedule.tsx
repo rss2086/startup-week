@@ -77,6 +77,13 @@ const weekSchedule: Array<Day> = [
             companyLogoUrl: logos.lowercarbonCapital,
             companyWebsite: 'https://lowercarbon.com/'
           },
+          {
+            name: 'Henry Xu',
+            company: 'Li Industries',
+            image: avatars.henryXu,
+            companyLogoUrl: logos.liIndustries,
+            companyWebsite: 'https://www.li-ind.com/'
+          }
         ]
       },
     ],
@@ -113,6 +120,13 @@ const weekSchedule: Array<Day> = [
             image: avatars.ianGoldberg,
             companyLogoUrl: logos.venrex,
             companyWebsite: 'http://www.venrex.partners'
+          },
+          {
+            name: 'Katie Tarbox',
+            company: 'Outside The Box',
+            image: avatars.katieTarbox,
+            companyLogoUrl: logos.outsideTheBox,
+            companyWebsite: 'https://www.outsidethebox.vc/'
           }
         ]
       },

@@ -59,6 +59,15 @@ const days: Day[] = [
         linkedinUrl: 'https://www.linkedin.com/in/shawnxxu/',
         companyWebsite: 'https://lowercarbon.com/'
       },
+      {
+        name: 'Henry Xu',
+        role: 'CFO & Co-Founder of Li Industries',
+        image: avatars.henryXu,
+        company: 'Li Industries',
+        companyLogoUrl: logos.liIndustries,
+        linkedinUrl: 'https://www.linkedin.com/in/xu-han-b819932a/',
+        companyWebsite: 'https://www.li-ind.com/'
+      },
     ],
   },
   {
@@ -74,6 +83,15 @@ const days: Day[] = [
         companyLogoUrl: logos.noteefy,
         linkedinUrl: 'https://www.linkedin.com/in/jng',
         companyWebsite: 'https://noteefy.app'
+      },
+      {
+        name: 'Katie Tarbox',
+        role: 'Founder & Managing Partner at Outside The Box',
+        image: avatars.katieTarbox,
+        company: 'Outside The Box',
+        companyLogoUrl: logos.outsideTheBox,
+        linkedinUrl: 'https://www.linkedin.com/in/katherine-tarbox-bbb0a43/',
+        companyWebsite: 'https://www.outsidethebox.vc/'
       },
       {
         name: 'Daniel Kang',
