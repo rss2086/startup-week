@@ -31,7 +31,19 @@ export interface TimeSlot {
     image?: string
     companyWebsite?: string
   }>
+  eventUrl?: string
+  format?: Array<{
+    time: string
+    title: string
+    description: string
+    applicationInfo?: {
+      deadline: string
+      notificationDate: string
+      slots: number
+    }
+  }>
 }
+
 const weekSchedule: Array<Day> = [
   {
     date: 'March 17',
@@ -132,9 +144,9 @@ const weekSchedule: Array<Day> = [
       },
       {
         name: 'After Class',
-        description: 'Contrary Venture Capital: From Seed to Success',
+        description: 'Inside the Deal: Fireside Chat & Early-Stage Masterclass with Contrary',
         start: '5:00PM',
-        end: '6:30PM',
+        end: '6:45PM',
         isVirtual: false,
         speakers: [
           {
@@ -144,6 +156,29 @@ const weekSchedule: Array<Day> = [
             image: avatars.jasonChen,
             companyLogoUrl: logos.contrary,
             companyWebsite: 'https://contrary.com'
+          }
+        ],
+        eventUrl: 'https://lu.ma/ContraryXStartupWeek',
+        format: [
+          {
+            time: '5:00PM - 5:45PM',
+            title: 'Fireside Chat: Inside the Deal',
+            description: 'Deep dive into a recent Contrary investment - from first meeting to partnership.'
+          },
+          {
+            time: '5:45PM - 6:00PM',
+            title: 'Reception',
+            description: 'Reception for all attendees.'
+          },
+          {
+            time: '6:00PM - 6:45PM',
+            title: 'Early-Stage Masterclass',
+            description: 'Exclusive session for 5 pre-selected teams to pitch and receive feedback.',
+            applicationInfo: {
+              deadline: 'March 12',
+              notificationDate: 'March 15',
+              slots: 5
+            }
           }
         ]
       },
@@ -332,6 +367,14 @@ export const summitSchedule: Day = {
         //   companyLogoUrl: logos.a16z,
         //   companyWebsite: 'https://a16z.com/'
         // },
+        {
+          name: 'Josh Lillie',
+          role: 'Director of Startups',
+          company: 'Databricks',
+          image: avatars.joshLillie,
+          companyLogoUrl: logos.databricks,
+          companyWebsite: 'https://www.databricks.com/'
+        },
         {
           name: 'Gabe Stengel',
           role: 'Founder',
@@ -813,6 +856,76 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
                       </div>
                     </div>
                   ))
+                )}
+              </div>
+            )}
+
+            {/* Event Format Section */}
+            {'format' in timeSlot && timeSlot.format && (
+              <div className="w-full max-w-3xl mx-auto mt-8 space-y-6">
+                <div className="grid gap-4">
+                  {timeSlot.format.map((segment, idx) => (
+                    <div key={idx} className="bg-white/90 rounded-xl border border-blue-100/20 p-4 sm:p-6">
+                      <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+                        <div className="flex-shrink-0">
+                          <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-medium">
+                            {segment.time}
+                          </div>
+                        </div>
+                        <div className="flex-grow">
+                          <h4 className="text-lg font-semibold text-blue-900 mb-2">
+                            {segment.title}
+                          </h4>
+                          <p className="text-gray-600">
+                            {segment.description}
+                          </p>
+                          {segment.applicationInfo && (
+                            <div className="mt-4 p-4 bg-blue-50/50 rounded-lg border border-blue-100">
+                              <div className="flex items-start gap-3">
+                                <div className="flex-shrink-0 w-5 h-5 mt-0.5">
+                                  <svg className="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                  </svg>
+                                </div>
+                                <div className="flex-grow">
+                                  <h5 className="text-sm font-semibold text-blue-900 mb-2">Application Details</h5>
+                                  <ul className="space-y-2 text-sm text-gray-600">
+                                    <li className="flex items-center gap-2">
+                                      <span className="font-medium">Slots Available:</span>
+                                      {segment.applicationInfo.slots} teams
+                                    </li>
+                                    <li className="flex items-center gap-2">
+                                      <span className="font-medium">Application Deadline:</span>
+                                      {segment.applicationInfo.deadline}
+                                    </li>
+                                    <li className="flex items-center gap-2">
+                                      <span className="font-medium">Notification Date:</span>
+                                      {segment.applicationInfo.notificationDate}
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {timeSlot.eventUrl && (
+                  <div className="flex justify-center">
+                    <a
+                      href={timeSlot.eventUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors duration-200"
+                    >
+                      Register for Event
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </a>
+                  </div>
                 )}
               </div>
             )}

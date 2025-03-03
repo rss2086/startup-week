@@ -117,7 +117,8 @@ const days: Day[] = [
         image: avatars.jasonChen,
         company: 'Contrary',
         companyLogoUrl: logos.contrary,
-        companyWebsite: 'https://contrary.com'
+        companyWebsite: 'https://contrary.com',
+        linkedinUrl:'https://www.linkedin.com/in/jasonchen623/'
       }
     ],
   },
@@ -266,6 +267,15 @@ const days: Day[] = [
       //   linkedinUrl: "https://www.linkedin.com/in/jamesdacosta",
       //   companyWebsite: "https://a16z.com/"
       // },
+      {
+        name: "Josh Lillie",
+        role: "Director of Startups",
+        image: avatars.joshLillie,
+        company: "Databricks",
+        companyLogoUrl: logos.databricks,
+        linkedinUrl: "https://www.linkedin.com/in/josh-lillie-0a4a8982/",
+        companyWebsite: "https://www.databricks.com/"
+      },  
       {
         name: "Gabe Stengel",
         role: "Founder at Rogo",
