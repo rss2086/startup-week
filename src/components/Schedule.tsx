@@ -175,8 +175,8 @@ const weekSchedule: Array<Day> = [
             title: 'Early-Stage Masterclass',
             description: 'Exclusive session for 5 pre-selected teams to pitch and receive feedback.',
             applicationInfo: {
-              deadline: 'March 12',
-              notificationDate: 'March 15',
+              deadline: 'March 15 (Saturday)',
+              notificationDate: 'March 17 (Monday)',
               slots: 5
             }
           }
@@ -312,6 +312,13 @@ export const summitSchedule: Day = {
   dateTime: '2024-03-21',
   summary: 'Our flagship event at Fitler Club featuring industry leaders, keynotes, and extensive networking.',
   timeSlots: [
+    {
+      name: 'Registration & Breakfast',
+      description: 'Check in and enjoy breakfast before the summit begins',
+      start: '8:00AM',
+      end: '9:00AM',
+      isVirtual: false
+    },
     {
       name: 'Intro to Summit',
       description: null,
@@ -531,10 +538,10 @@ export const summitSchedule: Day = {
       ]
     },
     {
-      name: 'Startup Networking Fair',
-      description: 'Connect with founders, investors, and fellow entrepreneurs',
+      name: 'Startup Networking Fair & Happy Hour',
+      description: 'Connect with founders, investors, and fellow entrepreneurs. Open bar until 5:00PM.',
       start: '3:15PM',
-      end: '5:00PM',
+      end: '6:00PM',
       isVirtual: false
     },
   ],
