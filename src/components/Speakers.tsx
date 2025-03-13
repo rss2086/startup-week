@@ -258,6 +258,15 @@ const days: Day[] = [
         linkedinUrl: "https://www.linkedin.com/in/johnstonphilip",
         companyWebsite: "https://www.starcloud.com/"
       },
+      {
+        name: 'Shreya Rajpal',
+        role: 'Co-Founder and CEO',
+        company: 'Guardrails AI',
+        image: avatars.shreyaRajpal,
+        companyLogoUrl: logos.guardrailsAI,
+        companyWebsite: 'https://guardrailsai.com',
+        linkedinUrl: 'https://www.linkedin.com/in/shreya-rajpal'
+      },
       // {
       //   name: "James da Costa",
       //   role: "Partner at a16z",
