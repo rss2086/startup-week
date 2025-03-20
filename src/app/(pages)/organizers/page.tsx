@@ -18,9 +18,9 @@ const teams = [
         bio: 'Overseeing the overall conference strategy and execution'
       },
       {
-        name: 'Ghassan Zubhaid',
+        name: 'Ghassan Zughaib',
         role: 'Conference Vice President', 
-        image: '/images/avatars/ghassan-zubhaid.jpg',
+        image: '/images/avatars/ghassan-zughaib.jpg',
         linkedin: 'https://www.linkedin.com/in/ghassan-zughaib/',
         bio: 'Managing speaker relations and event programming'
       },
