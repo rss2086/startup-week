@@ -18,6 +18,12 @@ export interface EventbriteTicket {
   quantity_total: number
   quantity_sold: number
   status: 'on_sale' | 'sold_out' | 'not_yet_on_sale'
+  discount?: {
+    percent_off?: number
+    amount_off?: number
+    code?: string
+    original_price?: number
+  }
 }
 
 export interface EventbriteEvent {
@@ -250,5 +256,35 @@ export async function getEventDetails(eventId: string) {
   } catch (error) {
     console.error('Error fetching event details:', error)
     throw error
+  }
+}
+
+export async function getEventDiscounts(eventId: string) {
+  if (!EVENTBRITE_API_KEY) {
+    throw new Error('EVENTBRITE_API_KEY is not set')
+  }
+
+  const url = `${BASE_URL}/events/${eventId}/discounts/`
+
+  try {
+    const response = await fetch(url, {
+      headers: {
+        'Authorization': `Bearer ${EVENTBRITE_API_KEY}`,
+        'Accept': 'application/json'
+      },
+      next: { revalidate: 3600 }
+    })
+
+    if (!response.ok) {
+      const errorText = await response.text()
+      throw new Error(`Failed to fetch event discounts: ${response.status} ${errorText}`)
+    }
+
+    const data = await response.json()
+    console.log('Event Discounts:', JSON.stringify(data, null, 2))
+    return data
+  } catch (error) {
+    console.error('Error fetching event discounts:', error)
+    return { discounts: [] } // Return empty array on error to prevent breaking the UI
   }
 }
