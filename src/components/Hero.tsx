@@ -8,7 +8,7 @@ import { LogoMarquee } from '@/components/LogoMarquee'
 import { motion } from 'framer-motion'
 
 function AnimatedTitle() {
-  const text = "Wharton Startup Week"
+  const text = "Wharton Startup Summit"
   const words = text.split(" ")
 
   const container = {
@@ -26,7 +26,7 @@ function AnimatedTitle() {
       y: 0,
       scale: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 12,
         stiffness: 100,
         duration: 0.8,
@@ -38,7 +38,7 @@ function AnimatedTitle() {
       y: 20,
       scale: 0.9,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 12,
         stiffness: 100,
       },
@@ -110,16 +110,16 @@ export function Hero() {
 
           <div className="space-y-6 text-xl text-gray-300 max-w-3xl mx-auto mb-12">
             <p>
-              Want to meet cool founders? Network your way to a job at a startup? Or maybe just have a good time? Come join us for EClub&apos;s startup week!
+              Want to meet cool founders? Network your way to a job at a startup? Or maybe just have a good time? Come join us for EClub&apos;s Startup Summit!
             </p>
             <p>
-              Our flagship event, Startup Summit, has us booking out Fitler Club for a full day packed with over 25+ founders, a networking fair, and two incredible keynotes by the founder of Octave, Sandeep Acharya, and the founder of Emergence Capital, Gordon Ritter.
+              Our flagship event, Startup Summit, has us booking out Sheraton University City for a full day packed with over 25+ founders, a networking fair, and two incredible keynotes by the founder of Octave, Sandeep Acharya, and the founder of Emergence Capital, Gordon Ritter.
             </p>
           </div>
 
           <div className="my-24 flex flex-col sm:flex-row items-center justify-center gap-6">
             <Button
-              href="https://www.eventbrite.com/e/wharton-startup-week-summit-2025-tickets-1248998310569"
+              href="https://www.eventbrite.com/e/wharton-startup-summit-2026-tickets-1984248331173"
               color="white"
               target="_blank"
               rel="noopener noreferrer"
@@ -144,7 +144,7 @@ export function Hero() {
             {[
               ['Speakers and Panelists', '25+ Founders & VCs'],
               ['Expected Attendees', '250+'],
-              ['Main Venues', 'Huntsman Hall & Fitler Club'],
+              ['Venue', 'Sheraton University City'],
               ['Location', 'Philadelphia, PA'],
             ].map(([name, value]) => (
               <div key={name} className="p-6 bg-white/5 backdrop-blur rounded-xl border border-white/20">

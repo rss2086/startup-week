@@ -8,116 +8,103 @@ import clsx from 'clsx'
 const teams = [
   {
     name: 'Conference Leadership',
-    description: 'Leading and organizing Startup Week 2025',
+    description: 'Leading and organizing Startup Summit 2026',
     members: [
       {
-        name: 'Claire North',
-        role: 'Conference President',
-        image: '/images/avatars/claire-north.jpg',
-        linkedin: 'https://www.linkedin.com/in/claire-north-12072b11b/',
+        name: 'Matt Seck',
+        role: 'Conference Co-Chair',
+        image: '/images/avatars/matt-seck.jpg',
+        linkedin: 'https://www.linkedin.com/in/matt-seck/',
         bio: 'Overseeing the overall conference strategy and execution'
       },
       {
-        name: 'Ghassan Zughaib',
-        role: 'Conference Vice President', 
-        image: '/images/avatars/ghassan-zughaib.jpg',
-        linkedin: 'https://www.linkedin.com/in/ghassan-zughaib/',
+        name: 'Ada Zhang',
+        role: 'Conference Co-Chair',
+        image: '/images/avatars/ada-zhang.jpg',
+        linkedin: 'https://www.linkedin.com/in/ada-zhang/',
+        bio: 'Overseeing the overall conference strategy and execution'
+      },
+      {
+        name: 'Nehal Rawat',
+        role: 'Conference Vice Chair',
+        image: '/images/avatars/nehal-rawat.jpg',
+        linkedin: 'https://www.linkedin.com/in/nehal-rawat/',
+        bio: 'Managing speaker relations and event programming'
+      },
+      {
+        name: 'Lu Lu',
+        role: 'Conference Vice Chair',
+        image: '/images/avatars/lu-lu.jpg',
+        linkedin: 'https://www.linkedin.com/in/lu-lu/',
         bio: 'Managing speaker relations and event programming'
       },
     ]
   },
-  {
-    name: 'Conference Committee',
-    description: 'Driving key initiatives and ensuring successful execution',
-    members: [
-      {
-        name: 'Don Dao',
-        role: 'WGA Conference Lead',
-        image: '/images/avatars/don-dao.jpeg',
-        linkedin: 'https://www.linkedin.com/in/donqdao/',
-        bio: 'Keynote Sourcing, Early Stage Investor'
-      },
-      {
-        name: 'Nico Aldeanueva',
-        role: 'Operations Director',
-        image: '/images/avatars/nico-aldeanueva.jpg',
-        linkedin: 'https://www.linkedin.com/in/nicolas-aldeanueva-34ab24126/',
-        bio: 'Coordinating event logistics and venue management'
-      },
-      {
-        name: 'Christo Ritter',
-        role: 'Partnerships Lead',
-        image: '/images/avatars/christo-ritter.jpg',
-        linkedin: 'https://www.linkedin.com/in/christoritter/',
-        bio: 'Managing sponsor relationships and partnerships'
-      },
-      {
-        name: 'Ben Wang',
-        role: 'Marketing Director',
-        image: '/images/avatars/ben-wang.jpg',
-        linkedin: 'https://www.linkedin.com/in/benwangg/',
-        bio: 'Leading brand strategy and community engagement'
-      },
-      {
-        name: 'Alex Liu',
-        role: 'Technology Lead',
-        image: '/images/avatars/alex-liu.jpg',
-        linkedin: 'https://www.linkedin.com/in/xalexliu/',
-        bio: 'Managing digital platforms and technical infrastructure'
-      },
-      {
-        name: 'Devon Murphy',
-        role: 'Content Strategy Lead',
-        image: '/images/avatars/devon-murphy.jpg',
-        linkedin: 'https://www.linkedin.com/in/devon-m-7b56bb141/',
-        bio: 'Developing content strategy and speaker programming'
-      },
-    ]
-  },
-  {
-    name: 'Finance Committee',
-    description: 'Managing budget and financial operations',
-    members: [
-      {
-        name: 'Rachana Lingutla',
-        role: 'EClub Head of Finance',
-        image: '/images/avatars/rachana-lingutla.jpeg',
-        linkedin: 'https://www.linkedin.com/in/rlingutla/',
-        bio: 'Managing financial operations and reporting'
-      },
-      {
-        name: 'Kamal Kadiri',
-        role: 'EClub Finance VP',
-        image: '/images/avatars/kamal-kadiri.jpeg',
-        linkedin: 'https://www.linkedin.com/in/kkadiri/',
-        bio: 'Managing expense tracking and vendor payments'
-      },
-    ]
-  },
+  // {
+  //   name: 'Conference Committee',
+  //   description: 'Driving key initiatives and ensuring successful execution',
+  //   members: [
+  //     {
+  //       name: 'Don Dao',
+  //       role: 'WGA Conference Lead',
+  //       image: '/images/avatars/don-dao.jpeg',
+  //       linkedin: 'https://www.linkedin.com/in/donqdao/',
+  //       bio: 'Keynote Sourcing, Early Stage Investor'
+  //     },
+  //     {
+  //       name: 'Nico Aldeanueva',
+  //       role: 'Operations Director',
+  //       image: '/images/avatars/nico-aldeanueva.jpg',
+  //       linkedin: 'https://www.linkedin.com/in/nicolas-aldeanueva-34ab24126/',
+  //       bio: 'Coordinating event logistics and venue management'
+  //     },
+  //     {
+  //       name: 'Christo Ritter',
+  //       role: 'Partnerships Lead',
+  //       image: '/images/avatars/christo-ritter.jpg',
+  //       linkedin: 'https://www.linkedin.com/in/christoritter/',
+  //       bio: 'Managing sponsor relationships and partnerships'
+  //     },
+  //     {
+  //       name: 'Ben Wang',
+  //       role: 'Marketing Director',
+  //       image: '/images/avatars/ben-wang.jpg',
+  //       linkedin: 'https://www.linkedin.com/in/benwangg/',
+  //       bio: 'Leading brand strategy and community engagement'
+  //     },
+  //     {
+  //       name: 'Alex Liu',
+  //       role: 'Technology Lead',
+  //       image: '/images/avatars/alex-liu.jpg',
+  //       linkedin: 'https://www.linkedin.com/in/xalexliu/',
+  //       bio: 'Managing digital platforms and technical infrastructure'
+  //     },
+  //     {
+  //       name: 'Devon Murphy',
+  //       role: 'Content Strategy Lead',
+  //       image: '/images/avatars/devon-murphy.jpg',
+  //       linkedin: 'https://www.linkedin.com/in/devon-m-7b56bb141/',
+  //       bio: 'Developing content strategy and speaker programming'
+  //     },
+  //   ]
+  // },
   {
     name: 'Club Leadership',
-    description: 'Supporting Startup Week through EClub resources and network',
+    description: 'Supporting Startup Summit through EClub resources and network',
     members: [
       {
-        name: 'Rohan Shah',
+        name: 'Alex Liu',
         role: 'EClub Co-President',
-        image: '/images/avatars/rohan-shah.jpg',
-        linkedin: 'https://www.linkedin.com/in/rss2086/',
-        bio: 'Providing strategic oversight and club resources + built this website'
+        image: '/images/avatars/alex-liu.jpg',
+        linkedin: 'https://www.linkedin.com/in/xalexliu/',
+        bio: 'Providing strategic oversight and club resources'
       },
       {
-        name: 'Srineetha Maddineni',
-        role: 'EClub Co-President',
-        image: '/images/avatars/srineetha-maddineni.jpg',
-        linkedin: 'https://www.linkedin.com/in/srineethamaddineni/',
-        bio: 'Facilitating club partnerships and financial operations'
-      },
-      {
-        name: 'Naman Jain',
-        role: 'EClub Co-President',
-        image: '/images/avatars/naman-jain.jpeg',
-        linkedin: 'https://www.linkedin.com/in/naman-jain-5a6126165/',
-        bio: 'Facilitating club partnerships and financial operations'
+        name: 'Onyi Ozoma',
+        role: 'Chief Financial Officer',
+        image: '/images/avatars/onyi-ozoma.jpg',
+        linkedin: 'https://www.linkedin.com/in/onyi-ozoma/',
+        bio: 'Managing financial operations and budget oversight'
       },
     ]
   },
@@ -153,18 +140,18 @@ function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export const metadata: Metadata = {
-  title: 'Organizing Team - Startup Week 2025',
-  description: 'Meet the dedicated team behind Startup Week 2025. Our student organizers from the Wharton Entrepreneurship Club work tirelessly to bring you an exceptional entrepreneurship experience.',
+  title: 'Organizing Team - Startup Summit 2026',
+  description: 'Meet the dedicated team behind Startup Summit 2026. Our student organizers from the Wharton Entrepreneurship Club work tirelessly to bring you an exceptional entrepreneurship experience.',
   keywords: 'organizing team, student organizers, Wharton E-Club, event planning, leadership team, committee members',
   openGraph: {
-    title: 'Organizing Team - Startup Week 2025',
-    description: 'Meet the dedicated team behind Startup Week 2025.',
+    title: 'Organizing Team - Startup Summit 2026',
+    description: 'Meet the dedicated team behind Startup Summit 2026.',
     images: ['/images/og-image.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Organizing Team - Startup Week 2025',
-    description: 'Meet the dedicated team behind Startup Week 2025.',
+    title: 'Organizing Team - Startup Summit 2026',
+    description: 'Meet the dedicated team behind Startup Summit 2026.',
     images: ['/images/og-image.png'],
   },
 }
@@ -178,7 +165,7 @@ export default function OrganizersPage() {
             Meet Our Team
           </h2>
           <p className="mt-4 font-display text-2xl tracking-tight text-blue-900">
-            The dedicated individuals bringing you Startup Week 2025.
+            The dedicated individuals bringing you Startup Summit 2026.
           </p>
         </div>
         
@@ -236,10 +223,10 @@ export default function OrganizersPage() {
         <div className="mx-auto mt-24 max-w-3xl rounded-2xl bg-blue-50 px-8 py-12">
           <div className="flex flex-col items-center text-center">
             <h2 className="font-display text-2xl font-medium tracking-tight text-blue-900">
-              Join Our Team for 2026
+              Join Our Team for 2027
             </h2>
             <p className="mt-4 text-lg tracking-tight text-slate-700">
-              Want to help organize Penn&apos;s largest entrepreneurship event? Keep an eye on your inbox - we&apos;ll be sending out committee recruitment emails in Fall 2025!
+              Want to help organize Penn&apos;s largest entrepreneurship event? Keep an eye on your inbox - we&apos;ll be sending out committee recruitment emails in Fall 2026!
             </p>
           </div>
         </div>

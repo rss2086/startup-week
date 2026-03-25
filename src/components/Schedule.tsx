@@ -1,11 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import clsx from 'clsx'
 import Image from 'next/image'
 
-import { BackgroundImage } from '@/components/BackgroundImage'
 import { Container } from '@/components/Container'
 import { avatars, logos } from '@/config/images'
 import startupSummit from '@/images/startup-summit.png'
@@ -44,584 +41,246 @@ export interface TimeSlot {
   }>
 }
 
-const weekSchedule: Array<Day> = [
-  {
-    date: 'March 17',
-    dateTime: '2024-03-17',
-    summary: 'Monday focuses on legal aspects and climate tech innovation.',
-    timeSlots: [
-      {
-        name: 'Lunch Event',
-        description: 'Legal Aspects of Entrepreneurship - Fireside Chat',
-        start: '12:00PM',
-        end: '1:00PM',
-        isVirtual: false,
-        speakers: [
-          {
-            name: 'Robert Borghese',
-            role: 'Professor',
-            company: 'Wharton',
-            image: avatars.robertBorghese,
-            companyLogoUrl: logos.wharton,
-            companyWebsite: 'https://lgst.wharton.upenn.edu/profile/borghese/'
-          }
-        ]
-      },
-      {
-        name: 'After Class',
-        description: 'Climate Tech Panel',
-        start: '5:00PM',
-        end: '6:00PM',
-        isVirtual: true,
-        speakers: [
-          {
-            name: 'Brian Riordan',
-            company: 'Avalanche',
-            role: 'Founder',
-            image: avatars.brianRiordan,
-            companyLogoUrl: logos.avalanche,
-            companyWebsite: 'https://avalanchefusion.com/'
-          },
-          {
-            name: 'Shawn Xu',
-            company: 'Lowercarbon',
-            image: avatars.shawnXu,
-            companyLogoUrl: logos.lowercarbonCapital,
-            companyWebsite: 'https://lowercarbon.com/'
-          },
-          {
-            name: 'Henry Xu',
-            company: 'Li Industries',
-            image: avatars.henryXu,
-            companyLogoUrl: logos.liIndustries,
-            companyWebsite: 'https://www.li-ind.com/'
-          }
-        ]
-      },
-    ],
-  },
-  {
-    date: 'March 18',
-    dateTime: '2024-03-18',
-    summary: 'Tuesday explores the journey from seed to Series A funding.',
-    timeSlots: [
-      {
-        name: 'Lunch Event',
-        description: 'Navigating Early Days Building a Startup',
-        start: '12:00PM',
-        end: '1:00PM',
-        isVirtual: true,
-        speakers: [
-          {
-            name: 'Jake Gordon',
-            company: 'Noteefy',
-            image: avatars.jakeGordon,
-            companyLogoUrl: logos.noteefy,
-            companyWebsite: 'https://noteefy.app'
-          },
-          {
-            name: 'Daniel Kang',
-            company: 'Flowbo',
-            image: avatars.danielKang,
-            companyLogoUrl: logos.flowbo,
-            companyWebsite: 'https://www.flowbo.co'
-          },
-          {
-            name: 'Ian Goldberg',
-            company: 'Venrex',
-            image: avatars.ianGoldberg,
-            companyLogoUrl: logos.venrex,
-            companyWebsite: 'http://www.venrex.partners'
-          },
-          {
-            name: 'Katie Tarbox',
-            company: 'Outside The Box',
-            image: avatars.katieTarbox,
-            companyLogoUrl: logos.outsideTheBox,
-            companyWebsite: 'https://www.outsidethebox.vc/'
-          }
-        ]
-      },
-      {
-        name: 'After Class',
-        description: 'Inside the Deal: Fireside Chat & Early-Stage Masterclass with Contrary',
-        start: '5:00PM',
-        end: '6:45PM',
-        isVirtual: false,
-        speakers: [
-          {
-            name: 'Jason Chen',
-            role: 'Partner',
-            company: 'Contrary',
-            image: avatars.jasonChen,
-            companyLogoUrl: logos.contrary,
-            companyWebsite: 'https://contrary.com'
-          }
-        ],
-        eventUrl: 'https://lu.ma/ContraryXStartupWeek',
-        format: [
-          {
-            time: '5:00PM - 5:45PM',
-            title: 'Fireside Chat: Inside the Deal',
-            description: 'Deep dive into a recent Contrary investment - from first meeting to partnership.'
-          },
-          {
-            time: '5:45PM - 6:00PM',
-            title: 'Reception',
-            description: 'Reception for all attendees.'
-          },
-          {
-            time: '6:00PM - 6:45PM',
-            title: 'Early-Stage Masterclass',
-            description: 'Exclusive session for 5 pre-selected teams to pitch and receive feedback.',
-            applicationInfo: {
-              deadline: 'March 15 (Saturday)',
-              notificationDate: 'March 17 (Monday)',
-              slots: 5
-            }
-          }
-        ]
-      },
-    ],
-  },
-  {
-    date: 'March 19',
-    dateTime: '2024-03-19',
-    summary: 'Wednesday focuses on startup careers and AI innovation.',
-    timeSlots: [
-      {
-        name: 'Lunch Event',
-        description: 'Getting a job at a startup: Wharton Students Panel',
-        start: '12:00PM',
-        end: '1:00PM',
-        isVirtual: false,
-        speakers: [
-          {
-            name: 'Hannah Frankl',
-            role: 'Wharton Student',
-            company: 'Rogo (Fin Tech)',
-            image: avatars.hannahFrankl,
-            companyLogoUrl: logos.rogo,
-            companyWebsite: 'https://rogo.ai/'
-          },
-          {
-            name: 'Allie DiPietro',
-            role: 'Wharton Student',
-            company: 'Juniver (Health Tech)',
-            image: avatars.allieDiPietro,
-            companyLogoUrl: logos.juniver,
-            companyWebsite: 'https://www.joinjuniver.com/'
-          },
-          {
-            name: 'Jacqueline Keene',
-            role: 'Wharton Student',
-            company: 'Sown to Grown (Ed Tech)',
-            image: avatars.jacquelineKeene,
-            companyLogoUrl: logos.sowntogrow,
-            companyWebsite: 'https://www.sowntogrow.com/'
-          },
-          {
-            name: 'Filippos Letsas',
-            role: 'Wharton Student',
-            company: 'Auterion (Deep Tech)',
-            image: avatars.filipposLetsas,
-            companyLogoUrl: logos.auterion,
-            companyWebsite: 'https://auterion.com/'
-          }
-        ]
-      },
-      {
-        name: 'After Class',
-        description: 'How AI is Making the World Flat',
-        start: '5:00PM',
-        end: '6:00PM',
-        isVirtual: true,
-        speakers: [
-          {
-            name: 'Nicole Sahin',
-            company: 'Globalization Partners',
-            image: avatars.nicoleSahin,
-            companyLogoUrl: logos.globalizationPartners,
-            companyWebsite: 'https://www.globalization-partners.com/'
-          }
-        ]
-      },
-    ],
-  },
-  {
-    date: 'March 20',
-    dateTime: '2024-03-20',
-    summary: 'Thursday highlights women in VC and AI innovation.',
-    timeSlots: [
-      {
-        name: 'Lunch Event',
-        description: 'Women in VC Panel',
-        start: '12:00PM',
-        end: '1:00PM',
-        isVirtual: true,
-        speakers: [
-          {
-            name: 'Jenna Bryant',
-            role: 'Founder, GP',
-            company: 'Embedded Ventures',
-            image: avatars.jennaBryant,
-            companyLogoUrl: logos.embeddedVentures,
-            companyWebsite: 'https://embedded.ventures/'
-          },
-          {
-            name: 'Urvashi Barooah',
-            role: 'Partner',
-            company: 'Redpoint Ventures',
-            image: avatars.urvashipBarooah,
-            companyLogoUrl: logos.redpoint,
-            companyWebsite: 'https://www.redpoint.com/'
-          },
-          {
-            name: 'Sue Xu',
-            role: 'GP',
-            company: 'Amino Capital',
-            image: avatars.sueXu,
-            companyLogoUrl: logos.aminocapital,
-            companyWebsite: 'https://www.aminocapital.com/'
-          }
-        ]
-      },
-      {
-        name: 'After Class',
-        description: 'Fireside Chat with Moonhub AI',
-        start: '5:00PM',
-        end: '6:00PM',
-        isVirtual: true,
-        speakers: [
-          {
-            name: 'Nancy Xu',
-            role: 'Founder, CEO',
-            company: 'Moonhub AI, Stanford',
-            image: avatars.nancyXu,
-            companyLogoUrl: logos.moonhubAi,
-            companyWebsite: 'https://www.moonhub.ai/'
-          }
-        ]
-      },
-    ],
-  },
-]
-
 export const summitSchedule: Day = {
-  date: 'March 21',
-  dateTime: '2024-03-21',
-  summary: 'Our flagship event at Fitler Club featuring industry leaders, keynotes, and extensive networking.',
+  date: 'March 27',
+  dateTime: '2026-03-27',
+  summary: 'Our flagship event at Sheraton University City featuring industry leaders, keynotes, and extensive networking.',
   timeSlots: [
     {
-      name: 'Registration & Breakfast',
-      description: 'Check in and enjoy breakfast before the summit begins',
-      start: '8:00AM',
+      name: 'Registration & Coffee',
+      description: 'Check in and enjoy coffee before the summit begins',
+      start: '8:30AM',
       end: '9:00AM',
-      isVirtual: false
+      isVirtual: false,
     },
     {
-      name: 'Intro to Summit',
+      name: 'Opening Remarks',
       description: null,
       start: '9:00AM',
-      end: '9:10AM',
-      isVirtual: false
-    },
-    {
-      name: 'Deep Tech Panel',
-      description: 'Innovations in Deep Tech',
-      start: '9:10AM',
-      end: '10:00AM',
+      end: '9:05AM',
       isVirtual: false,
-      speakers: [
-        {
-          name: 'Jordan Noone',
-          role: 'Co-Founder @ Zoo and Relativity Space',
-          company: 'Zoo',
-          image: avatars.jordanNoone,
-          companyLogoUrl: logos.zoo,
-          companyWebsite: 'https://www.zoo.co/'
-        },
-        {
-          name: 'Dan Roelker',
-          role: 'Co-Founder',
-          company: 'Observable Space',
-          image: avatars.danielRoelker,
-          companyLogoUrl: logos.observableSpace,
-          companyWebsite: 'https://observable.space/'
-        },
-        {
-          name: 'Philip Johnston',
-          role: 'Founder',
-          company: 'Starcloud',
-          image: avatars.phillipJohnston,
-          companyLogoUrl: logos.starcloud,
-          companyWebsite: 'https://www.starcloud.com/'
-        }
-      ]
-    },
-    {
-      name: 'Enterprise AI Panel',
-      description: 'The Future of Enterprise AI',
-      start: '10:05AM',
-      end: '10:55AM',
-      isVirtual: false,
-      speakers: [
-        {
-          name: 'Shreya Rajpal',
-          role: 'Co-Founder and CEO',
-          company: 'Guardrails AI',
-          image: avatars.shreyaRajpal,
-          companyLogoUrl: logos.guardrailsAI,
-          companyWebsite: 'https://guardrailsai.com',
-        },
-        {
-          name: 'Josh Lillie',
-          role: 'Director of Startups',
-          company: 'Databricks',
-          image: avatars.joshLillie,
-          companyLogoUrl: logos.databricks,
-          companyWebsite: 'https://www.databricks.com/'
-        },
-        {
-          name: 'Gabe Stengel',
-          role: 'Founder',
-          company: 'Rogo',
-          image: avatars.gabrielStengel,
-          companyLogoUrl: logos.rogo,
-          companyWebsite: 'https://www.rogo.ai'
-        },
-        {
-          name: 'Haroon Choudery',
-          role: 'Founder',
-          company: 'Autoblocks AI',
-          image: avatars.haroonChoudery,
-          companyLogoUrl: logos.autoblocksAi,
-          companyWebsite: 'https://www.autoblocks.ai/'
-        },
-        // {
-        //   name: 'Logan Kilpatrick',
-        //   role: 'Founder, Former A16z Scout',
-        //   company: 'DeepMind, Google Gemini, Early stage AI VC',
-        //   image: avatars.loganKilpatrick,
-        //   companyLogoUrl: logos.deepmind
-        // },
-        // {
-        //   name: 'John Nay',
-        //   role: 'Founder, CEO',
-        //   company: 'Norm AI',
-        //   image: avatars.johnNay,
-        //   companyLogoUrl: logos.normAi
-        // }
-      ]
-    },
-    {
-      name: 'Wharton Healthcare Founders Panel',
-      description: 'Innovation in Healthcare',
-      start: '11:00AM',
-      end: '11:50AM',
-      isVirtual: false,
-      speakers: [
-        {
-          name: 'Eric Kinariwala',
-          role: 'Founder and CEO',
-          company: 'Capsule',
-          image: avatars.ericKinariwala,
-          companyLogoUrl: logos.capsule,
-          companyWebsite: 'https://www.capsule.com/'
-        },
-        {
-          name: 'Cavan Klinsky',
-          role: 'Founder',
-          company: 'Healthie',
-          image: avatars.cavanKlinsky,
-          companyLogoUrl: logos.healthie,
-          companyWebsite: 'https://www.gethealthie.com/'
-        },
-        {
-          name: 'Justin Silver',
-          role: 'Founder',
-          company: 'Symptoguard & Aavrani',
-          image: avatars.justinSilver,
-          companyLogoUrl: logos.symptoguard,
-          companyWebsite: 'https://www.symptoguard.com/'
-        }
-      ]
     },
     {
       name: 'Keynote Speaker',
-      description: 'Healthcare Innovation & Leadership',
-      start: '11:55AM',
-      end: '12:35PM',
+      description: 'Building the Creator Economy',
+      start: '9:05AM',
+      end: '9:45AM',
       isVirtual: false,
       speakers: [
         {
-          name: 'Sandeep Acharya',
+          name: 'John Hu',
           role: 'Founder & CEO',
-          company: 'Octave',
-          image: avatars.sandeepAcharya,
-          companyLogoUrl: logos.octave,
-          companyWebsite: 'https://www.findoctave.com/'
-        }
-      ]
+          company: 'Stan',
+          image: avatars.johnHu,
+          companyLogoUrl: logos.stan,
+          companyWebsite: 'https://www.stan.store/',
+        },
+      ],
     },
     {
-      name: 'Lunch Break',
-      description: null,
-      start: '12:35PM',
-      end: '1:25PM',
-      isVirtual: false
+      name: 'VC Panel',
+      description: "Funding the Frontier: Inside Today's VC Landscape",
+      start: '9:50AM',
+      end: '10:40AM',
+      isVirtual: false,
+      speakers: [
+        {
+          name: 'Mia Farnham',
+          role: 'Principal',
+          company: 'Precursor Ventures',
+          image: avatars.miaFarnham,
+          companyLogoUrl: logos.precursorVentures,
+          companyWebsite: 'https://precursorvc.com/',
+        },
+        {
+          name: 'Emma Silverman',
+          role: 'Partner',
+          company: 'TMV',
+          image: avatars.emmaSilverman,
+          companyLogoUrl: logos.tmv,
+          companyWebsite: 'https://www.tmv.vc/',
+        },
+        {
+          name: 'Aditya Nidmarti',
+          role: 'Vice Principal',
+          company: 'Bessemer Venture Partners',
+          image: avatars.adityaNidmarti,
+          companyLogoUrl: logos.bessemerVenturePartners,
+          companyWebsite: 'https://www.bvp.com/',
+        },
+        {
+          name: 'Emily Man',
+          role: 'Partner',
+          company: 'Primary Venture Partners',
+          image: avatars.emilyMan,
+          companyLogoUrl: logos.primaryVenturePartners,
+          companyWebsite: 'https://www.primary.vc/',
+        },
+      ],
     },
     {
       name: 'Keynote Speaker',
-      description: 'The Future of Enterprise Software & Venture Capital',
-      start: '1:30PM',
-      end: '2:20PM',
+      description: 'Investing in the Future of Tech',
+      start: '10:50AM',
+      end: '11:30AM',
       isVirtual: false,
       speakers: [
         {
-          name: 'Gordon Ritter',
-          role: 'Founder & General Partner',
-          company: 'Emergence Capital',
-          image: avatars.gordonRitter,
-          companyLogoUrl: logos.emergenceCapital,
-          companyWebsite: 'https://www.emcap.com/'
-        }
-      ]
+          name: 'Saanya Ojha',
+          role: 'Partner',
+          company: 'Bain Capital Ventures',
+          image: avatars.saanyaOjha,
+          companyLogoUrl: logos.bainCapitalVentures,
+          companyWebsite: 'https://www.baincapitalventures.com/',
+        },
+      ],
     },
     {
-      name: 'State of Crypto Panel Discussion',
-      description: 'The Future of Crypto and Web3',
-      start: '2:25PM',
-      end: '3:15PM',
+      name: 'Fintech Panel',
+      description: "The Future of Money: Building in Fintech's Next Era",
+      start: '11:40AM',
+      end: '12:30PM',
       isVirtual: false,
       speakers: [
         {
-          name: 'Nassim Eddequiouaq',
-          role: 'Founder, CEO',
-          company: 'Bastion, a16z crypto CTO',
-          image: avatars.nassimEddequiouaq,
-          companyLogoUrl: logos.bastion,
-          companyWebsite: 'https://www.bastion.com/'
+          name: "Keerthana 'KK' Kumar",
+          role: 'Head of Engineering',
+          company: 'Stripe Capital',
+          image: avatars.keerthanaKumar,
+          companyLogoUrl: logos.stripeCapital,
+          companyWebsite: 'https://stripe.com/capital',
         },
         {
-          name: 'Nick Krakoff',
-          role: 'Crypto Products & Business',
-          company: 'Stripe',
-          image: avatars.nickKrakoff,
-          companyLogoUrl: logos.stripe,
-          companyWebsite: 'https://stripe.com/'
+          name: 'Ilona Limonta-Volkova',
+          role: 'Principal / Forbes Fintech Writer',
+          company: 'Bright Ventures',
+          image: avatars.ilonaLimontaVolkova,
+          companyLogoUrl: logos.brightVentures,
+          companyWebsite: 'https://bright.vc/',
         },
         {
-          name: 'Rami Shahatit',
-          role: 'Co-Founder',
-          company: 'Portal',
-          image: avatars.ramiShahatit,
-          companyLogoUrl: logos.portal,
-          companyWebsite: 'https://www.portalhq.io/'
+          name: 'Julian Manieson',
+          role: 'AI Deployment Lead',
+          company: 'Hebbia',
+          image: avatars.julianManieson,
+          companyLogoUrl: logos.hebbia,
+          companyWebsite: 'https://www.hebbia.ai/',
         },
-        {
-          name: 'Ejaaz Ahamadeen',
-          role: 'Cohost and Founder',
-          company: 'Founder / CIO @26CC, Co-host Bankless, Core contributor @aiccelerateDAO',
-          image: avatars.ejaazAhamadeen,
-          companyLogoUrl: logos.bankless,
-          companyWebsite: 'https://www.bankless.com/'
-        },
-        {
-          name: 'Andrew Flockhart',
-          role: 'Director of Engineering For Base',
-          company: 'Coinbase',
-          image: avatars.andrewF,
-          companyLogoUrl: logos.coinbase,
-          companyWebsite: 'https://www.coinbase.com/'
-        }
-      ]
+      ],
     },
     {
-      name: 'Startup Networking Fair & Happy Hour',
-      description: 'Connect with founders, investors, and fellow entrepreneurs. Open bar until 5:00PM.',
-      start: '3:15PM',
+      name: 'Lunch',
+      description: null,
+      start: '12:30PM',
+      end: '1:15PM',
+      isVirtual: false,
+    },
+    {
+      name: 'Student Startup Pitch',
+      description: 'Student founders pitch their startups to the audience',
+      start: '1:15PM',
+      end: '1:45PM',
+      isVirtual: false,
+    },
+    {
+      name: 'Product Panel',
+      description: 'From Idea to Impact: Crafting Products That Scale',
+      start: '1:50PM',
+      end: '2:40PM',
+      isVirtual: false,
+      speakers: [
+        {
+          name: 'Claire North',
+          role: 'PM',
+          company: 'Tennr',
+          image: avatars.claireNorth,
+          companyLogoUrl: logos.tennr,
+          companyWebsite: 'https://www.tennr.com/',
+        },
+        {
+          name: "Kari D'Elia",
+          role: 'CPO',
+          company: 'USAFacts',
+          image: avatars.kariDelia,
+          companyLogoUrl: logos.usafacts,
+          companyWebsite: 'https://usafacts.org/',
+        },
+        {
+          name: 'Beni Shafer-Sull',
+          role: 'CPO',
+          company: 'Oleum',
+          image: avatars.beniShaferSull,
+          companyLogoUrl: logos.oleum,
+          companyWebsite: 'https://www.oleum.ai/',
+        },
+        {
+          name: 'Daniel Hanover',
+          role: 'Co-founder',
+          company: 'Dandy',
+          image: avatars.danielHanover,
+          companyLogoUrl: logos.dandy,
+          companyWebsite: 'https://www.meetdandy.com/',
+        },
+      ],
+    },
+    {
+      name: 'Fireside Chat',
+      description: 'Building a Consumer App from Zero to One',
+      start: '2:50PM',
+      end: '3:30PM',
+      isVirtual: false,
+      speakers: [
+        {
+          name: 'Judy Thelen',
+          role: 'Co-Founder & CEO',
+          company: 'Beli',
+          image: avatars.judyThelen,
+          companyLogoUrl: logos.beli,
+          companyWebsite: 'https://www.beliapp.com/',
+        },
+      ],
+    },
+    {
+      name: 'AI Panel',
+      description: 'Intelligence Unlocked: Building in the Age of AI',
+      start: '3:40PM',
+      end: '4:30PM',
+      isVirtual: false,
+      speakers: [
+        {
+          name: 'Hashim Syed',
+          role: 'AI GTM Lead, Startups',
+          company: 'Google',
+          image: avatars.hashimSyed,
+          companyLogoUrl: logos.google,
+          companyWebsite: 'https://cloud.google.com/',
+        },
+        {
+          name: 'Parth Detroja',
+          role: 'CEO',
+          company: 'Pair AI',
+          image: avatars.parthDetroja,
+          companyLogoUrl: logos.pairAi,
+          companyWebsite: 'https://www.getpair.com/',
+        },
+        {
+          name: 'Aman Rangrass',
+          role: 'SVP, Global Head of Revenue',
+          company: 'Skan AI',
+          image: avatars.amanRangrass,
+          companyLogoUrl: logos.skanAi,
+          companyWebsite: 'https://www.skan.ai/',
+        },
+      ],
+    },
+    {
+      name: 'Networking Cocktail Reception',
+      description: 'Connect with founders, investors, and fellow entrepreneurs.',
+      start: '4:30PM',
       end: '6:00PM',
-      isVirtual: false
+      isVirtual: false,
     },
   ],
-}
-
-function WeekSchedule() {
-  let [tabOrientation, setTabOrientation] = useState('horizontal')
-
-  useEffect(() => {
-    let smMediaQuery = window.matchMedia('(min-width: 640px)')
-
-    function onMediaQueryChange({ matches }: { matches: boolean }) {
-      setTabOrientation(matches ? 'vertical' : 'horizontal')
-    }
-
-    onMediaQueryChange(smMediaQuery)
-    smMediaQuery.addEventListener('change', onMediaQueryChange)
-
-    return () => {
-      smMediaQuery.removeEventListener('change', onMediaQueryChange)
-    }
-  }, [])
-
-  return (
-    <TabGroup
-      className="mx-auto grid max-w-2xl grid-cols-1 gap-y-6 sm:grid-cols-2 lg:hidden"
-      vertical={tabOrientation === 'vertical'}
-    >
-      <TabList className="-mx-4 flex gap-x-4 gap-y-10 overflow-x-auto pb-4 pl-4 sm:mx-0 sm:flex-col sm:pr-8 sm:pb-0 sm:pl-0">
-        {({ selectedIndex }) => (
-          <>
-            {weekSchedule.map((day, dayIndex) => (
-              <div
-                key={day.dateTime}
-                className={clsx(
-                  'relative w-3/4 flex-none pr-4 sm:w-auto sm:pr-0 group cursor-pointer',
-                  dayIndex !== selectedIndex && 'opacity-70',
-                )}
-              >
-                <DaySummary
-                  day={{
-                    ...day,
-                    date: (
-                      <Tab className="data-selected:not-data-focus:outline-hidden flex items-center gap-2">
-                        <span className="absolute inset-0" />
-                        {day.date}
-                        <svg 
-                          className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
-                      </Tab>
-                    ),
-                  }}
-                />
-              </div>
-            ))}
-          </>
-        )}
-      </TabList>
-      <TabPanels>
-        {weekSchedule.map((day) => (
-          <TabPanel
-            key={day.dateTime}
-            className="data-selected:not-data-focus:outline-hidden"
-          >
-            <TimeSlots day={day} />
-          </TabPanel>
-        ))}
-      </TabPanels>
-    </TabGroup>
-  )
 }
 
 function SummitSchedule() {
@@ -638,7 +297,7 @@ function SummitSchedule() {
       </div>
       <div className="relative z-10 mx-auto max-w-2xl lg:mx-0">
         <h3 className="font-display text-3xl font-medium tracking-tighter text-blue-600">
-          Startup Summit at Fitler Club
+          Startup Summit at Sheraton University City
         </h3>
         <p className="mt-4 text-lg tracking-tight text-blue-900">
           {summitSchedule.summary}
@@ -663,38 +322,12 @@ export function Schedule() {
           <div className="inline-flex items-center justify-center gap-3 mb-6 sm:mb-8 bg-blue-50/50 px-4 py-2 rounded-2xl">
             <div className="h-px w-8 rounded-full bg-blue-600/20" />
             <span className="text-xl font-semibold text-blue-600 tracking-wider uppercase">
-              Week Events
-            </span>
-            <div className="h-px w-8 rounded-full bg-blue-600/20" />
-          </div>
-          <h2 className="font-display text-4xl font-medium tracking-tighter text-blue-600 sm:text-5xl">
-            Join us at Huntsman Hall
-          </h2>
-          <p className="mt-4 font-display text-2xl tracking-tight text-blue-900">
-            Join us throughout the week for intimate fireside chats and focused panel discussions with industry leaders.
-          </p>
-        </div>
-      </Container>
-      <div className="relative mt-14 sm:mt-24">
-        <Container className="relative">
-          <div className="mx-auto max-w-7xl">
-            <WeekSchedule />
-            <ScheduleStatic />
-          </div>
-        </Container>
-      </div>
-
-      <Container className="relative z-10 mt-24">
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-4xl lg:pr-24">
-          <div className="inline-flex items-center justify-center gap-3 mb-6 sm:mb-8 bg-blue-50/50 px-4 py-2 rounded-2xl">
-            <div className="h-px w-8 rounded-full bg-blue-600/20" />
-            <span className="text-xl font-semibold text-blue-600 tracking-wider uppercase">
               Summit Day
             </span>
             <div className="h-px w-8 rounded-full bg-blue-600/20" />
           </div>
           <h2 className="font-display text-4xl font-medium tracking-tighter text-blue-600 sm:text-5xl">
-            Startup Summit at Fitler Club
+            Startup Summit at Sheraton University City
           </h2>
           <div className="mt-4">
             <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
@@ -715,21 +348,8 @@ export function Schedule() {
   )
 }
 
-function DaySummary({ day }: { day: Day }) {
-  return (
-    <>
-      <h3 className="text-2xl font-semibold tracking-tight text-blue-900">
-        <time dateTime={day.dateTime}>{day.date}</time>
-      </h3>
-      <p className="mt-1.5 text-base tracking-tight text-blue-900">
-        {day.summary}
-      </p>
-    </>
-  )
-}
-
 export function TimeSlots({ day, className }: { day: Day; className?: string }) {
-  const isWeekday = day.date !== 'March 21'
+  const isWeekday = day.date !== 'March 27'
 
   return (
     <ol
@@ -940,21 +560,6 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
         </li>
       ))}
     </ol>
-  )
-}
-
-function ScheduleStatic() {
-  return (
-    <div className="hidden lg:block">
-      <div className="grid lg:grid-cols-2 gap-x-12 gap-y-16">
-        {weekSchedule.map((day) => (
-          <section key={day.dateTime} className="relative">
-            <DaySummary day={day} />
-            <TimeSlots day={day} className="mt-10" />
-          </section>
-        ))}
-      </div>
-    </div>
   )
 }
 

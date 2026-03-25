@@ -3,14 +3,14 @@ import { Hero } from '@/components/Hero'
 import { OrganizersCallout } from '@/components/OrganizingTeamCallout'
 import { Schedule } from '@/components/Schedule'
 import { Speakers } from '@/components/Speakers'
-import { Sponsors } from '@/components/Sponsors'
+// import { Sponsors } from '@/components/Sponsors'
 import { KeynoteSpeakers } from '@/components/KeynoteSpeakers'
 import { LogoMarquee } from '@/components/LogoMarquee'
 import { TicketPricing } from '@/components/TicketPricing'
 import { getEventTickets, getEventDiscounts, EventbriteTicket } from '@/lib/eventbrite'
 
 export default async function Home() {
-  const eventId = '1248998310569'
+  const eventId = '1984248331173'
   const [tickets, discountsData] = await Promise.all([
     getEventTickets(eventId),
     getEventDiscounts(eventId)
@@ -66,7 +66,7 @@ export default async function Home() {
       <Hero />
       <TicketPricing tickets={availableTickets} />
       <KeynoteSpeakers />
-      <Sponsors onHomePage={true} />
+      {/* <Sponsors onHomePage={true} /> */}
       <Speakers />
       <OrganizersCallout />
       <Schedule />

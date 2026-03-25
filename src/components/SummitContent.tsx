@@ -31,15 +31,15 @@ export function SummitContent() {
               Wharton
               <br/>
               Startup Summit
-              <span className="block text-[#9eff65] text-3xl sm:text-4xl mt-4 font-normal">March 21st, 2025</span>
+              <span className="block text-[#9eff65] text-3xl sm:text-4xl mt-4 font-normal">March 27th, 2026</span>
             </h1>
             <p className="mt-8 text-xl text-gray-300 max-w-2xl">
-              An immersive one-day conference bringing together founders, investors, and innovators at Philadelphia&apos;s exclusive Fitler Club.
+              An immersive one-day conference bringing together founders, investors, and innovators at Philadelphia&apos;s Sheraton University City.
             </p>
 
             <div className="mt-12 flex flex-col sm:flex-row gap-6">
               <a
-                href="https://www.eventbrite.com/e/wharton-startup-week-summit-2025-tickets-1248998310569"
+                href="https://www.eventbrite.com/e/wharton-startup-summit-2026-tickets-1984248331173"
                 className="inline-flex items-center justify-center rounded-lg bg-[#9eff65] px-8 py-3 text-lg font-medium text-[#1a1150] hover:bg-white transition-all duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -67,9 +67,9 @@ export function SummitContent() {
                   <h3 className="text-lg font-medium text-white">Venue</h3>
                 </div>
                 <p className="text-gray-300">
-                  The Fitler Club<br/>
-                  24 S. 24th Street<br/>
-                  Philadelphia, PA 19103
+                  Sheraton University City<br/>
+                  3549 Chestnut Street<br/>
+                  Philadelphia, PA 19104
                 </p>
               </div>
 

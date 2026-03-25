@@ -173,7 +173,8 @@ export async function listEvents(urlPattern?: string): Promise<void> {
 
 export async function getEventTickets(eventId: string): Promise<EventbriteTicket[]> {
   if (!EVENTBRITE_API_KEY) {
-    throw new Error('EVENTBRITE_API_KEY is not set')
+    console.warn('EVENTBRITE_API_KEY is not set - returning empty tickets')
+    return []
   }
 
   // Get tickets for specific event
@@ -261,7 +262,8 @@ export async function getEventDetails(eventId: string) {
 
 export async function getEventDiscounts(eventId: string) {
   if (!EVENTBRITE_API_KEY) {
-    throw new Error('EVENTBRITE_API_KEY is not set')
+    console.warn('EVENTBRITE_API_KEY is not set - returning empty discounts')
+    return { discounts: [] }
   }
 
   const url = `${BASE_URL}/events/${eventId}/discounts/`

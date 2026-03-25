@@ -1,12 +1,9 @@
 'use client'
 
-import { useEffect, useId, useState } from 'react'
+import { useId } from 'react'
 import Image from 'next/image'
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
-import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import { DiamondIcon } from '@/components/DiamondIcon'
 import { avatars, logos } from '@/config/images'
 
 interface Speaker {
@@ -19,390 +16,165 @@ interface Speaker {
   companyWebsite?: string
 }
 
-interface Day {
-  name: string
-  date: string
-  dateTime: string
-  speakers: Speaker[]
-}
-
-const days: Day[] = [
+const speakers: Speaker[] = [
+  // Keynote Speakers
   {
-    name: 'Monday',
-    date: 'March 17',
-    dateTime: '2024-03-17',
-    speakers: [
-      {
-        name: 'Robert Borghese',
-        role: 'Professor at Wharton - Legal Aspects of Entrepreneurship',
-        image: avatars.robertBorghese,
-        company: 'Wharton',
-        companyLogoUrl: logos.wharton,
-        linkedinUrl: 'https://www.linkedin.com/in/robert-j-borghese-16247a1',
-        companyWebsite: 'https://lgst.wharton.upenn.edu/profile/borghese/'
-      },
-      {
-        name: 'Brian Riordan',
-        role: 'Founder at Avalanche',
-        image: avatars.brianRiordan,
-        company: 'Avalanche Energy',
-        companyLogoUrl: logos.avalanche,
-        linkedinUrl: 'https://www.linkedin.com/in/brian-riordan-a7883b11/',
-        companyWebsite: 'https://avalanchefusion.com/'
-      },
-      {
-        name: 'Shawn Xu',
-        role: 'Partner at Lowercarbon Capital',
-        image: avatars.shawnXu,
-        company: 'Lowercarbon Capital',
-        companyLogoUrl: logos.lowercarbonCapital,
-        linkedinUrl: 'https://www.linkedin.com/in/shawnxxu/',
-        companyWebsite: 'https://lowercarbon.com/'
-      },
-      {
-        name: 'Henry Xu',
-        role: 'CFO & Co-Founder of Li Industries',
-        image: avatars.henryXu,
-        company: 'Li Industries',
-        companyLogoUrl: logos.liIndustries,
-        linkedinUrl: 'https://www.linkedin.com/in/xu-han-b819932a/',
-        companyWebsite: 'https://www.li-ind.com/'
-      },
-    ],
+    name: 'John Hu',
+    role: 'Founder & CEO',
+    company: 'Stan',
+    image: avatars.johnHu,
+    companyLogoUrl: logos.stan,
+    linkedinUrl: 'https://www.linkedin.com/in/johnghu',
+    companyWebsite: 'https://www.stan.store/',
   },
   {
-    name: 'Tuesday',
-    date: 'March 18',
-    dateTime: '2024-03-18',
-    speakers: [
-      {
-        name: 'Jake Gordon',
-        role: 'Co-Founder & CEO of Noteefy',
-        image: avatars.jakeGordon,
-        company: 'Noteefy',
-        companyLogoUrl: logos.noteefy,
-        linkedinUrl: 'https://www.linkedin.com/in/jng',
-        companyWebsite: 'https://noteefy.app'
-      },
-      {
-        name: 'Katie Tarbox',
-        role: 'Founder & Managing Partner at Outside The Box',
-        image: avatars.katieTarbox,
-        company: 'Outside The Box',
-        companyLogoUrl: logos.outsideTheBox,
-        linkedinUrl: 'https://www.linkedin.com/in/katherine-tarbox-bbb0a43/',
-        companyWebsite: 'https://www.outsidethebox.vc/'
-      },
-      {
-        name: 'Daniel Kang',
-        role: 'Co-Founder of Flowbo (YC S21)',
-        image: avatars.danielKang,
-        company: 'Flowbo',
-        companyLogoUrl: logos.flowbo,
-        linkedinUrl: 'https://www.linkedin.com/in/itsdankang',
-        companyWebsite: 'https://www.flowbo.co'
-      },
-      {
-        name: 'Ian Goldberg',
-        role: 'Partner at Venrex',
-        image: avatars.ianGoldberg,
-        company: 'Venrex',
-        companyLogoUrl: logos.venrex,
-        linkedinUrl: 'https://www.linkedin.com/in/ian-s-goldberg',
-        companyWebsite: 'http://www.venrex.partners'
-      },
-      {
-        name: 'Jason Chen',
-        role: 'Partner at Contrary',
-        image: avatars.jasonChen,
-        company: 'Contrary',
-        companyLogoUrl: logos.contrary,
-        companyWebsite: 'https://contrary.com',
-        linkedinUrl:'https://www.linkedin.com/in/jasonchen623/'
-      }
-    ],
+    name: 'Saanya Ojha',
+    role: 'Partner',
+    company: 'Bain Capital Ventures',
+    image: avatars.saanyaOjha,
+    companyLogoUrl: logos.bainCapitalVentures,
+    linkedinUrl: 'https://www.linkedin.com/in/saanyaojha',
+    companyWebsite: 'https://www.baincapitalventures.com/',
+  },
+  // Fireside Chat
+  {
+    name: 'Judy Thelen',
+    role: 'Co-Founder & CEO',
+    company: 'Beli',
+    image: avatars.judyThelen,
+    companyLogoUrl: logos.beli,
+    linkedinUrl: 'https://www.linkedin.com/in/judiththelen',
+    companyWebsite: 'https://www.beliapp.com/',
+  },
+  // AI Panel
+  {
+    name: 'Hashim Syed',
+    role: 'AI GTM Lead, Startups',
+    company: 'Google',
+    image: avatars.hashimSyed,
+    companyLogoUrl: logos.google,
+    linkedinUrl: 'https://www.linkedin.com/in/hashim-syed',
+    companyWebsite: 'https://cloud.google.com/',
   },
   {
-    name: 'Wednesday',
-    date: 'March 19',
-    dateTime: '2024-03-19',
-    speakers: [
-      {
-        name: 'Hannah Frankl',
-        role: 'Wharton Student - Rogo (Fin Tech)',
-        image: avatars.hannahFrankl,
-        company: 'Rogo',
-        companyLogoUrl: logos.rogo,
-        linkedinUrl: 'https://www.linkedin.com/in/hannahfrankl/',
-        companyWebsite: 'https://rogo.ai/'
-      },
-      {
-        name: 'Allie DiPietro',
-        role: 'Wharton Student - Juniver (Health Tech)',
-        image: avatars.allieDiPietro,
-        company: 'Juniver',
-        companyLogoUrl: logos.juniver,
-        linkedinUrl: 'https://www.linkedin.com/in/alice-dipietro/',
-        companyWebsite: 'https://www.joinjuniver.com/'
-      },
-      {
-        name: 'Jacqueline Keene',
-        role: 'Wharton Student - Sown to Grown (Ed Tech)',
-        image: avatars.jacquelineKeene,
-        company: 'Sown To Grow',
-        companyLogoUrl: logos.sowntogrow,
-        linkedinUrl: 'https://www.linkedin.com/in/jacqueline-keene/',
-        companyWebsite: 'https://www.sowntogrow.com/'
-      },
-      {
-        name: 'Filippos Letsas',
-        role: 'Wharton Student - Auterion (Deep Tech)',
-        image: avatars.filipposLetsas,
-        company: 'Auterion',
-        companyLogoUrl: logos.auterion,
-        linkedinUrl: 'https://www.linkedin.com/in/fletsas/',
-        companyWebsite: 'https://auterion.com/'
-      },
-      {
-        name: 'Nicole Sahin',
-        role: 'Co-Founder & CEO at Globalization Partners',
-        image: avatars.nicoleSahin,
-        company: 'Globalization Partners',
-        companyLogoUrl: logos.globalizationPartners,
-        linkedinUrl: 'https://www.linkedin.com/in/nicolesahin/',
-        companyWebsite: 'https://www.globalization-partners.com/'
-      },
-    ],
+    name: 'Parth Detroja',
+    role: 'CEO',
+    company: 'Pair AI',
+    image: avatars.parthDetroja,
+    companyLogoUrl: logos.pairAi,
+    linkedinUrl: 'https://www.linkedin.com/in/parthdetroja',
+    companyWebsite: 'https://www.getpair.com/',
   },
   {
-    name: 'Thursday',
-    date: 'March 20',
-    dateTime: '2024-03-20',
-    speakers: [
-      {
-        name: 'Jenna Bryant',
-        role: 'Founder & GP at Embedded Ventures',
-        image: avatars.jennaBryant,
-        company: 'Embedded Ventures',
-        companyLogoUrl: logos.embeddedVentures,
-        linkedinUrl: 'https://www.linkedin.com/in/jennabryant/',
-        companyWebsite: 'https://embedded.ventures/'
-      },
-      {
-        name: 'Urvashi Barooah',
-        role: 'Partner at Redpoint Ventures',
-        image: avatars.urvashipBarooah,
-        company: 'Redpoint Ventures',
-        companyLogoUrl: logos.redpoint,
-        linkedinUrl: 'https://www.linkedin.com/in/urvashi-barooah-7a0ba228/',
-        companyWebsite: 'https://www.redpoint.com/'
-      },
-      {
-        name: 'Sue Xu',
-        role: 'GP at Amino Capital',
-        image: avatars.sueXu,
-        company: 'Amino Capital',
-        companyLogoUrl: logos.aminocapital,
-        linkedinUrl: 'https://www.linkedin.com/in/suexu/',
-        companyWebsite: 'https://www.aminocapital.com/'
-      },
-      {
-        name: 'Nancy Xu',
-        role: 'Founder & CEO at Moonhub AI',
-        image: avatars.nancyXu,
-        company: 'Moonhub AI',
-        companyLogoUrl: logos.moonhubAi,
-        linkedinUrl: 'https://www.linkedin.com/in/xnancy/',
-        companyWebsite: 'https://www.moonhub.ai/'
-      },
-    ],
+    name: 'Aman Rangrass',
+    role: 'SVP, Global Head of Revenue',
+    company: 'Skan AI',
+    image: avatars.amanRangrass,
+    companyLogoUrl: logos.skanAi,
+    linkedinUrl: 'https://www.linkedin.com/in/amanrangrass',
+    companyWebsite: 'https://www.skan.ai/',
+  },
+  // VC Panel
+  {
+    name: 'Mia Farnham',
+    role: 'Principal',
+    company: 'Precursor Ventures',
+    image: avatars.miaFarnham,
+    companyLogoUrl: logos.precursorVentures,
+    linkedinUrl: 'https://www.linkedin.com/in/mia-farnham-a3295b68',
+    companyWebsite: 'https://precursorvc.com/',
   },
   {
-    name: 'Summit Day',
-    date: 'March 21',
-    dateTime: '2024-03-21',
-    speakers: [
-      {
-        name: "Sandeep Acharya",
-        role: "Founder & CEO at Octave - Keynote Speaker",
-        image: avatars.sandeepAcharya,
-        company: "Octave",
-        companyLogoUrl: logos.octave,
-        linkedinUrl: "https://www.linkedin.com/in/sandeep-acharya-he-his-52ab458",
-        companyWebsite: "https://www.findoctave.com/"
-      },
-      {
-        name: "Jordan Noone",
-        role: "Co-Founder @ Zoo and Relativity Space",
-        image: avatars.jordanNoone,
-        company: "Zoo",
-        companyLogoUrl: logos.zoo,
-        linkedinUrl: "https://www.linkedin.com/in/jordannoone/",
-        companyWebsite: "https://zoo.dev/"
-      },
-      {
-        name: "Dan Roelker",
-        role: "Co-Founder at Observable Space",
-        image: avatars.danielRoelker,
-        company: "Observable Space",
-        companyLogoUrl: logos.observableSpace,
-        linkedinUrl: "https://www.linkedin.com/in/dan-roelker",
-        companyWebsite: "https://observable.space/"
-      },
-      {
-        name: "Philip Johnston",
-        role: "Founder at Starcloud",
-        image: avatars.phillipJohnston,
-        company: "Starcloud",
-        companyLogoUrl: logos.starcloud,
-        linkedinUrl: "https://www.linkedin.com/in/johnstonphilip",
-        companyWebsite: "https://www.starcloud.com/"
-      },
-      {
-        name: 'Shreya Rajpal',
-        role: 'Co-Founder and CEO',
-        company: 'Guardrails AI',
-        image: avatars.shreyaRajpal,
-        companyLogoUrl: logos.guardrailsAI,
-        companyWebsite: 'https://guardrailsai.com',
-        linkedinUrl: 'https://www.linkedin.com/in/shreya-rajpal'
-      },
-      // {
-      //   name: "James da Costa",
-      //   role: "Partner at a16z",
-      //   image: avatars.jamesDaCosta,
-      //   company: "Andreessen Horowitz",
-      //   companyLogoUrl: logos.a16z,
-      //   linkedinUrl: "https://www.linkedin.com/in/jamesdacosta",
-      //   companyWebsite: "https://a16z.com/"
-      // },
-      {
-        name: "Josh Lillie",
-        role: "Director of Startups",
-        image: avatars.joshLillie,
-        company: "Databricks",
-        companyLogoUrl: logos.databricks,
-        linkedinUrl: "https://www.linkedin.com/in/josh-lillie-0a4a8982/",
-        companyWebsite: "https://www.databricks.com/"
-      },  
-      {
-        name: "Gabe Stengel",
-        role: "Founder at Rogo",
-        image: avatars.gabrielStengel,
-        company: "Rogo",
-        companyLogoUrl: logos.rogo,
-        linkedinUrl: "https://www.linkedin.com/in/gabestengel/",
-        companyWebsite: "https://www.rogo.ai"
-      },
-      {
-        name: "Haroon Choudery",
-        role: "Founder at Autoblocks AI",
-        image: avatars.haroonChoudery,
-        company: "Autoblocks AI",
-        companyLogoUrl: logos.autoblocksAi,
-        linkedinUrl: "https://www.linkedin.com/in/haroonchoudery/",
-        companyWebsite: "https://www.autoblocks.ai/"
-      },
-      // {
-      //   name: "Logan Kilpatrick",
-      //   role: "DeepMind, Google Gemini, Early stage AI VC Founder",
-      //   image: avatars.loganKilpatrick,
-      //   company: "Google",
-      //   companyLogoUrl: logos.deepmind,
-      //   linkedinUrl: "https://www.linkedin.com/in/logankilpatrick/",
-      //   companyWebsite: "https://deepmind.google/"
-      // },
-      // {
-      //   name: "John Nay",
-      //   role: "Founder & CEO at Norm AI",
-      //   image: avatars.johnNay,
-      //   company: "Norm AI",
-      //   companyLogoUrl: logos.normAi,
-      //   linkedinUrl: "https://www.linkedin.com/in/johnjnay",
-      //   companyWebsite: "https://www.norm.ai/"
-      // },
-      {
-        name: "Eric Kinariwala",
-        role: "Founder and CEO at Capsule",
-        image: avatars.ericKinariwala,
-        company: "Capsule",
-        companyLogoUrl: logos.capsule,
-        linkedinUrl: "https://www.linkedin.com/in/ekinariwala",
-        companyWebsite: "https://www.capsule.com/"
-      },
-      {
-        name: "Cavan Klinsky",
-        role: "Founder at Healthie",
-        image: avatars.cavanKlinsky,
-        company: "Healthie",
-        companyLogoUrl: logos.healthie,
-        linkedinUrl: "https://www.linkedin.com/in/cavan-klinsky-4b4b74a9/",
-        companyWebsite: "https://www.gethealthie.com/"
-      },
-      {
-        name: "Justin Silver",
-        role: "Founder at Symptoguard + Aavrani",
-        image: avatars.justinSilver,
-        company: "Symptoguard & Aavrani",
-        companyLogoUrl: logos.symptoguard,
-        linkedinUrl: "https://www.linkedin.com/in/justinasilver/",
-        companyWebsite: "https://www.symptoguard.com/"
-      },
-      {
-        name: "Gordon Ritter",
-        role: "Founder and GP at Emergence Capital",
-        image: avatars.gordonRitter,
-        company: "Emergence Capital",
-        companyLogoUrl: logos.emergenceCapital,
-        linkedinUrl: "https://www.linkedin.com/in/gordonpritter",
-        companyWebsite: "https://www.emcap.com/"
-      },
-      {
-        name: "Nassim Eddequiouaq",
-        role: "Founder & CEO at Bastion, former a16z crypto CTO",
-        image: avatars.nassimEddequiouaq,
-        company: "Bastion",
-        companyLogoUrl: logos.bastion,
-        linkedinUrl: "https://www.linkedin.com/in/nassim-eddequidouaq/",
-        companyWebsite: "https://www.bastion.com/"
-      },
-      {
-        name: "Nick Krakoff",
-        role: "Crypto Products & Business at Stripe",
-        image: avatars.nickKrakoff,
-        company: "Stripe",
-        companyLogoUrl: logos.stripe,
-        linkedinUrl: undefined,
-        companyWebsite: "https://stripe.com/"
-      },
-      {
-        name: "Rami Shahatit",
-        role: "Co-Founder",
-        image: avatars.ramiShahatit,
-        company: "Portal", 
-        companyLogoUrl: logos.portal,
-        linkedinUrl: "https://www.linkedin.com/in/rami-shahatit/",
-        companyWebsite: "https://www.portalhq.io/"
-      },
-      {
-        name: "Ejaaz Ahamadeen",
-        role: "Founder / CIO @26CC, Co-host Bankless, Core contributor @aiccelerateDAO",
-        image: avatars.ejaazAhamadeen,
-        company: "Bankless",
-        companyLogoUrl: logos.bankless,
-        linkedinUrl: "https://www.linkedin.com/in/ejaaz-ahamadeen-231b7030/",
-        companyWebsite: "https://www.bankless.com/"
-      },
-      {
-        name: "Andrew Flockhart",
-        role: "Director of Engineering For Base at ",
-        image: avatars.andrewF,
-        company: "Coinbase",
-        companyLogoUrl: logos.coinbase,
-        linkedinUrl: "https://www.linkedin.com/in/andrew-f-206a77153/",
-        companyWebsite: "https://www.coinbase.com/"
-      },
-    ],
+    name: 'Emma Silverman',
+    role: 'Partner',
+    company: 'TMV',
+    image: avatars.emmaSilverman,
+    companyLogoUrl: logos.tmv,
+    linkedinUrl: 'https://www.linkedin.com/in/emmacsilverman',
+    companyWebsite: 'https://www.tmv.vc/',
+  },
+  {
+    name: 'Aditya Nidmarti',
+    role: 'Vice Principal',
+    company: 'Bessemer Venture Partners',
+    image: avatars.adityaNidmarti,
+    companyLogoUrl: logos.bessemerVenturePartners,
+    linkedinUrl: 'https://www.linkedin.com/in/adityanidmarti',
+    companyWebsite: 'https://www.bvp.com/',
+  },
+  {
+    name: 'Emily Man',
+    role: 'Partner',
+    company: 'Primary Venture Partners',
+    image: avatars.emilyMan,
+    companyLogoUrl: logos.primaryVenturePartners,
+    linkedinUrl: 'https://www.linkedin.com/in/emily-man-02a1a486',
+    companyWebsite: 'https://www.primary.vc/',
+  },
+  // Fintech Panel
+  {
+    name: "Keerthana 'KK' Kumar",
+    role: 'Head of Engineering',
+    company: 'Stripe Capital',
+    image: avatars.keerthanaKumar,
+    companyLogoUrl: logos.stripeCapital,
+    linkedinUrl: 'https://www.linkedin.com/in/keerthanakumar',
+    companyWebsite: 'https://stripe.com/capital',
+  },
+  {
+    name: 'Ilona Limonta-Volkova',
+    role: 'Principal / Forbes Fintech Writer',
+    company: 'Bright Ventures',
+    image: avatars.ilonaLimontaVolkova,
+    companyLogoUrl: logos.brightVentures,
+    linkedinUrl: 'https://www.linkedin.com/in/ilona-l-a83009b1',
+    companyWebsite: 'https://bright.vc/',
+  },
+  {
+    name: 'Julian Manieson',
+    role: 'AI Deployment Lead',
+    company: 'Hebbia',
+    image: avatars.julianManieson,
+    companyLogoUrl: logos.hebbia,
+    linkedinUrl: 'https://www.linkedin.com/in/julian-manieson',
+    companyWebsite: 'https://www.hebbia.ai/',
+  },
+  // Product Panel
+  {
+    name: 'Claire North',
+    role: 'PM',
+    company: 'Tennr',
+    image: avatars.claireNorth,
+    companyLogoUrl: logos.tennr,
+    linkedinUrl: 'https://www.linkedin.com/in/claire-k-north',
+    companyWebsite: 'https://www.tennr.com/',
+  },
+  {
+    name: "Kari D'Elia",
+    role: 'CPO',
+    company: 'USAFacts',
+    image: avatars.kariDelia,
+    companyLogoUrl: logos.usafacts,
+    linkedinUrl: 'https://www.linkedin.com/in/karidelia',
+    companyWebsite: 'https://usafacts.org/',
+  },
+  {
+    name: 'Beni Shafer-Sull',
+    role: 'CPO',
+    company: 'Oleum',
+    image: avatars.beniShaferSull,
+    companyLogoUrl: logos.oleum,
+    linkedinUrl: 'https://www.linkedin.com/in/beni-shafer-sull',
+    companyWebsite: 'https://www.oleum.ai/',
+  },
+  {
+    name: 'Daniel Hanover',
+    role: 'Co-founder',
+    company: 'Dandy',
+    image: avatars.danielHanover,
+    companyLogoUrl: logos.dandy,
+    linkedinUrl: 'https://www.linkedin.com/in/danielmhanover',
+    companyWebsite: 'https://www.meetdandy.com/',
   },
 ]
 
@@ -429,22 +201,6 @@ function ImageClipPaths({
 
 export function Speakers() {
   let id = useId()
-  let [tabOrientation, setTabOrientation] = useState<'horizontal' | 'vertical'>('horizontal')
-
-  useEffect(() => {
-    let lgMediaQuery = window.matchMedia('(min-width: 1024px)')
-
-    function onMediaQueryChange({ matches }: { matches: boolean }) {
-      setTabOrientation(matches ? 'vertical' : 'horizontal')
-    }
-
-    onMediaQueryChange(lgMediaQuery)
-    lgMediaQuery.addEventListener('change', onMediaQueryChange)
-
-    return () => {
-      lgMediaQuery.removeEventListener('change', onMediaQueryChange)
-    }
-  }, [])
 
   return (
     <section
@@ -462,69 +218,16 @@ export function Speakers() {
             Featured Speakers
           </h2>
           <p className="mt-4 font-display text-2xl tracking-tight text-blue-900">
-            Join us for talks and panels with over 25 founders, VCs, and industry leaders from the most innovative companies.
+            Join us for talks and panels with founders, VCs, and industry leaders from the most innovative companies.
           </p>
         </div>
-        <TabGroup
-          className="mt-14 grid grid-cols-1 items-start gap-x-8 gap-y-8 sm:mt-16 sm:gap-y-16 lg:mt-24 lg:grid-cols-4"
-          vertical={tabOrientation === 'vertical'}
-        >
-          <div className="relative -mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:block sm:overflow-visible sm:pb-0">
-            <div className="absolute top-2 bottom-0 left-0.5 hidden w-px bg-slate-200 lg:block" />
-            <TabList className="grid auto-cols-auto grid-flow-col justify-start gap-x-8 gap-y-10 px-4 whitespace-nowrap sm:mx-auto sm:max-w-2xl sm:grid-cols-3 sm:px-0 sm:text-center lg:grid-flow-row lg:grid-cols-1 lg:text-left">
-              {({ selectedIndex }) => (
-                <>
-                  {days.map((day, dayIndex) => (
-                    <div key={day.dateTime} className="relative lg:pl-8">
-                      <DiamondIcon
-                        className={clsx(
-                          'absolute top-[0.5625rem] left-[-0.5px] hidden h-1.5 w-1.5 overflow-visible lg:block',
-                          dayIndex === selectedIndex
-                            ? 'fill-blue-600 stroke-blue-600'
-                            : 'fill-transparent stroke-slate-400',
-                        )}
-                      />
-                      <div className="relative">
-                        <div
-                          className={clsx(
-                            'font-mono text-sm',
-                            dayIndex === selectedIndex
-                              ? 'text-blue-600'
-                              : 'text-slate-500',
-                          )}
-                        >
-                          <Tab className="data-selected:not-data-focus:outline-hidden">
-                            <span className="absolute inset-0" />
-                            {day.name}
-                          </Tab>
-                        </div>
-                        <time
-                          dateTime={day.dateTime}
-                          className="mt-1.5 block text-2xl font-semibold tracking-tight text-blue-900"
-                        >
-                          {day.date}
-                        </time>
-                      </div>
-                    </div>
-                  ))}
-                </>
-              )}
-            </TabList>
-          </div>
-          <TabPanels className="lg:col-span-3">
-            {days.map((day) => (
-              <TabPanel
-                key={day.dateTime}
-                className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:gap-x-12 lg:gap-y-16"
-                unmount={false}
-              >
-                {day.speakers.map((speaker, speakerIndex) => (
-                  <SpeakerCard key={speakerIndex} speaker={speaker} />
-                ))}
-              </TabPanel>
+        <div className="mt-14 sm:mt-16 lg:mt-24">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-16">
+            {speakers.map((speaker, speakerIndex) => (
+              <SpeakerCard key={speakerIndex} speaker={speaker} />
             ))}
-          </TabPanels>
-        </TabGroup>
+          </div>
+        </div>
       </Container>
     </section>
   )

@@ -10,10 +10,9 @@ import { MobileMenu } from './MobileMenu'
 
 const navigation = {
   main: [
-    { name: 'Schedule', href: '/schedule' },
-    { name: 'Summit', href: '/summit' },
+    { name: 'Schedule', href: '/summit' },
     { name: 'Speakers', href: '/speakers' },
-    { name: 'Sponsors', href: '/sponsors' },
+    // { name: 'Sponsors', href: '/sponsors' },
     { name: 'Organizers', href: '/organizers' },
     { name: 'FAQ', href: '/faq' },
   ]
@@ -113,8 +112,8 @@ export function Header() {
         <nav className="hidden lg:flex lg:items-center lg:space-x-6">
           <div className="flex items-center gap-3 text-lg font-bold text-[#9eff65]">
             <div className="flex flex-col items-center">
-              <span className="text-xs uppercase tracking-wider text-gray-400">Startup Week</span>
-              <span className="text-xl">March 17-21, 2025</span>
+              <span className="text-xs uppercase tracking-wider text-gray-400">Startup Summit</span>
+              <span className="text-xl">March 27, 2026</span>
             </div>
           </div>
           <div className="h-4 w-px bg-gray-600" />
@@ -129,8 +128,8 @@ export function Header() {
           <ExternalLink href="https://whartonentrepreneurship.com">
             Visit E-Club Website
           </ExternalLink>
-          <Button 
-            href="https://www.eventbrite.com/e/wharton-startup-week-summit-2025-tickets-1248998310569"
+          <Button
+            href="https://www.eventbrite.com/e/wharton-startup-summit-2026-tickets-1984248331173"
             target="_blank"
             rel="noopener noreferrer"
           >

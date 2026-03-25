@@ -15,7 +15,7 @@ export function CountdownTimer() {
   })
 
   useEffect(() => {
-    const targetDate = new Date('2025-03-21T09:00:00-04:00') // 9 AM EDT on March 21, 2025
+    const targetDate = new Date('2026-03-27T09:00:00-04:00') // 9 AM EDT on March 27, 2026
 
     const calculateTimeLeft = () => {
       const now = new Date()

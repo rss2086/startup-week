@@ -21,34 +21,34 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://startup-week.whartonentrepreneurship.com'),
   title: {
-    template: '%s - Startup Week 2025',
-    default: 'Startup Week 2025 - Wharton Entrepreneurship Club',
+    template: '%s - Startup Summit 2026',
+    default: 'Startup Summit 2026 - Wharton Entrepreneurship Club',
   },
   description:
-    "Join us for Startup Week 2025, Wharton Entrepreneurship Club's annual flagship event featuring founders, investors, and students. Experience panels, workshops, and networking events, culminating in our Startup Summit at Fitler Club.",
-  keywords: 'Wharton, entrepreneurship, startup week, business conference, networking, venture capital, founders, innovation',
+    "Join us for Startup Summit 2026, Wharton Entrepreneurship Club's annual flagship event featuring founders, investors, and students. Experience panels, keynotes, and networking at Sheraton University City on March 27, 2026.",
+  keywords: 'Wharton, entrepreneurship, startup summit, business conference, networking, venture capital, founders, innovation',
   openGraph: {
     type: 'website',
-    siteName: 'Startup Week 2025',
-    title: 'Startup Week 2025 - Wharton Entrepreneurship Club',
-    description: 'Join us for Startup Week 2025, featuring industry leaders, innovative founders, and transformative ideas.',
+    siteName: 'Startup Summit 2026',
+    title: 'Startup Summit 2026 - Wharton Entrepreneurship Club',
+    description: 'Join us for Startup Summit 2026, featuring industry leaders, innovative founders, and transformative ideas.',
     images: [{
       url: '/images/og-image.png',
       width: 1200,
       height: 630,
-      alt: 'Startup Week 2025 - Wharton Entrepreneurship Club',
+      alt: 'Startup Summit 2026 - Wharton Entrepreneurship Club',
       type: 'image/png',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Startup Week 2025 - Wharton Entrepreneurship Club',
-    description: 'Join us for Startup Week 2025, featuring industry leaders, innovative founders, and transformative ideas.',
+    title: 'Startup Summit 2026 - Wharton Entrepreneurship Club',
+    description: 'Join us for Startup Summit 2026, featuring industry leaders, innovative founders, and transformative ideas.',
     images: [{
       url: '/images/og-image.png',
       width: 1200,
       height: 630,
-      alt: 'Startup Week 2025 - Wharton Entrepreneurship Club',
+      alt: 'Startup Summit 2026 - Wharton Entrepreneurship Club',
     }],
   },
   robots: {

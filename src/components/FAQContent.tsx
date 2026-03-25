@@ -6,24 +6,24 @@ import clsx from 'clsx'
 
 const faqs = [
   {
-    question: 'What is Startup Week?',
-    answer: 'Startup Week is our annual flagship event that brings together founders, investors, and students interested in entrepreneurship. It features a week of panels, workshops, and networking events, culminating in our Startup Summit at Fitler Club.'
+    question: 'What is Startup Summit?',
+    answer: 'Startup Summit is our annual flagship event that brings together founders, investors, and students interested in entrepreneurship. It features a full day of panels, keynotes, and networking at Sheraton University City on March 27th, 2026.'
   },
   {
     question: 'Do I need to be a Wharton student to attend?',
     answer: 'Not at all! While the event is organized by the Wharton Entrepreneurship Club, we welcome students from all Penn schools, as well as alumni and professionals interested in entrepreneurship.'
   },
   {
-    question: 'Are the events in-person or virtual?',
-    answer: 'We have a mix of both! The weekday events are hybrid, with some speakers joining virtually and others in person at Huntsman Hall. The Startup Summit on March 21st is fully in-person at Fitler Club.'
+    question: 'Is the event in-person or virtual?',
+    answer: 'Startup Summit is a fully in-person event at Sheraton University City in Philadelphia. This allows for the best networking and engagement with our speakers and fellow attendees.'
   },
   {
     question: 'What should I wear?',
-    answer: 'Feel free to wear whatever you feel comfortable in! Smart casual attire is common, but there&apos;s no strict dress code. Just keep in mind there will be networking opportunities at the events.'
+    answer: 'Feel free to wear whatever you feel comfortable in! Smart casual attire is common, but there&apos;s no strict dress code. Just keep in mind there will be networking opportunities throughout the day.'
   },
   {
     question: 'Will there be food?',
-    answer: 'Yes! We try to provide lunch during our weekday events and full catering during the Startup Summit, including breakfast, lunch, and refreshments throughout the day.'
+    answer: 'Yes! The Startup Summit includes full catering with breakfast, lunch, and refreshments throughout the day.'
   },
   {
     question: 'How can I become a sponsor?',
@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: 'Will sessions be recorded?',
-    answer: 'Most weekday sessions will be recorded and made available to ticket holders. The Startup Summit sessions will not be recorded to encourage open and candid discussions.'
+    answer: 'The Startup Summit sessions will not be recorded to encourage open and candid discussions with our speakers.'
   }
 ]
 
@@ -54,7 +54,7 @@ export function FAQContent() {
               Frequently Asked Questions
             </h1>
             <p className="mt-6 text-xl text-gray-300">
-              Everything you need to know about Startup Week 2025. Can&apos;t find what you&apos;re looking for? Feel free to reach out.
+              Everything you need to know about Startup Summit 2026. Can&apos;t find what you&apos;re looking for? Feel free to reach out.
             </p>
           </div>
         </Container>

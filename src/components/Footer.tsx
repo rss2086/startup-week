@@ -10,7 +10,7 @@ const navigation = {
     { name: 'Schedule', href: '/schedule' },
     { name: 'Summit', href: '/summit' },
     { name: 'Speakers', href: '/speakers' },
-    { name: 'Sponsors', href: '/sponsors' },
+    // { name: 'Sponsors', href: '/sponsors' },
     { name: 'Organizers', href: '/organizers' },
     { name: 'FAQ', href: '/faq' },
   ],

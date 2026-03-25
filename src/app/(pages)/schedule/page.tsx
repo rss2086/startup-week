@@ -2,18 +2,18 @@ import { Metadata } from 'next'
 import { Schedule } from '@/components/Schedule'
 
 export const metadata: Metadata = {
-  title: 'Schedule - Startup Week 2025',
-  description: 'View the full schedule for Startup Week 2025, featuring daily events from March 17-21, including panels, workshops, networking sessions, and our flagship Startup Summit.',
-  keywords: 'startup week schedule, events, panels, workshops, networking, startup summit, conference agenda',
+  title: 'Schedule - Startup Summit 2026',
+  description: 'View the full schedule for Startup Summit 2026 on March 27, featuring panels, keynotes, and networking at Sheraton University City.',
+  keywords: 'startup summit schedule, events, panels, keynotes, networking, conference agenda',
   openGraph: {
-    title: 'Schedule - Startup Week 2025',
-    description: 'View the full schedule for Startup Week 2025, March 17-21.',
+    title: 'Schedule - Startup Summit 2026',
+    description: 'View the full schedule for Startup Summit 2026, March 27.',
     images: ['/images/schedule-og.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Schedule - Startup Week 2025',
-    description: 'View the full schedule for Startup Week 2025, March 17-21.',
+    title: 'Schedule - Startup Summit 2026',
+    description: 'View the full schedule for Startup Summit 2026, March 27.',
     images: ['/images/schedule-og.jpg'],
   },
 }

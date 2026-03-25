@@ -91,8 +91,8 @@ export function MobileMenu({ isOpen, onClose, navigation }: MobileMenuProps) {
             <div className="flex h-[100dvh] flex-col overflow-hidden">
               <div className="flex items-center justify-between p-4 border-b border-gray-800">
                 <div className="flex flex-col">
-                  <span className="text-xs uppercase tracking-wider text-gray-400">Startup Week</span>
-                  <span className="text-xl font-bold text-[#9eff65]">March 17-21, 2025</span>
+                  <span className="text-xs uppercase tracking-wider text-gray-400">Startup Summit</span>
+                  <span className="text-xl font-bold text-[#9eff65]">March 27, 2026</span>
                 </div>
                 <button
                   onClick={onClose}
@@ -113,7 +113,7 @@ export function MobileMenu({ isOpen, onClose, navigation }: MobileMenuProps) {
                 style={{ WebkitOverflowScrolling: 'touch' }}
               >
                 <div className="flex flex-col items-center justify-center">
-                  <h1 className="text-sm font-bold text-[#9eff65]">Time until Startup Week</h1>
+                  <h1 className="text-sm font-bold text-[#9eff65]">Time until Startup Summit</h1>
                 </div>
                 <div className="flex justify-center mb-8">
                   <CountdownTimer/>
@@ -134,8 +134,8 @@ export function MobileMenu({ isOpen, onClose, navigation }: MobileMenuProps) {
                   </div>
                   
                   <div className="pt-2 pb-8">
-                    <Button 
-                      href="https://www.eventbrite.com/e/wharton-startup-week-summit-2025-tickets-1248998310569"
+                    <Button
+                      href="https://www.eventbrite.com/e/wharton-startup-summit-2026-tickets-1984248331173"
                       className="w-full text-lg" 
                       onClick={onClose}
                     >
