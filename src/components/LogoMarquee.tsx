@@ -1,90 +1,82 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Container } from '@/components/Container'
-import { logos } from '@/config/images'
-import Image from 'next/image'
 import clsx from 'clsx'
 
-export function LogoMarquee({ className = "", whiteLogos = true }: { className?: string, whiteLogos?: boolean }) {
-  const logoArray = Object.values(logos)
-  // Filter out wharton logo and non-PNG files for white version
-  const filteredLogos = whiteLogos 
-    ? logoArray.filter(logo => logo.endsWith('.png') && !logo.includes('wharton') && !logo.includes('octave-white'))
-    : logoArray.filter(logo => !logo.includes('octave-white'))
+export function LogoMarquee({ className = '' }: { className?: string }) {
+  // Company names from 2026 speakers
+  const speakerCompanies = [
+    'Stan',
+    'Bain Capital Ventures',
+    'Beli',
+    'Google',
+    'Pair AI',
+    'Skan AI',
+    'Precursor Ventures',
+    'TMV',
+    'Bessemer Venture Partners',
+    'Primary Venture Partners',
+    'Stripe',
+    'Bright Ventures',
+    'Hebbia',
+    'Tennr',
+    'USAFacts',
+    'Oleum',
+    'Dandy',
+  ]
 
-  // Split logos into two equal groups for different rows
-  const firstHalf = filteredLogos.slice(0, Math.ceil(filteredLogos.length / 2))
-  const secondHalf = filteredLogos.slice(Math.ceil(filteredLogos.length / 2))
+  // Split companies into two rows
+  const firstRow = speakerCompanies.slice(0, Math.ceil(speakerCompanies.length / 2))
+  const secondRow = speakerCompanies.slice(Math.ceil(speakerCompanies.length / 2))
 
   return (
-    <section className={clsx("relative overflow-hidden py-6 bg-transparent", className)}>
-      {/* Gradient Edges */}
-      {/* Logo Marquee */}
+    <section className={clsx('relative overflow-hidden bg-transparent py-6', className)}>
       <div className="relative w-full overflow-hidden">
-        {/* First Row */}
+        {/* First Row - scrolls right */}
         <motion.div
-          className="flex space-x-12 mb-10" 
+          className="mb-8 flex space-x-16"
           animate={{
-            x: [-2000, 0],
+            x: [-1500, 0],
           }}
           transition={{
             x: {
-              duration: 40,
+              duration: 30,
               repeat: Infinity,
-              ease: "linear",
+              ease: 'linear',
             },
           }}
         >
-          {[...firstHalf, ...firstHalf].map((logo, index) => (
-            <div
+          {[...firstRow, ...firstRow, ...firstRow].map((company, index) => (
+            <span
               key={index}
-              className="flex-shrink-0 w-32 h-16 relative group"
+              className="shrink-0 whitespace-nowrap text-lg font-semibold text-white/90 transition-colors hover:text-white"
             >
-              <Image
-                src={logo}
-                alt="Company logo"
-                fill
-                sizes="128px"
-                className={clsx(
-                  "object-contain transition-all duration-300 scale-95 group-hover:scale-100",
-                  whiteLogos && "brightness-0 invert group-hover:brightness-0 group-hover:invert"
-                )}
-              />
-            </div>
+              {company}
+            </span>
           ))}
         </motion.div>
 
-        {/* Second Row */}
+        {/* Second Row - scrolls left */}
         <motion.div
-          className="flex space-x-12"
+          className="flex space-x-16"
           animate={{
-            x: [0, -2000],
+            x: [0, -1500],
           }}
           transition={{
             x: {
-              duration: 40,
+              duration: 30,
               repeat: Infinity,
-              ease: "linear",
+              ease: 'linear',
             },
           }}
         >
-          {[...secondHalf, ...secondHalf].map((logo, index) => (
-            <div
+          {[...secondRow, ...secondRow, ...secondRow].map((company, index) => (
+            <span
               key={index}
-              className="flex-shrink-0 w-32 h-16 relative group"
+              className="shrink-0 whitespace-nowrap text-lg font-semibold text-white/90 transition-colors hover:text-white"
             >
-              <Image
-                src={logo}
-                alt="Company logo"
-                fill
-                sizes="128px"
-                className={clsx(
-                  "object-contain transition-all duration-300 scale-95 group-hover:scale-100",
-                  whiteLogos && "brightness-0 invert group-hover:brightness-0 group-hover:invert"
-                )}
-              />
-            </div>
+              {company}
+            </span>
           ))}
         </motion.div>
       </div>

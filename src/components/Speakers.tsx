@@ -10,6 +10,7 @@ interface Speaker {
   name: string
   role: string
   image?: string
+  imagePosition?: string // CSS object-position value for headshot framing
   company?: string
   companyLogoUrl?: string
   linkedinUrl?: string
@@ -20,11 +21,11 @@ const speakers: Speaker[] = [
   // Keynote Speakers
   {
     name: 'John Hu',
-    role: 'Founder & CEO',
+    role: 'Co-Founder & CEO',
     company: 'Stan',
     image: avatars.johnHu,
     companyLogoUrl: logos.stan,
-    linkedinUrl: 'https://www.linkedin.com/in/johnghu',
+    linkedinUrl: 'https://www.linkedin.com/in/johnzhu',
     companyWebsite: 'https://www.stan.store/',
   },
   {
@@ -32,6 +33,7 @@ const speakers: Speaker[] = [
     role: 'Partner',
     company: 'Bain Capital Ventures',
     image: avatars.saanyaOjha,
+    imagePosition: 'center 17%',
     companyLogoUrl: logos.bainCapitalVentures,
     linkedinUrl: 'https://www.linkedin.com/in/saanyaojha',
     companyWebsite: 'https://www.baincapitalventures.com/',
@@ -42,6 +44,7 @@ const speakers: Speaker[] = [
     role: 'Co-Founder & CEO',
     company: 'Beli',
     image: avatars.judyThelen,
+    imagePosition: 'center 5%',
     companyLogoUrl: logos.beli,
     linkedinUrl: 'https://www.linkedin.com/in/judiththelen',
     companyWebsite: 'https://www.beliapp.com/',
@@ -63,13 +66,14 @@ const speakers: Speaker[] = [
     image: avatars.parthDetroja,
     companyLogoUrl: logos.pairAi,
     linkedinUrl: 'https://www.linkedin.com/in/parthdetroja',
-    companyWebsite: 'https://www.getpair.com/',
+    companyWebsite: 'https://pairai.com/',
   },
   {
     name: 'Aman Rangrass',
     role: 'SVP, Global Head of Revenue',
     company: 'Skan AI',
     image: avatars.amanRangrass,
+    imagePosition: 'center 30%',
     companyLogoUrl: logos.skanAi,
     linkedinUrl: 'https://www.linkedin.com/in/amanrangrass',
     companyWebsite: 'https://www.skan.ai/',
@@ -128,15 +132,16 @@ const speakers: Speaker[] = [
     image: avatars.ilonaLimontaVolkova,
     companyLogoUrl: logos.brightVentures,
     linkedinUrl: 'https://www.linkedin.com/in/ilona-l-a83009b1',
-    companyWebsite: 'https://bright.vc/',
+    companyWebsite: 'https://www.brightventures.io/',
   },
   {
     name: 'Julian Manieson',
     role: 'AI Deployment Lead',
     company: 'Hebbia',
     image: avatars.julianManieson,
+    imagePosition: 'center 17%',
     companyLogoUrl: logos.hebbia,
-    linkedinUrl: 'https://www.linkedin.com/in/julian-manieson',
+    linkedinUrl: 'https://www.linkedin.com/in/julian-akodoye-manieson-3612a3142',
     companyWebsite: 'https://www.hebbia.ai/',
   },
   // Product Panel
@@ -145,6 +150,7 @@ const speakers: Speaker[] = [
     role: 'PM',
     company: 'Tennr',
     image: avatars.claireNorth,
+    imagePosition: 'center 25%',
     companyLogoUrl: logos.tennr,
     linkedinUrl: 'https://www.linkedin.com/in/claire-k-north',
     companyWebsite: 'https://www.tennr.com/',
@@ -165,13 +171,14 @@ const speakers: Speaker[] = [
     image: avatars.beniShaferSull,
     companyLogoUrl: logos.oleum,
     linkedinUrl: 'https://www.linkedin.com/in/beni-shafer-sull',
-    companyWebsite: 'https://www.oleum.ai/',
+    companyWebsite: 'https://bi.oleum.pro/',
   },
   {
     name: 'Daniel Hanover',
     role: 'Co-founder',
     company: 'Dandy',
     image: avatars.danielHanover,
+    imagePosition: 'center 5%',
     companyLogoUrl: logos.dandy,
     linkedinUrl: 'https://www.linkedin.com/in/danielmhanover',
     companyWebsite: 'https://www.meetdandy.com/',
@@ -244,6 +251,7 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
             alt={speaker.name}
             fill
             className="object-cover transition-all duration-500 will-change-transform group-hover:scale-105 group-hover:brightness-110"
+            style={{ objectPosition: speaker.imagePosition || 'center' }}
           />
           {/* Enhanced Gradient Overlay with multiple layers */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.3)_100%)]" />

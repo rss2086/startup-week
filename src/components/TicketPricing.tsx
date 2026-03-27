@@ -49,7 +49,7 @@ export function TicketPricing({ tickets }: TicketPricingProps) {
   }, [])
 
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-[#2b1c8c] to-[#1a1150] ">
+    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-[#0d0820] via-[#1a1150] to-[#1a1150]">
       {/* Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:14px_14px]" />
       
@@ -243,7 +243,7 @@ export function TicketPricing({ tickets }: TicketPricingProps) {
                 <div className="mt-6">
                   {isAvailable ? (
                     <Button
-                      href="https://www.eventbrite.com/e/wharton-startup-week-summit-2025-tickets-1248998310569"
+                      href="https://www.eventbrite.com/e/wharton-startup-week-summit-2026-tickets-1984248331173"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`w-full justify-center group/button ${

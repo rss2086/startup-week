@@ -216,7 +216,7 @@ export function Sponsors({ onHomePage = false }: SponsorsProps) {
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6 sm:mb-8 text-center">
             Trusted By Industry Leaders
           </h2>
-          <LogoMarquee className="bg-gray-50 py-8 sm:py-12 rounded-2xl" whiteLogos={false} />
+          <LogoMarquee className="bg-gray-50 py-8 sm:py-12 rounded-2xl" />
         </div>
       </Container>
     </section>

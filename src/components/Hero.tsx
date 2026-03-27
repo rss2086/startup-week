@@ -4,7 +4,6 @@ import { BackgroundImage } from '@/components/BackgroundImage'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { CountdownTimer } from '@/components/CountdownTimer'
-import { LogoMarquee } from '@/components/LogoMarquee'
 import { motion } from 'framer-motion'
 
 function AnimatedTitle() {
@@ -157,22 +156,6 @@ export function Hero() {
       </Container>
 
       {/* Companies Section */}
-      <div className="relative py-16 bg-black/20 backdrop-blur-sm">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:14px_14px]" />
-        
-        <div className="relative">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/20 mb-3">
-              <div className="h-px w-3 bg-[#9eff65]/30" />
-              <p className="text-[#9eff65] text-sm font-medium tracking-wider uppercase">
-                With Speakers from
-              </p>
-              <div className="h-px w-3 bg-[#9eff65]/30" />
-            </div>
-          </div>
-          <LogoMarquee />
-        </div>
-      </div>
     </section>
   )
 }
