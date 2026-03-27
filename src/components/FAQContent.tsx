@@ -126,7 +126,7 @@ export function FAQContent() {
                 Can&apos;t find what you&apos;re looking for? We&apos;re here to help!
               </p>
               <a
-                href="mailto:rohanss@wharton.upenn.edu"
+                href="mailto:zyuq@wharton.upenn.edu"
                 className="mt-8 inline-flex items-center justify-center rounded-xl bg-blue-600 px-8 py-4 text-lg font-semibold text-white hover:bg-blue-700 transition-colors duration-200"
               >
                 Contact Us

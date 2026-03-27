@@ -4,31 +4,32 @@ import { avatars, logos } from '@/config/images'
 export function KeynoteSpeakers() {
   const speakers = [
     {
-      name: 'Sandeep Acharya',
-      role: 'Founder & CEO',
-      company: 'Octave',
-      image: avatars.sandeepAcharya,
-      companyLogo: logos.octave,
-      companyWebsite: 'https://www.findoctave.com/',
+      name: 'John Hu',
+      role: 'Co-Founder & CEO',
+      company: 'Stan',
+      image: avatars.johnHu,
+      companyLogo: logos.stan,
+      companyWebsite: 'https://www.stan.store/',
       bio: {
-        main: 'Sandeep Acharya is the founder and CEO of Octave, which is transforming premium mental health care into a standard practice. By partnering with major insurers, high-quality, affordable therapy is available to over 33M covered lives across 17 states.  Under Sandeep\'s leadership, Octave has raised over $90M in capital, been recognized as a Top Startup by LinkedIn and been a winner of best places to work awards for multiple years.',
-        experience: 'Prior to co-founding Octave, Sandeep led strategy at One Medical for five years. In this role, he was responsible for overseeing commercial partnerships with employers, health systems and physician groups. The company subsequently went public and was bought by Amazon for $3.9B. Before One Medical, he spent his career as an investor, operator and consultant in the healthcare, retail, and technology sectors at Bain & Co, Bain Capital and Insight Venture Partners.',
-        recognition: 'In addition to his executive career, Sandeep has been an active writer & speaker over the last decade. His posts on LinkedIn have earned him over 84,000 followers globally, and he has written articles for USA Today and Fast Company. He has been an invited speaker at HIMSS, Conference Board, National Business Group on Health, Behavioral Health Tech, and other conferences.',
-        personal: 'Sandeep is a recovering collegiate a cappella singer, karaoke enthusiast, and a long-suffering New York Giants fan. When he\'s not working, he enjoys writing and spending time with his family.'
+        main: 'John Hu is the Co-Founder and CEO of Stan, the all-in-one platform that enables entrepreneurs to build, operate and scale their digital businesses. After experiencing firsthand how fragmented and inefficient the Creator-commerce ecosystem was, John created Stan to give entrepreneurs a single operating system for running and growing an online business.',
+        experience: 'With a mission to empower anyone to make a living working for themselves, Stan now supports over 80,000 creator-entrepreneurs and was recognized on Forbes\' Next Billion-Dollar Startups list. Today, Stan continues to expand with tools designed to accelerate growth, streamline operations, and help Creator-entrepreneurs build sustainable, independent businesses.',
+        recognition: '',
+        personal: 'The son of an immigrant, single mother, John grew up with a belief that financial independence should be accessible to all. John began his career at Goldman Sachs, before co-founding Stan in 2021.'
       }
     },
     {
-      name: 'Gordon Ritter',
-      role: 'Founder & General Partner',
-      company: 'Emergence Capital',
-      image: avatars.gordonRitter,
-      companyLogo: logos.emergenceCapital,
-      companyWebsite: 'https://www.emcap.com/',
+      name: 'Saanya Ojha',
+      role: 'Partner',
+      company: 'Bain Capital Ventures',
+      image: avatars.saanyaOjha,
+      imagePosition: 'center 17%',
+      companyLogo: logos.bainCapitalVentures,
+      companyWebsite: 'https://www.baincapitalventures.com/',
       bio: {
-        main: 'Gordon Ritter is the Founder and General Partner of Emergence Capital Partners. With over 15 years of experience founding and building companies, he has been instrumental in shaping new markets including embedded web-based interfaces, server appliances, "On Demand" services for the SMB market and web-native application development.',
-        experience: 'In 2003, he led Emergence Capital\'s first investment in Salesforce.com. His strategic vision and investment acumen have earned him multiple appearances on Forbes\' Midas List of top venture capital investors.',
-        recognition: 'He currently sits on the boards of five companies, including the leading cloud life sciences company, Veeva Systems. Gordon invested in Veeva in 2008 when the company had 30 people and $2 million in revenue. He has played a key role in the company\'s development, and he is currently the Chairman of the Board.',
-        personal: 'Outside of work, Gordon is a strong supporter of various non-profits including the Golden Gate National Parks and Common Sense Media. He lives in San Francisco and cherishes spending time with his wife Amy and their four children.'
+        main: 'Saanya is a Partner at Bain Capital Ventures, where she leads growth-stage investments in cloud infrastructure, cybersecurity and the developer ecosystem.',
+        experience: 'Previously, she was a partner at Coatue, focusing on growth investments after having started her career as a hedge fund analyst at Goldman Sachs Investment Partners, a long/short fundamental equity fund. A career investor, she is driven by the fundamental question of what makes a good business and has experience investing across stages, verticals and geographies.',
+        recognition: '',
+        personal: 'Originally from India, Saanya now lives in San Francisco but has lived and worked in New York, Hong Kong and Singapore.'
       }
     }
   ]
@@ -65,6 +66,7 @@ export function KeynoteSpeakers() {
                     alt={speaker.name}
                     fill
                     className="object-cover transition-all duration-500 will-change-transform group-hover:scale-105 group-hover:brightness-110"
+                    style={{ objectPosition: speaker.imagePosition || 'center' }}
                   />
                   {/* Enhanced Gradient Overlay */}
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.3)_100%)]" />

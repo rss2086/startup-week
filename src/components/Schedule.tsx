@@ -466,7 +466,7 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
                 !isWeekday && (
                   timeSlot.speakers.length === 1 ? "max-w-lg" :
                   timeSlot.speakers.length === 2 ? "grid-cols-1 sm:grid-cols-2 max-w-3xl" :
-                  timeSlot.speakers.length === 4 ? "grid-cols-1 sm:grid-cols-2 max-w-5xl" :
+                  timeSlot.speakers.length === 4 ? "grid-cols-1 sm:grid-cols-2 max-w-3xl" :
                   "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl"
                 )
               )}>
@@ -600,7 +600,7 @@ function SpeakerCard({ speaker }: SpeakerCardProps) {
 
           {/* Company Logo Overlay */}
           {speaker.companyLogoUrl && (
-            <div className="absolute bottom-0 right-0 flex h-1/3 w-3/5 items-center justify-center">
+            <div className="absolute bottom-0 right-0 flex h-1/3 w-1/2 sm:w-1/3 items-center justify-center">
               <a 
                 href={speaker.companyWebsite}
                 target="_blank"

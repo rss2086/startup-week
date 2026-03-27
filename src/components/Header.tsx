@@ -74,7 +74,35 @@ export function Header() {
   return (
     <header className="sticky top-0 z-[9997] bg-[#1a1150]/95 backdrop-blur-sm">
       <Container className="flex flex-wrap items-center justify-between py-4 lg:flex-nowrap">
-        <div className="flex items-center">
+        {/* Left side: Logo + Summit Date + Nav Links */}
+        <div className="hidden lg:flex items-center gap-6">
+          <Link href="/">
+            <Image
+              src={Logo}
+              alt="E-Club Logo"
+              width={120}
+              height={120}
+              className="h-16 w-auto invert"
+            />
+          </Link>
+          <div className="flex items-center gap-3 text-lg font-bold text-[#9eff65]">
+            <div className="flex flex-col items-center">
+              <span className="text-xs uppercase tracking-wider text-gray-400">Startup Summit</span>
+              <span className="text-xl">March 27, 2026</span>
+            </div>
+          </div>
+          <div className="h-4 w-px bg-gray-600" />
+          <nav className="flex items-center space-x-5">
+            {navigation.main.map((item) => (
+              <NavLink key={item.name} href={item.href}>
+                {item.name}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
+
+        {/* Mobile: Logo only */}
+        <div className="lg:hidden flex items-center">
           <Link href="/">
             <Image
               src={Logo}
@@ -99,32 +127,17 @@ export function Header() {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
         </button>
 
-        {/* Desktop navigation */}
-        <nav className="hidden lg:flex lg:items-center lg:space-x-6">
-          <div className="flex items-center gap-3 text-lg font-bold text-[#9eff65]">
-            <div className="flex flex-col items-center">
-              <span className="text-xs uppercase tracking-wider text-gray-400">Startup Summit</span>
-              <span className="text-xl">March 27, 2026</span>
-            </div>
-          </div>
-          <div className="h-4 w-px bg-gray-600" />
-          <div className="flex items-center space-x-5">
-            {navigation.main.map((item) => (
-              <NavLink key={item.name} href={item.href}>
-                {item.name}
-              </NavLink>
-            ))}
-          </div>
-          <div className="h-4 w-px bg-gray-600" />
+        {/* Right side: E-Club link + Ticket button */}
+        <div className="hidden lg:flex lg:items-center lg:space-x-6">
           <ExternalLink href="https://whartonentrepreneurship.com">
             Visit E-Club Website
           </ExternalLink>
@@ -135,7 +148,7 @@ export function Header() {
           >
             Get Your Ticket
           </Button>
-        </nav>
+        </div>
 
         {/* Mobile Menu */}
         <MobileMenu

@@ -14,20 +14,23 @@ const teams = [
         name: 'Matt Seck',
         role: 'Conference Co-Chair',
         image: '/images/avatars/matt-seck.jpg',
-        linkedin: 'https://www.linkedin.com/in/matt-seck/',
+        imagePosition: 'center 17%',
+        linkedin: 'https://www.linkedin.com/in/matthew-s-025b1182/',
         bio: 'Overseeing the overall conference strategy and execution'
       },
       {
         name: 'Ada Zhang',
         role: 'Conference Co-Chair',
         image: '/images/avatars/ada-zhang.jpg',
-        linkedin: 'https://www.linkedin.com/in/ada-zhang/',
+        imagePosition: 'center 17%',
+        linkedin: 'https://www.linkedin.com/in/ada-zhang-1667b3152/',
         bio: 'Overseeing the overall conference strategy and execution'
       },
       {
         name: 'Nehal Rawat',
         role: 'Conference Vice Chair',
         image: '/images/avatars/nehal-rawat.jpg',
+        imagePosition: 'center 17%',
         linkedin: 'https://www.linkedin.com/in/nehal-rawat/',
         bio: 'Managing speaker relations and event programming'
       },
@@ -35,7 +38,8 @@ const teams = [
         name: 'Lu Lu',
         role: 'Conference Vice Chair',
         image: '/images/avatars/lu-lu.jpg',
-        linkedin: 'https://www.linkedin.com/in/lu-lu/',
+        imagePosition: 'center 17%',
+        linkedin: 'https://www.linkedin.com/in/lulu1016/',
         bio: 'Managing speaker relations and event programming'
       },
     ]
@@ -103,7 +107,8 @@ const teams = [
         name: 'Onyi Ozoma',
         role: 'Chief Financial Officer',
         image: '/images/avatars/onyi-ozoma.jpg',
-        linkedin: 'https://www.linkedin.com/in/onyi-ozoma/',
+        imagePosition: 'center 17%',
+        linkedin: 'https://www.linkedin.com/in/onyiozoma/',
         bio: 'Managing financial operations and budget oversight'
       },
     ]
@@ -194,6 +199,7 @@ export default function OrganizersPage() {
                         alt={member.name}
                         fill
                         className="object-cover transition-all duration-500 will-change-transform group-hover:scale-105"
+                        style={{ objectPosition: (member as any).imagePosition || 'center' }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-gray-900/0" />
                     </div>
