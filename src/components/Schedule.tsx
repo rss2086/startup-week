@@ -27,6 +27,7 @@ export interface TimeSlot {
     companyLogoUrl?: string
     image?: string
     companyWebsite?: string
+    imagePosition?: string
   }>
   eventUrl?: string
   format?: Array<{
@@ -130,6 +131,7 @@ export const summitSchedule: Day = {
           role: 'Partner',
           company: 'Bain Capital Ventures',
           image: avatars.saanyaOjha,
+          imagePosition: 'center 17%',
           companyLogoUrl: logos.bainCapitalVentures,
           companyWebsite: 'https://www.baincapitalventures.com/',
         },
@@ -163,6 +165,7 @@ export const summitSchedule: Day = {
           role: 'AI Deployment Lead',
           company: 'Hebbia',
           image: avatars.julianManieson,
+          imagePosition: 'center 17%',
           companyLogoUrl: logos.hebbia,
           companyWebsite: 'https://www.hebbia.ai/',
         },
@@ -194,6 +197,7 @@ export const summitSchedule: Day = {
           role: 'PM',
           company: 'Tennr',
           image: avatars.claireNorth,
+          imagePosition: 'center 25%',
           companyLogoUrl: logos.tennr,
           companyWebsite: 'https://www.tennr.com/',
         },
@@ -235,6 +239,7 @@ export const summitSchedule: Day = {
           role: 'Co-Founder & CEO',
           company: 'Beli',
           image: avatars.judyThelen,
+          imagePosition: 'center 5%',
           companyLogoUrl: logos.beli,
           companyWebsite: 'https://www.beliapp.com/',
         },
@@ -268,6 +273,7 @@ export const summitSchedule: Day = {
           role: 'SVP, Global Head of Revenue',
           company: 'Skan AI',
           image: avatars.amanRangrass,
+          imagePosition: 'center 25%',
           companyLogoUrl: logos.skanAi,
           companyWebsite: 'https://www.skan.ai/',
         },
@@ -458,8 +464,9 @@ export function TimeSlots({ day, className }: { day: Day; className?: string }) 
                   ? "max-w-3xl" 
                   : "grid gap-4 sm:gap-6",
                 !isWeekday && (
-                  timeSlot.speakers.length === 1 ? "max-w-lg" : 
+                  timeSlot.speakers.length === 1 ? "max-w-lg" :
                   timeSlot.speakers.length === 2 ? "grid-cols-1 sm:grid-cols-2 max-w-3xl" :
+                  timeSlot.speakers.length === 4 ? "grid-cols-1 sm:grid-cols-2 max-w-5xl" :
                   "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl"
                 )
               )}>
@@ -571,6 +578,7 @@ interface SpeakerCardProps {
     companyLogoUrl?: string;
     companyWebsite?: string;
     image?: string;
+    imagePosition?: string;
   };
 }
 
@@ -585,6 +593,7 @@ function SpeakerCard({ speaker }: SpeakerCardProps) {
             alt={speaker.name}
             fill
             className="object-cover transition-all duration-500 will-change-transform group-hover:scale-105 group-hover:brightness-110"
+            style={{ objectPosition: speaker.imagePosition || 'center' }}
           />
           {/* Enhanced Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-slate-900/0" />
