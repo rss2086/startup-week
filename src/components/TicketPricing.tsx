@@ -96,7 +96,6 @@ export function TicketPricing({ tickets }: TicketPricingProps) {
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {sortedTickets.map((ticket, index) => {
             const isHighlighted = ticket.name.toLowerCase().includes('super early bird')
-            const spotsLeft = ticket.quantity_total - ticket.quantity_sold
             const isAvailable = ticket.status === 'on_sale'
             const price = ticket.cost.value / 100 // Convert from cents to dollars
             const fee = ticket.fee.value / 100
@@ -230,13 +229,6 @@ export function TicketPricing({ tickets }: TicketPricingProps) {
                     <p className="text-sm text-gray-400 mb-4">{ticket.description}</p>
                   )}
 
-                  {/* Ticket Availability */}
-                  {isAvailable && (
-                    <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10">
-                      <span className="text-sm font-medium text-[#9eff65]">{spotsLeft}</span>
-                      <span className="text-sm text-gray-400">tickets remaining</span>
-                    </div>
-                  )}
                 </div>
 
                 {/* CTA Button */}
